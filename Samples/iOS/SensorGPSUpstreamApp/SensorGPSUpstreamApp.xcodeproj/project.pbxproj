@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAAC64D725CA387D0065A360 /* Intdash.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC64D525CA38770065A360 /* Intdash.xcframework */; };
+		EAAC64D825CA387D0065A360 /* Intdash.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC64D525CA38770065A360 /* Intdash.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EAE2094325C91CBB007A1C46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE2094125C91CBB007A1C46 /* Main.storyboard */; };
+		EAE2094525C91CBD007A1C46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE2094425C91CBD007A1C46 /* Assets.xcassets */; };
+		EAE2094825C91CBD007A1C46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE2094625C91CBD007A1C46 /* LaunchScreen.storyboard */; };
+		EAE2098325C91D52007A1C46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2095825C91D52007A1C46 /* AppDelegate.swift */; };
+		EAE2098725C91D52007A1C46 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2095D25C91D52007A1C46 /* Config.swift */; };
+		EAE2099425C91D53007A1C46 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2096F25C91D52007A1C46 /* SignInViewController.swift */; };
+		EAE2099525C91D53007A1C46 /* FileListViewController+ViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097125C91D52007A1C46 /* FileListViewController+ViewEvents.swift */; };
+		EAE2099625C91D53007A1C46 /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097225C91D52007A1C46 /* FileListViewController.swift */; };
+		EAE2099725C91D53007A1C46 /* FileListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097325C91D52007A1C46 /* FileListViewController+TableView.swift */; };
+		EAE2099825C91D53007A1C46 /* FileListViewController+IntdashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097425C91D52007A1C46 /* FileListViewController+IntdashManager.swift */; };
+		EAE2099925C91D53007A1C46 /* MainViewController+IntdashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097625C91D52007A1C46 /* MainViewController+IntdashManager.swift */; };
+		EAE2099A25C91D53007A1C46 /* MainViewController+ViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097725C91D52007A1C46 /* MainViewController+ViewEvents.swift */; };
+		EAE2099B25C91D53007A1C46 /* MainViewController+SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097825C91D52007A1C46 /* MainViewController+SensorManager.swift */; };
+		EAE2099C25C91D53007A1C46 /* MainViewController+GPSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097925C91D52007A1C46 /* MainViewController+GPSManager.swift */; };
+		EAE2099D25C91D53007A1C46 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097A25C91D52007A1C46 /* MainViewController.swift */; };
+		EAE2099E25C91D53007A1C46 /* MainViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2097B25C91D52007A1C46 /* MainViewController+MapView.swift */; };
+		EAE209B225C91DC3007A1C46 /* MySystemClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A225C91DC3007A1C46 /* MySystemClock.swift */; };
+		EAE209B325C91DC3007A1C46 /* IntdashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A325C91DC3007A1C46 /* IntdashAPIManager.swift */; };
+		EAE209B425C91DC3007A1C46 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A425C91DC3007A1C46 /* Common.swift */; };
+		EAE209B525C91DC3007A1C46 /* UIInterfaceOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A625C91DC3007A1C46 /* UIInterfaceOrientationExtension.swift */; };
+		EAE209B625C91DC3007A1C46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A725C91DC3007A1C46 /* UIViewExtension.swift */; };
+		EAE209B725C91DC3007A1C46 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A825C91DC3007A1C46 /* TimeIntervalExtension.swift */; };
+		EAE209B825C91DC3007A1C46 /* UInt64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209A925C91DC3007A1C46 /* UInt64Extension.swift */; };
+		EAE209B925C91DC3007A1C46 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209AA25C91DC3007A1C46 /* StringExtension.swift */; };
+		EAE209BA25C91DC3007A1C46 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209AB25C91DC3007A1C46 /* UIImageExtension.swift */; };
+		EAE209BB25C91DC3007A1C46 /* LoadingAlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209AD25C91DC3007A1C46 /* LoadingAlertDialogView.swift */; };
+		EAE209BC25C91DC3007A1C46 /* AlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209AE25C91DC3007A1C46 /* AlertDialogView.swift */; };
+		EAE209BD25C91DC3007A1C46 /* IntdashSignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE209B025C91DC3007A1C46 /* IntdashSignInView.xib */; };
+		EAE209BE25C91DC3007A1C46 /* IntdashSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE209B125C91DC3007A1C46 /* IntdashSignInView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAE209C525C920B0007A1C46 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAAC64D825CA387D0065A360 /* Intdash.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA6B24EB25CD10580060D57A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EAAC64D525CA38770065A360 /* Intdash.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Intdash.xcframework; path = "../../../../../Intdash.xcframework"; sourceTree = "<group>"; };
+		EAE2093825C91CBB007A1C46 /* SensorGPSUpstreamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorGPSUpstreamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE2094225C91CBB007A1C46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAE2094425C91CBD007A1C46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAE2094725C91CBD007A1C46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAE2094925C91CBD007A1C46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE2095825C91D52007A1C46 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAE2095D25C91D52007A1C46 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		EAE2096F25C91D52007A1C46 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EAE2097125C91D52007A1C46 /* FileListViewController+ViewEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+ViewEvents.swift"; sourceTree = "<group>"; };
+		EAE2097225C91D52007A1C46 /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
+		EAE2097325C91D52007A1C46 /* FileListViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+TableView.swift"; sourceTree = "<group>"; };
+		EAE2097425C91D52007A1C46 /* FileListViewController+IntdashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+IntdashManager.swift"; sourceTree = "<group>"; };
+		EAE2097625C91D52007A1C46 /* MainViewController+IntdashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+IntdashManager.swift"; sourceTree = "<group>"; };
+		EAE2097725C91D52007A1C46 /* MainViewController+ViewEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+ViewEvents.swift"; sourceTree = "<group>"; };
+		EAE2097825C91D52007A1C46 /* MainViewController+SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+SensorManager.swift"; sourceTree = "<group>"; };
+		EAE2097925C91D52007A1C46 /* MainViewController+GPSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+GPSManager.swift"; sourceTree = "<group>"; };
+		EAE2097A25C91D52007A1C46 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EAE2097B25C91D52007A1C46 /* MainViewController+MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+MapView.swift"; sourceTree = "<group>"; };
+		EAE209A225C91DC3007A1C46 /* MySystemClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySystemClock.swift; sourceTree = "<group>"; };
+		EAE209A325C91DC3007A1C46 /* IntdashAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashAPIManager.swift; sourceTree = "<group>"; };
+		EAE209A425C91DC3007A1C46 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		EAE209A625C91DC3007A1C46 /* UIInterfaceOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientationExtension.swift; sourceTree = "<group>"; };
+		EAE209A725C91DC3007A1C46 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		EAE209A825C91DC3007A1C46 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		EAE209A925C91DC3007A1C46 /* UInt64Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt64Extension.swift; sourceTree = "<group>"; };
+		EAE209AA25C91DC3007A1C46 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		EAE209AB25C91DC3007A1C46 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		EAE209AD25C91DC3007A1C46 /* LoadingAlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAlertDialogView.swift; sourceTree = "<group>"; };
+		EAE209AE25C91DC3007A1C46 /* AlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialogView.swift; sourceTree = "<group>"; };
+		EAE209B025C91DC3007A1C46 /* IntdashSignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntdashSignInView.xib; sourceTree = "<group>"; };
+		EAE209B125C91DC3007A1C46 /* IntdashSignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashSignInView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAE2093525C91CBB007A1C46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC64D725CA387D0065A360 /* Intdash.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAE2092F25C91CBB007A1C46 = {
+			isa = PBXGroup;
+			children = (
+				EA6B24EB25CD10580060D57A /* README.md */,
+				EAE2099F25C91DC3007A1C46 /* Common */,
+				EAE2093A25C91CBB007A1C46 /* SensorGPSUpstreamApp */,
+				EAE2093925C91CBB007A1C46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAE2093925C91CBB007A1C46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2093825C91CBB007A1C46 /* SensorGPSUpstreamApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAE2093A25C91CBB007A1C46 /* SensorGPSUpstreamApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209C025C92094007A1C46 /* Frameworks */,
+				EAE2094F25C91CE8007A1C46 /* Classes */,
+				EAE2094125C91CBB007A1C46 /* Main.storyboard */,
+				EAE2094425C91CBD007A1C46 /* Assets.xcassets */,
+				EAE2094625C91CBD007A1C46 /* LaunchScreen.storyboard */,
+				EAE2094925C91CBD007A1C46 /* Info.plist */,
+			);
+			path = SensorGPSUpstreamApp;
+			sourceTree = "<group>";
+		};
+		EAE2094F25C91CE8007A1C46 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2095D25C91D52007A1C46 /* Config.swift */,
+				EAE2095825C91D52007A1C46 /* AppDelegate.swift */,
+				EAE2096D25C91D52007A1C46 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAE2096D25C91D52007A1C46 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2096E25C91D52007A1C46 /* SignIn */,
+				EAE2097025C91D52007A1C46 /* FileList */,
+				EAE2097525C91D52007A1C46 /* Main */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAE2096E25C91D52007A1C46 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2096F25C91D52007A1C46 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		EAE2097025C91D52007A1C46 /* FileList */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2097225C91D52007A1C46 /* FileListViewController.swift */,
+				EAE2097125C91D52007A1C46 /* FileListViewController+ViewEvents.swift */,
+				EAE2097325C91D52007A1C46 /* FileListViewController+TableView.swift */,
+				EAE2097425C91D52007A1C46 /* FileListViewController+IntdashManager.swift */,
+			);
+			path = FileList;
+			sourceTree = "<group>";
+		};
+		EAE2097525C91D52007A1C46 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EAE2097A25C91D52007A1C46 /* MainViewController.swift */,
+				EAE2097625C91D52007A1C46 /* MainViewController+IntdashManager.swift */,
+				EAE2097725C91D52007A1C46 /* MainViewController+ViewEvents.swift */,
+				EAE2097825C91D52007A1C46 /* MainViewController+SensorManager.swift */,
+				EAE2097925C91D52007A1C46 /* MainViewController+GPSManager.swift */,
+				EAE2097B25C91D52007A1C46 /* MainViewController+MapView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EAE2099F25C91DC3007A1C46 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209A025C91DC3007A1C46 /* Classes */,
+			);
+			name = Common;
+			path = ../Common;
+			sourceTree = "<group>";
+		};
+		EAE209A025C91DC3007A1C46 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209A425C91DC3007A1C46 /* Common.swift */,
+				EAE209AC25C91DC3007A1C46 /* Views */,
+				EAE209A125C91DC3007A1C46 /* Backends */,
+				EAE209A525C91DC3007A1C46 /* Extensions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAE209A125C91DC3007A1C46 /* Backends */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209A225C91DC3007A1C46 /* MySystemClock.swift */,
+				EAE209A325C91DC3007A1C46 /* IntdashAPIManager.swift */,
+			);
+			path = Backends;
+			sourceTree = "<group>";
+		};
+		EAE209A525C91DC3007A1C46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209A625C91DC3007A1C46 /* UIInterfaceOrientationExtension.swift */,
+				EAE209A725C91DC3007A1C46 /* UIViewExtension.swift */,
+				EAE209A825C91DC3007A1C46 /* TimeIntervalExtension.swift */,
+				EAE209A925C91DC3007A1C46 /* UInt64Extension.swift */,
+				EAE209AA25C91DC3007A1C46 /* StringExtension.swift */,
+				EAE209AB25C91DC3007A1C46 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAE209AC25C91DC3007A1C46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209AF25C91DC3007A1C46 /* IntdashSignInView */,
+				EAE209AD25C91DC3007A1C46 /* LoadingAlertDialogView.swift */,
+				EAE209AE25C91DC3007A1C46 /* AlertDialogView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EAE209AF25C91DC3007A1C46 /* IntdashSignInView */ = {
+			isa = PBXGroup;
+			children = (
+				EAE209B025C91DC3007A1C46 /* IntdashSignInView.xib */,
+				EAE209B125C91DC3007A1C46 /* IntdashSignInView.swift */,
+			);
+			path = IntdashSignInView;
+			sourceTree = "<group>";
+		};
+		EAE209C025C92094007A1C46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC64D525CA38770065A360 /* Intdash.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAE2093725C91CBB007A1C46 /* SensorGPSUpstreamApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE2094C25C91CBD007A1C46 /* Build configuration list for PBXNativeTarget "SensorGPSUpstreamApp" */;
+			buildPhases = (
+				EAE2093425C91CBB007A1C46 /* Sources */,
+				EAE2093525C91CBB007A1C46 /* Frameworks */,
+				EAE2093625C91CBB007A1C46 /* Resources */,
+				EAE209C525C920B0007A1C46 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SensorGPSUpstreamApp;
+			productName = SensorGPSUpstreamApp;
+			productReference = EAE2093825C91CBB007A1C46 /* SensorGPSUpstreamApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAE2093025C91CBB007A1C46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "aptpod, Inc.";
+				TargetAttributes = {
+					EAE2093725C91CBB007A1C46 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = EAE2093325C91CBB007A1C46 /* Build configuration list for PBXProject "SensorGPSUpstreamApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAE2092F25C91CBB007A1C46;
+			productRefGroup = EAE2093925C91CBB007A1C46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAE2093725C91CBB007A1C46 /* SensorGPSUpstreamApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAE2093625C91CBB007A1C46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE209BD25C91DC3007A1C46 /* IntdashSignInView.xib in Resources */,
+				EAE2094825C91CBD007A1C46 /* LaunchScreen.storyboard in Resources */,
+				EAE2094525C91CBD007A1C46 /* Assets.xcassets in Resources */,
+				EAE2094325C91CBB007A1C46 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE2093425C91CBB007A1C46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE209B425C91DC3007A1C46 /* Common.swift in Sources */,
+				EAE2098325C91D52007A1C46 /* AppDelegate.swift in Sources */,
+				EAE209BB25C91DC3007A1C46 /* LoadingAlertDialogView.swift in Sources */,
+				EAE209B325C91DC3007A1C46 /* IntdashAPIManager.swift in Sources */,
+				EAE2099B25C91D53007A1C46 /* MainViewController+SensorManager.swift in Sources */,
+				EAE209B725C91DC3007A1C46 /* TimeIntervalExtension.swift in Sources */,
+				EAE2099D25C91D53007A1C46 /* MainViewController.swift in Sources */,
+				EAE2098725C91D52007A1C46 /* Config.swift in Sources */,
+				EAE209B825C91DC3007A1C46 /* UInt64Extension.swift in Sources */,
+				EAE209B925C91DC3007A1C46 /* StringExtension.swift in Sources */,
+				EAE209B625C91DC3007A1C46 /* UIViewExtension.swift in Sources */,
+				EAE209BC25C91DC3007A1C46 /* AlertDialogView.swift in Sources */,
+				EAE2099425C91D53007A1C46 /* SignInViewController.swift in Sources */,
+				EAE209B225C91DC3007A1C46 /* MySystemClock.swift in Sources */,
+				EAE2099C25C91D53007A1C46 /* MainViewController+GPSManager.swift in Sources */,
+				EAE209BE25C91DC3007A1C46 /* IntdashSignInView.swift in Sources */,
+				EAE2099A25C91D53007A1C46 /* MainViewController+ViewEvents.swift in Sources */,
+				EAE2099925C91D53007A1C46 /* MainViewController+IntdashManager.swift in Sources */,
+				EAE209BA25C91DC3007A1C46 /* UIImageExtension.swift in Sources */,
+				EAE2099525C91D53007A1C46 /* FileListViewController+ViewEvents.swift in Sources */,
+				EAE2099725C91D53007A1C46 /* FileListViewController+TableView.swift in Sources */,
+				EAE209B525C91DC3007A1C46 /* UIInterfaceOrientationExtension.swift in Sources */,
+				EAE2099E25C91D53007A1C46 /* MainViewController+MapView.swift in Sources */,
+				EAE2099625C91D53007A1C46 /* FileListViewController.swift in Sources */,
+				EAE2099825C91D53007A1C46 /* FileListViewController+IntdashManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EAE2094125C91CBB007A1C46 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAE2094225C91CBB007A1C46 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAE2094625C91CBD007A1C46 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAE2094725C91CBD007A1C46 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAE2094A25C91CBD007A1C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAE2094B25C91CBD007A1C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAE2094D25C91CBD007A1C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SensorGPSUpstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.SensorGPSUpstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAE2094E25C91CBD007A1C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SensorGPSUpstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.SensorGPSUpstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAE2093325C91CBB007A1C46 /* Build configuration list for PBXProject "SensorGPSUpstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE2094A25C91CBD007A1C46 /* Debug */,
+				EAE2094B25C91CBD007A1C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE2094C25C91CBD007A1C46 /* Build configuration list for PBXNativeTarget "SensorGPSUpstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE2094D25C91CBD007A1C46 /* Debug */,
+				EAE2094E25C91CBD007A1C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAE2093025C91CBB007A1C46 /* Project object */;
+}

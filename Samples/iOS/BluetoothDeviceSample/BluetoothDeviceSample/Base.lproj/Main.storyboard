@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rgL-VI-pfe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="1AR-aF-civ">
+            <objects>
+                <viewController id="rgL-VI-pfe" customClass="ViewController" customModule="AppCommunicationBluetoothTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qwJ-uj-x1k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-kL-9wT">
+                                <rect key="frame" x="97" y="44" width="220" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdW-cx-RKv">
+                                <rect key="frame" x="20" y="90" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FdW-cx-RKv" firstAttribute="leading" secondItem="5WH-iu-vCV" secondAttribute="leading" constant="20" id="HXh-uH-ZP7"/>
+                            <constraint firstItem="cEo-kL-9wT" firstAttribute="top" secondItem="5WH-iu-vCV" secondAttribute="top" id="LT2-sx-YNe"/>
+                            <constraint firstItem="5WH-iu-vCV" firstAttribute="trailing" secondItem="FdW-cx-RKv" secondAttribute="trailing" constant="20" id="Lg9-Ui-sio"/>
+                            <constraint firstItem="FdW-cx-RKv" firstAttribute="top" secondItem="cEo-kL-9wT" secondAttribute="bottom" constant="10" id="RFM-4b-zF0"/>
+                            <constraint firstItem="cEo-kL-9wT" firstAttribute="centerX" secondItem="qwJ-uj-x1k" secondAttribute="centerX" id="w1o-Ub-QTk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5WH-iu-vCV"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="FdW-cx-RKv" id="mFW-wD-jdo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60K-8j-6KT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

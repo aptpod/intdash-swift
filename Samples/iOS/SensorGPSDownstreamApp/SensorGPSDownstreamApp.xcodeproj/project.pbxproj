@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAAC64E725CA4C2B0065A360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC64E625CA4C2B0065A360 /* AppDelegate.swift */; };
+		EAAC64EE25CA4C2B0065A360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAC64EC25CA4C2B0065A360 /* Main.storyboard */; };
+		EAAC64F025CA4C2D0065A360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC64EF25CA4C2D0065A360 /* Assets.xcassets */; };
+		EAAC64F325CA4C2D0065A360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAC64F125CA4C2D0065A360 /* LaunchScreen.storyboard */; };
+		EAAC65A725CA53780065A360 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65A625CA53780065A360 /* Config.swift */; };
+		EAAC65B725CA537F0065A360 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65AB25CA537F0065A360 /* SignInViewController.swift */; };
+		EAAC65B825CA537F0065A360 /* MainViewController+IntdashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65AE25CA537F0065A360 /* MainViewController+IntdashManager.swift */; };
+		EAAC65B925CA537F0065A360 /* MainViewController+ViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65AF25CA537F0065A360 /* MainViewController+ViewEvents.swift */; };
+		EAAC65BA25CA537F0065A360 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65B025CA537F0065A360 /* MainViewController.swift */; };
+		EAAC65BB25CA537F0065A360 /* MainViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65B125CA537F0065A360 /* MainViewController+MapView.swift */; };
+		EAAC65BC25CA537F0065A360 /* SelectEdgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65B325CA537F0065A360 /* SelectEdgeViewController.swift */; };
+		EAAC65BD25CA537F0065A360 /* SelectEdgeViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65B425CA537F0065A360 /* SelectEdgeViewController+SearchBar.swift */; };
+		EAAC65BE25CA537F0065A360 /* SelectEdgeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65B525CA537F0065A360 /* SelectEdgeViewController+TableView.swift */; };
+		EAAC65C225CA53CA0065A360 /* Intdash.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC65C025CA53C60065A360 /* Intdash.xcframework */; };
+		EAAC65C325CA53CA0065A360 /* Intdash.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC65C025CA53C60065A360 /* Intdash.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EAAC65D925CA53D50065A360 /* MySystemClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65C825CA53D50065A360 /* MySystemClock.swift */; };
+		EAAC65DA25CA53D50065A360 /* IntdashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65C925CA53D50065A360 /* IntdashAPIManager.swift */; };
+		EAAC65DB25CA53D50065A360 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65CA25CA53D50065A360 /* Common.swift */; };
+		EAAC65DC25CA53D50065A360 /* UIInterfaceOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65CC25CA53D50065A360 /* UIInterfaceOrientationExtension.swift */; };
+		EAAC65DD25CA53D50065A360 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65CD25CA53D50065A360 /* UIViewExtension.swift */; };
+		EAAC65DE25CA53D50065A360 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65CE25CA53D50065A360 /* TimeIntervalExtension.swift */; };
+		EAAC65DF25CA53D50065A360 /* UInt64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65CF25CA53D50065A360 /* UInt64Extension.swift */; };
+		EAAC65E025CA53D50065A360 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65D025CA53D50065A360 /* StringExtension.swift */; };
+		EAAC65E125CA53D50065A360 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65D125CA53D50065A360 /* UIImageExtension.swift */; };
+		EAAC65E225CA53D50065A360 /* LoadingAlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65D425CA53D50065A360 /* LoadingAlertDialogView.swift */; };
+		EAAC65E325CA53D50065A360 /* AlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65D525CA53D50065A360 /* AlertDialogView.swift */; };
+		EAAC65E425CA53D50065A360 /* IntdashSignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAC65D725CA53D50065A360 /* IntdashSignInView.xib */; };
+		EAAC65E525CA53D50065A360 /* IntdashSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65D825CA53D50065A360 /* IntdashSignInView.swift */; };
+		EAAC664325CA904C0065A360 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC664225CA904C0065A360 /* UISearchBarExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAAC65C425CA53CA0065A360 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAAC65C325CA53CA0065A360 /* Intdash.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA6B24ED25CD123F0060D57A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EAAC64E325CA4C2B0065A360 /* SensorGPSDownstreamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorGPSDownstreamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC64E625CA4C2B0065A360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAAC64ED25CA4C2B0065A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAAC64EF25CA4C2D0065A360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAAC64F225CA4C2D0065A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAAC64F425CA4C2D0065A360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAC65A625CA53780065A360 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		EAAC65AB25CA537F0065A360 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EAAC65AE25CA537F0065A360 /* MainViewController+IntdashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+IntdashManager.swift"; sourceTree = "<group>"; };
+		EAAC65AF25CA537F0065A360 /* MainViewController+ViewEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+ViewEvents.swift"; sourceTree = "<group>"; };
+		EAAC65B025CA537F0065A360 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EAAC65B125CA537F0065A360 /* MainViewController+MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+MapView.swift"; sourceTree = "<group>"; };
+		EAAC65B325CA537F0065A360 /* SelectEdgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEdgeViewController.swift; sourceTree = "<group>"; };
+		EAAC65B425CA537F0065A360 /* SelectEdgeViewController+SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectEdgeViewController+SearchBar.swift"; sourceTree = "<group>"; };
+		EAAC65B525CA537F0065A360 /* SelectEdgeViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectEdgeViewController+TableView.swift"; sourceTree = "<group>"; };
+		EAAC65C025CA53C60065A360 /* Intdash.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Intdash.xcframework; path = "../../../../../Intdash.xcframework"; sourceTree = "<group>"; };
+		EAAC65C825CA53D50065A360 /* MySystemClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySystemClock.swift; sourceTree = "<group>"; };
+		EAAC65C925CA53D50065A360 /* IntdashAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashAPIManager.swift; sourceTree = "<group>"; };
+		EAAC65CA25CA53D50065A360 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		EAAC65CC25CA53D50065A360 /* UIInterfaceOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientationExtension.swift; sourceTree = "<group>"; };
+		EAAC65CD25CA53D50065A360 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		EAAC65CE25CA53D50065A360 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		EAAC65CF25CA53D50065A360 /* UInt64Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt64Extension.swift; sourceTree = "<group>"; };
+		EAAC65D025CA53D50065A360 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		EAAC65D125CA53D50065A360 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		EAAC65D425CA53D50065A360 /* LoadingAlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAlertDialogView.swift; sourceTree = "<group>"; };
+		EAAC65D525CA53D50065A360 /* AlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialogView.swift; sourceTree = "<group>"; };
+		EAAC65D725CA53D50065A360 /* IntdashSignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntdashSignInView.xib; sourceTree = "<group>"; };
+		EAAC65D825CA53D50065A360 /* IntdashSignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashSignInView.swift; sourceTree = "<group>"; };
+		EAAC664225CA904C0065A360 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAAC64E025CA4C2B0065A360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC65C225CA53CA0065A360 /* Intdash.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAAC64DA25CA4C2B0065A360 = {
+			isa = PBXGroup;
+			children = (
+				EA6B24ED25CD123F0060D57A /* README.md */,
+				EAAC65C525CA53D50065A360 /* Common */,
+				EAAC64E525CA4C2B0065A360 /* SensorGPSDownstreamApp */,
+				EAAC64E425CA4C2B0065A360 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAAC64E425CA4C2B0065A360 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC64E325CA4C2B0065A360 /* SensorGPSDownstreamApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAAC64E525CA4C2B0065A360 /* SensorGPSDownstreamApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65BF25CA53B90065A360 /* Frameworks */,
+				EAAC657B25CA4EA60065A360 /* Classes */,
+				EAAC64EC25CA4C2B0065A360 /* Main.storyboard */,
+				EAAC64EF25CA4C2D0065A360 /* Assets.xcassets */,
+				EAAC64F125CA4C2D0065A360 /* LaunchScreen.storyboard */,
+				EAAC64F425CA4C2D0065A360 /* Info.plist */,
+			);
+			path = SensorGPSDownstreamApp;
+			sourceTree = "<group>";
+		};
+		EAAC657B25CA4EA60065A360 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65A625CA53780065A360 /* Config.swift */,
+				EAAC64E625CA4C2B0065A360 /* AppDelegate.swift */,
+				EAAC65A925CA537F0065A360 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAAC65A925CA537F0065A360 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65AA25CA537F0065A360 /* SignIn */,
+				EAAC65AD25CA537F0065A360 /* Main */,
+				EAAC65B225CA537F0065A360 /* SelectEdge */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAAC65AA25CA537F0065A360 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65AB25CA537F0065A360 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		EAAC65AD25CA537F0065A360 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65B025CA537F0065A360 /* MainViewController.swift */,
+				EAAC65B125CA537F0065A360 /* MainViewController+MapView.swift */,
+				EAAC65AF25CA537F0065A360 /* MainViewController+ViewEvents.swift */,
+				EAAC65AE25CA537F0065A360 /* MainViewController+IntdashManager.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EAAC65B225CA537F0065A360 /* SelectEdge */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65B325CA537F0065A360 /* SelectEdgeViewController.swift */,
+				EAAC65B425CA537F0065A360 /* SelectEdgeViewController+SearchBar.swift */,
+				EAAC65B525CA537F0065A360 /* SelectEdgeViewController+TableView.swift */,
+			);
+			path = SelectEdge;
+			sourceTree = "<group>";
+		};
+		EAAC65BF25CA53B90065A360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65C025CA53C60065A360 /* Intdash.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAAC65C525CA53D50065A360 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65C625CA53D50065A360 /* Classes */,
+			);
+			name = Common;
+			path = ../Common;
+			sourceTree = "<group>";
+		};
+		EAAC65C625CA53D50065A360 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65CA25CA53D50065A360 /* Common.swift */,
+				EAAC65C725CA53D50065A360 /* Backends */,
+				EAAC65CB25CA53D50065A360 /* Extensions */,
+				EAAC65D225CA53D50065A360 /* ViewControllers */,
+				EAAC65D325CA53D50065A360 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAAC65C725CA53D50065A360 /* Backends */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65C825CA53D50065A360 /* MySystemClock.swift */,
+				EAAC65C925CA53D50065A360 /* IntdashAPIManager.swift */,
+			);
+			path = Backends;
+			sourceTree = "<group>";
+		};
+		EAAC65CB25CA53D50065A360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC664225CA904C0065A360 /* UISearchBarExtension.swift */,
+				EAAC65CC25CA53D50065A360 /* UIInterfaceOrientationExtension.swift */,
+				EAAC65CD25CA53D50065A360 /* UIViewExtension.swift */,
+				EAAC65CE25CA53D50065A360 /* TimeIntervalExtension.swift */,
+				EAAC65CF25CA53D50065A360 /* UInt64Extension.swift */,
+				EAAC65D025CA53D50065A360 /* StringExtension.swift */,
+				EAAC65D125CA53D50065A360 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAAC65D225CA53D50065A360 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAAC65D325CA53D50065A360 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65D425CA53D50065A360 /* LoadingAlertDialogView.swift */,
+				EAAC65D525CA53D50065A360 /* AlertDialogView.swift */,
+				EAAC65D625CA53D50065A360 /* IntdashSignInView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EAAC65D625CA53D50065A360 /* IntdashSignInView */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65D725CA53D50065A360 /* IntdashSignInView.xib */,
+				EAAC65D825CA53D50065A360 /* IntdashSignInView.swift */,
+			);
+			path = IntdashSignInView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAAC64E225CA4C2B0065A360 /* SensorGPSDownstreamApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAC64F725CA4C2D0065A360 /* Build configuration list for PBXNativeTarget "SensorGPSDownstreamApp" */;
+			buildPhases = (
+				EAAC64DF25CA4C2B0065A360 /* Sources */,
+				EAAC64E025CA4C2B0065A360 /* Frameworks */,
+				EAAC64E125CA4C2B0065A360 /* Resources */,
+				EAAC65C425CA53CA0065A360 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SensorGPSDownstreamApp;
+			productName = SensorGPSDownstreamApp;
+			productReference = EAAC64E325CA4C2B0065A360 /* SensorGPSDownstreamApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAAC64DB25CA4C2B0065A360 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "aptpod, Inc.";
+				TargetAttributes = {
+					EAAC64E225CA4C2B0065A360 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = EAAC64DE25CA4C2B0065A360 /* Build configuration list for PBXProject "SensorGPSDownstreamApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAAC64DA25CA4C2B0065A360;
+			productRefGroup = EAAC64E425CA4C2B0065A360 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAC64E225CA4C2B0065A360 /* SensorGPSDownstreamApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAAC64E125CA4C2B0065A360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC65E425CA53D50065A360 /* IntdashSignInView.xib in Resources */,
+				EAAC64F325CA4C2D0065A360 /* LaunchScreen.storyboard in Resources */,
+				EAAC64F025CA4C2D0065A360 /* Assets.xcassets in Resources */,
+				EAAC64EE25CA4C2B0065A360 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAAC64DF25CA4C2B0065A360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC65E525CA53D50065A360 /* IntdashSignInView.swift in Sources */,
+				EAAC65E225CA53D50065A360 /* LoadingAlertDialogView.swift in Sources */,
+				EAAC65DD25CA53D50065A360 /* UIViewExtension.swift in Sources */,
+				EAAC65BC25CA537F0065A360 /* SelectEdgeViewController.swift in Sources */,
+				EAAC65BA25CA537F0065A360 /* MainViewController.swift in Sources */,
+				EAAC65DB25CA53D50065A360 /* Common.swift in Sources */,
+				EAAC664325CA904C0065A360 /* UISearchBarExtension.swift in Sources */,
+				EAAC65B725CA537F0065A360 /* SignInViewController.swift in Sources */,
+				EAAC65DC25CA53D50065A360 /* UIInterfaceOrientationExtension.swift in Sources */,
+				EAAC65B925CA537F0065A360 /* MainViewController+ViewEvents.swift in Sources */,
+				EAAC65DF25CA53D50065A360 /* UInt64Extension.swift in Sources */,
+				EAAC65DE25CA53D50065A360 /* TimeIntervalExtension.swift in Sources */,
+				EAAC65B825CA537F0065A360 /* MainViewController+IntdashManager.swift in Sources */,
+				EAAC65E325CA53D50065A360 /* AlertDialogView.swift in Sources */,
+				EAAC64E725CA4C2B0065A360 /* AppDelegate.swift in Sources */,
+				EAAC65BD25CA537F0065A360 /* SelectEdgeViewController+SearchBar.swift in Sources */,
+				EAAC65BE25CA537F0065A360 /* SelectEdgeViewController+TableView.swift in Sources */,
+				EAAC65E125CA53D50065A360 /* UIImageExtension.swift in Sources */,
+				EAAC65BB25CA537F0065A360 /* MainViewController+MapView.swift in Sources */,
+				EAAC65E025CA53D50065A360 /* StringExtension.swift in Sources */,
+				EAAC65A725CA53780065A360 /* Config.swift in Sources */,
+				EAAC65DA25CA53D50065A360 /* IntdashAPIManager.swift in Sources */,
+				EAAC65D925CA53D50065A360 /* MySystemClock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EAAC64EC25CA4C2B0065A360 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAC64ED25CA4C2B0065A360 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAAC64F125CA4C2D0065A360 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAC64F225CA4C2D0065A360 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAAC64F525CA4C2D0065A360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAAC64F625CA4C2D0065A360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAAC64F825CA4C2D0065A360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SensorGPSDownstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.SensorGPSDownstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAAC64F925CA4C2D0065A360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SensorGPSDownstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.SensorGPSDownstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAAC64DE25CA4C2B0065A360 /* Build configuration list for PBXProject "SensorGPSDownstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC64F525CA4C2D0065A360 /* Debug */,
+				EAAC64F625CA4C2D0065A360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAC64F725CA4C2D0065A360 /* Build configuration list for PBXNativeTarget "SensorGPSDownstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC64F825CA4C2D0065A360 /* Debug */,
+				EAAC64F925CA4C2D0065A360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAAC64DB25CA4C2B0065A360 /* Project object */;
+}

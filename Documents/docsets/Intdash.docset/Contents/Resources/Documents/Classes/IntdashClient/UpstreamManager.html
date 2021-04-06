@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UpstreamManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/UpstreamManager" class="dashAnchor"></a>
+    <a title="UpstreamManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">Intdash v1.0.0 Docs</a> (93% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">Intdash Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        UpstreamManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/CANUtils.html">CANUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/GeneralSensorUtils.html">GeneralSensorUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient.html">IntdashClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/Session.html">– Session</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/DataPointsAPI.html">– DataPointsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/EdgesAPI.html">– EdgesAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/DownstreamManager.html">– DownstreamManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/UpstreamManager.html">– UpstreamManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/OAuth2API.html">– OAuth2API</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/CapturesAPI.html">– CapturesAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/MeasurementsAPI.html">– MeasurementsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/VersionsAPI.html">– VersionsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData.html">IntdashData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataAAC.html">– DataAAC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataBaseTime.html">– DataBaseTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataBytes.html">– DataBytes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataCAN.html">– DataCAN</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataControlPad.html">– DataControlPad</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataFloat.html">– DataFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataGeneralSensor.html">– DataGeneralSensor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataGeneric.html">– DataGeneric</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataH264.html">– DataH264</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataH265.html">– DataH265</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataInt.html">– DataInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataJPEG.html">– DataJPEG</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataMavlinkPacket.html">– DataMavlinkPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataNMEA.html">– DataNMEA</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataPCM.html">– DataPCM</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashData/DataString.html">– DataString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashDataFileManager.html">IntdashDataFileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashLog.html">IntdashLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/IntdashPacketHelper.html">IntdashPacketHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/NMEAUtils.html">NMEAUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/NTPManager.html">NTPManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Global%20Variables.html#/s:7Intdash01kA16FrameworkVersionSSvp">kIntdashFrameworkVersion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/Endian.html">Endian</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/FactorType.html">FactorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/IntdashDataType.html">IntdashDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/IntdashLogLevel.html">IntdashLogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/NMEADataType.html">NMEADataType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/IntdashClientDelegate.html">IntdashClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/IntdashClientDownstreamManagerDelegate.html">IntdashClientDownstreamManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/IntdashClientUpstreamManagerDelegate.html">IntdashClientUpstreamManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/NMEA.html">NMEA</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/CaptureItem.html">CaptureItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/CapturesListResponse.html">CapturesListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/CapturesPage.html">CapturesPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DataPoint.html">DataPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/DataPointsGetDataPointsResponse.html">DataPointsGetDataPointsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EdgeItem.html">EdgeItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EdgesListResponse.html">EdgesListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EdgesMePasswordResponse.html">EdgesMePasswordResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EdgesPage.html">EdgesPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorAcceleration.html">GeneralSensorAcceleration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorAccelerationIncludingGravity.html">GeneralSensorAccelerationIncludingGravity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGeoLocationAccuracy.html">GeneralSensorGeoLocationAccuracy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGeoLocationAltitude.html">GeneralSensorGeoLocationAltitude</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGeoLocationCoordinate.html">GeneralSensorGeoLocationCoordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGeoLocationHeading.html">GeneralSensorGeoLocationHeading</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGeoLocationSpeed.html">GeneralSensorGeoLocationSpeed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorGravity.html">GeneralSensorGravity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorOrientationAngle.html">GeneralSensorOrientationAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/GeneralSensorRotationRate.html">GeneralSensorRotationRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/IntdashClientDownstreamManagerError.html">IntdashClientDownstreamManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/IntdashClientDownstreamManagerError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/IntdashClientUpstreamManagerError.html">IntdashClientUpstreamManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/IntdashClientUpstreamManagerError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/IntdashVersion.html">IntdashVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MeasurementItem.html">MeasurementItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MeasurementsListResponse.html">MeasurementsListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/MeasurementsPage.html">MeasurementsPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/NMEARMC.html">NMEARMC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/OAuth2AuthenticateResponse.html">OAuth2AuthenticateResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/RESTError.html">RESTError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/RESTError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/RealtimeDataPoint.html">RealtimeDataPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/VersionsGetVersionInfoResponse.html">VersionsGetVersionInfoResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:7Intdash15EdgesMeResponsea">EdgesMeResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:7Intdash21OAuth2RefreshResponsea">OAuth2RefreshResponse</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>UpstreamManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpstreamManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>アップストリームを管理するクラス。</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC17defaultRetryCountSivpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultRetryCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC17defaultRetryCountSivpZ">defaultRetryCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>再送回数のデフォルト値。0回が設定されています。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultRetryCount</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC34defaultRetryCountOfRequestingSpecsSivpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultRetryCountOfRequestingSpecs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC34defaultRetryCountOfRequestingSpecsSivpZ">defaultRetryCountOfRequestingSpecs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>UpstreamSpecRequestのリトライ回数。5回が設定されています。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultRetryCountOfRequestingSpecs</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC3tagSivp"></a>
+                    <a name="//apple_ref/swift/Property/tag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC3tagSivp">tag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>オブジェクトを識別するためのタグ。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC11upstreamIdsSaySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/upstreamIds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC11upstreamIdsSaySiGvp">upstreamIds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>開いているアップストリームのストリームIDのリスト。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">upstreamIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC4open13measurementId07srcEdgeG003dstI3Ids5store10retryCount21sectionUpdateIntervalSiSS_SSSaySSGSgSbSiSdSgtKF"></a>
+                    <a name="//apple_ref/swift/Method/open(measurementId:srcEdgeId:dstEdgeIds:store:retryCount:sectionUpdateInterval:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC4open13measurementId07srcEdgeG003dstI3Ids5store10retryCount21sectionUpdateIntervalSiSS_SSSaySSGSgSbSiSdSgtKF">open(measurementId:<wbr>srcEdgeId:<wbr>dstEdgeIds:<wbr>store:<wbr>retryCount:<wbr>sectionUpdateInterval:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アップストリームを開いて、開いたストリームのストリームIDを返します。
+（再送処理を行う場合、再送用のストリームIDは内部で管理するため返しません）</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">open</span><span class="p">(</span><span class="nv">measurementId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">srcEdgeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dstEdgeIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                 <span class="nv">store</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">retryCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt"><a href="../../Classes/IntdashClient.html">IntdashClient</a></span><span class="o">.</span><span class="kt">UpstreamManager</span><span class="o">.</span><span class="n"><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC17defaultRetryCountSivpZ">defaultRetryCount</a></span><span class="p">,</span> <span class="nv">sectionUpdateInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>measurementId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>開くアップストリームから送信するデータが紐付けられる計測のUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcEdgeId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>送信元エッジのUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dstEdgeIds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>送信先エッジのUUIDのリスト</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>store</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>サーバーへの保存フラグ</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryCount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>再送のリトライ回数（0の場合は再送しません）</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionUpdateInterval</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>セクションの長さ<br>
+nilの場合はデフォルト値である1秒が適用されます。</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>開いたアップストリームのストリームID</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC13openForResend13measurementId07srcEdgeI003dstK3Ids21sectionUpdateInterval14resendSections011lastSectionI0SiSS_SSSaySSGSgSdSgSDyS2iGSiSgtKF"></a>
+                    <a name="//apple_ref/swift/Method/openForResend(measurementId:srcEdgeId:dstEdgeIds:sectionUpdateInterval:resendSections:lastSectionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC13openForResend13measurementId07srcEdgeI003dstK3Ids21sectionUpdateInterval14resendSections011lastSectionI0SiSS_SSSaySSGSgSdSgSDyS2iGSiSgtKF">openForResend(measurementId:<wbr>srcEdgeId:<wbr>dstEdgeIds:<wbr>sectionUpdateInterval:<wbr>resendSections:<wbr>lastSectionId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>再送用にアップストリームを開いて、開いたストリームのストリームIDを返します。
+このメソッドを用いて開いたストリームは、リアルタイムデータの送信に使用してはならず、
+<code>resendSections</code> で指定したセクションに所属する再送データの送信のみに使用することができます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">openForResend</span><span class="p">(</span><span class="nv">measurementId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">srcEdgeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dstEdgeIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">sectionUpdateInterval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">resendSections</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="kt">Int</span><span class="p">](),</span> <span class="nv">lastSectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>measurementId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>開くアップストリームから送信するデータが紐付けられる計測のUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcEdgeId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>送信元エッジのUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dstEdgeIds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>送信先エッジのUUIDのリスト</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resendSections</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>開いたストリームで送信するセクションの <code>sectionIndex</code> と <code>sectionId</code> のリスト [ <code>sectionIndex</code> : <code>sectionId</code> ]<br>
+本引数に引き渡す <code>sectionIndex</code> と <code>sectionId</code> は、 <code><a href="../../Protocols/IntdashClientUpstreamManagerDelegate.html#/c:@M@Intdash@objc(pl)IntdashClientUpstreamManagerDelegate(im)upstreamManager:didGeneratedSesion:sectionIndex:streamId:final:sentCount:startOfElapsedTime:endOfElapsedTime:">IntdashClientUpstreamManagerDelegate.upstreamManager(_:didGeneratedSesion:sectionIndex:streamId:final:sentCount:startOfElapsedTime:endOfElapsedTime:)</a></code> により取得することができます。
+空の場合は、開かれたストリームを使用して送信されるデータ全てを再送扱いとして送信します。</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionUpdateInterval</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>セクションの長さ<br>
+nilの場合はデフォルト値である1秒が適用されます。</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>開いたアップストリームのストリームID</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC5close10completionyys5Error_pSgc_tF"></a>
+                    <a name="//apple_ref/swift/Method/close(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC5close10completionyys5Error_pSgc_tF">close(completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アップストリームを閉じます。また、設定済みのストリームIDを全てクリアします。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリーム終了時のコールバック</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC5close9streamIds10completionySaySiG_ys5Error_pSgctF"></a>
+                    <a name="//apple_ref/swift/Method/close(streamIds:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC5close9streamIds10completionySaySiG_ys5Error_pSgctF">close(streamIds:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>指定したストリームIDのアップストリームを閉じます。また、対象のストリームIDをクリアします。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">(</span><span class="nv">streamIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamIds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>閉じるダウンストームのストリームIDを格納した配列</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリーム終了時のコールバック</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC9reconnect10completionyySbcSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/reconnect(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC9reconnect10completionyySbcSg_tF">reconnect(completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アップストリームを再接続します。送信づまりが発生した場合に、溜まったキューデータを一旦解放して最新のデータから送信を開始することができます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reconnect</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>再接続完了時のコールバック</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC15clearResendData9streamIdsySaySiG_tF"></a>
+                    <a name="//apple_ref/swift/Method/clearResendData(streamIds:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC15clearResendData9streamIdsySaySiG_tF">clearResendData(streamIds:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>再送用のデータをクリアします。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">clearResendData</span><span class="p">(</span><span class="nv">streamIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamIds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>再送用のデータをクリアする対象のストリームIDの配列</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC20requestMeasurementId8edgeUuid10completionySS_ySSSg_s5Error_pSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/requestMeasurementId(edgeUuid:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC20requestMeasurementId8edgeUuid10completionySS_ySSSg_s5Error_pSgtctF">requestMeasurementId(edgeUuid:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>新しい計測の作成をリクエストします。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">requestMeasurementId</span><span class="p">(</span><span class="nv">edgeUuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">measurementUuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edgeUuid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>生成する計測が紐づくエッジのUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>取得完了時のコールバック</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>measurementUuid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>生成された計測のUUID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>エラー情報</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC4sync18removeClosedStream10retryCount10completionySb_Siys5Error_pSgctF"></a>
+                    <a name="//apple_ref/swift/Method/sync(removeClosedStream:retryCount:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC4sync18removeClosedStream10retryCount10completionySb_Siys5Error_pSgctF">sync(removeClosedStream:<wbr>retryCount:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>クライアントが保持しているアップストリームの状態をサーバーと同期します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sync</span><span class="p">(</span><span class="nv">removeClosedStream</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nv">retryCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt"><a href="../../Classes/IntdashClient.html">IntdashClient</a></span><span class="o">.</span><span class="kt">UpstreamManager</span><span class="o">.</span><span class="n"><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC34defaultRetryCountOfRequestingSpecsSivpZ">defaultRetryCountOfRequestingSpecs</a></span><span class="p">,</span>
+                    <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span><span class="o">-&gt;</span><span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>removeClosedStream</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>閉じられたストリームを削除するかどうか</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryCount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>同期失敗時のリトライ回数</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>処理完了時のコールバック</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC012removeClosedC0yyF"></a>
+                    <a name="//apple_ref/swift/Method/removeClosedUpstream()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC012removeClosedC0yyF">removeClosedUpstream()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>閉じられているアップストリームを破棄します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeClosedUpstream</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF"></a>
+                    <a name="//apple_ref/swift/Method/sendFirstData(_:streamId:channelNum:baseTimeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:<wbr>streamId:<wbr>channelNum:<wbr>baseTimeType:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>最初のデータ（SOSマーカーと基準時刻）を送信します。
+<code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamIdyAA0A4DataC_SdSitKF">sendUnit(_:elapsedTime:streamId:)</a></code> でデータを送信開始する前に、最初のSOSマーカーと基準時刻を送信するために使用します。</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="../../Classes/IntdashData/DataBaseTime/TimeType.html">IntdashData.DataBaseTime.TimeType</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendFirstData</span><span class="p">(</span><span class="n">_</span> <span class="nv">baseTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">channelNum</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+                          <span class="nv">baseTimeType</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashData.html">IntdashData</a></span><span class="o">.</span><span class="kt">DataBaseTime</span><span class="o">.</span><span class="kt">TimeType</span> <span class="o">=</span> <span class="o">.</span><span class="n">edge</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時間</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>channelNum</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>チャンネル番号（0を設定してください）<br></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseTimeType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時間の種別（デフォルトはEdgeRTC）</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC12sendLastData8streamIdySi_tKF"></a>
+                    <a name="//apple_ref/swift/Method/sendLastData(streamId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC12sendLastData8streamIdySi_tKF">sendLastData(streamId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>最後のデータ（EOSマーカー）を送信します。
+<code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamIdyAA0A4DataC_SdSitKF">sendUnit(_:elapsedTime:streamId:)</a></code> でデータの送信終了後に、EOSマーカーを送信するために使用します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendLastData</span><span class="p">(</span><span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamIdyAA0A4DataC_SdSitKF"></a>
+                    <a name="//apple_ref/swift/Method/sendUnit(_:elapsedTime:streamId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamIdyAA0A4DataC_SdSitKF">sendUnit(_:<wbr>elapsedTime:<wbr>streamId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型のデータを送信します。
+データを送り始める前に、 <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:streamId:channelNum:baseTimeType:)</a></code> を使用して、
+最初のSOSマーカーと基準時刻を送らなければなりません。
+このメソッドで送信されるデータのチャンネル番号は、 <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:streamId:channelNum:baseTimeType:)</a></code> で指定したものが使用されます。
+<code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型の中でも <code><a href="../../Classes/IntdashData/DataGeneralSensor.html">IntdashData.DataGeneralSensor</a></code> 型を送信する際には、
+より簡便に <code><a href="../../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a></code> 型を用いてデータ送信が可能な <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC10sendSensor_11elapsedTime8streamIdyAA07GeneralF11Convertible_p_SdSitKF">sendSensor(_:elapsedTime:streamId:)</a></code> を使用することができます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendUnit</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashData.html">IntdashData</a></span><span class="p">,</span> <span class="nv">elapsedTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型のデータ</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>elapsedTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時刻からの経過時間</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamId10channelNumyAA0A4DataC_SdS2itKF"></a>
+                    <a name="//apple_ref/swift/Method/sendUnit(_:elapsedTime:streamId:channelNum:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC8sendUnit_11elapsedTime8streamId10channelNumyAA0A4DataC_SdS2itKF">sendUnit(_:<wbr>elapsedTime:<wbr>streamId:<wbr>channelNum:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型のデータを送信します。
+データを送り始める前に、 <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:streamId:channelNum:baseTimeType:)</a></code> を使用して、
+最初のSOSマーカーと基準時刻を送らなければなりません。
+<code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型の中でも <code><a href="../../Classes/IntdashData/DataGeneralSensor.html">IntdashData.DataGeneralSensor</a></code> 型を送信する際には、
+より簡便に <code><a href="../../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a></code> 型を用いてデータ送信が可能な <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC10sendSensor_11elapsedTime8streamIdyAA07GeneralF11Convertible_p_SdSitKF">sendSensor(_:elapsedTime:streamId:)</a></code> を使用することができます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendUnit</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashData.html">IntdashData</a></span><span class="p">,</span> <span class="nv">elapsedTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">channelNum</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../../Classes/IntdashData.html">IntdashData</a></code> 型のデータ</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>elapsedTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時刻からの経過時間</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>channelNum</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>チャンネル番号</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC12sendBaseTime_04baseG4Type8streamIdySd_AA0A4DataC0lfG0C0gI0OSitKF"></a>
+                    <a name="//apple_ref/swift/Method/sendBaseTime(_:baseTimeType:streamId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC12sendBaseTime_04baseG4Type8streamIdySd_AA0A4DataC0lfG0C0gI0OSitKF">sendBaseTime(_:<wbr>baseTimeType:<wbr>streamId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>基準時間を送信します。
+<code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:streamId:channelNum:baseTimeType:)</a></code> で最初に送信した種別の基準時刻は、このメソッドを使用して送信する必要はありません。</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../../Structs/IntdashClientUpstreamManagerError.html">IntdashClientUpstreamManagerError</a></code></p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendBaseTime</span><span class="p">(</span><span class="n">_</span> <span class="nv">baseTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span>
+                         <span class="nv">baseTimeType</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashData.html">IntdashData</a></span><span class="o">.</span><span class="kt">DataBaseTime</span><span class="o">.</span><span class="kt">TimeType</span><span class="p">,</span>
+                         <span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時間</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseTimeType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時間の種別</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC10sendSensor_11elapsedTime8streamIdyAA07GeneralF11Convertible_p_SdSitKF"></a>
+                    <a name="//apple_ref/swift/Method/sendSensor(_:elapsedTime:streamId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC10sendSensor_11elapsedTime8streamIdyAA07GeneralF11Convertible_p_SdSitKF">sendSensor(_:<wbr>elapsedTime:<wbr>streamId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code><a href="../../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a></code> 型のデータを送信します。
+データを送り始める前に、 <code><a href="../../Classes/IntdashClient/UpstreamManager.html#/s:7Intdash0A6ClientC15UpstreamManagerC13sendFirstData_8streamId10channelNum12baseTimeTypeySd_S2iAA0aG0C0g4BaseM0C0mN0OtKF">sendFirstData(_:streamId:channelNum:baseTimeType:)</a></code> を使用して、
+最初のSOSマーカーと基準時刻を送らなければなりません。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendSensor</span><span class="p">(</span><span class="n">_</span> <span class="nv">sensor</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a></span><span class="p">,</span> <span class="nv">elapsedTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sensor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>センサーデータ</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>elapsedTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>基準時刻からの経過時間</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>streamId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ストリームID</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC11addDelegate8delegateyAA0abcdF0_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/addDelegate(delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC11addDelegate8delegateyAA0abcdF0_p_tF">addDelegate(delegate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegateを追加します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addDelegate</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/IntdashClientUpstreamManagerDelegate.html">IntdashClientUpstreamManagerDelegate</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>追加するDelegate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC14removeDelegate8delegateyAA0abcdF0_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeDelegate(delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC14removeDelegate8delegateyAA0abcdF0_p_tF">removeDelegate(delegate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegateを削除します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeDelegate</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/IntdashClientUpstreamManagerDelegate.html">IntdashClientUpstreamManagerDelegate</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>削除するDelegate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15UpstreamManagerC7disposeyyF"></a>
+                    <a name="//apple_ref/swift/Method/dispose()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15UpstreamManagerC7disposeyyF">dispose()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>割り当てを解除します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dispose</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://www.aptpod.co.jp" target="_blank" rel="external">aptpod Inc</a>. All rights reserved. (Last updated: 2021-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

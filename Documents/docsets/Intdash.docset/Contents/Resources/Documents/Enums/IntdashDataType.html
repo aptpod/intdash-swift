@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IntdashDataType Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/IntdashDataType" class="dashAnchor"></a>
+    <a title="IntdashDataType Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Intdash v1.0.0 Docs</a> (93% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Intdash Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        IntdashDataType Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CANUtils.html">CANUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GeneralSensorUtils.html">GeneralSensorUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient.html">IntdashClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/Session.html">– Session</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/DataPointsAPI.html">– DataPointsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/EdgesAPI.html">– EdgesAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/DownstreamManager.html">– DownstreamManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/UpstreamManager.html">– UpstreamManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/OAuth2API.html">– OAuth2API</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/CapturesAPI.html">– CapturesAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/MeasurementsAPI.html">– MeasurementsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashClient/VersionsAPI.html">– VersionsAPI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData.html">IntdashData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataAAC.html">– DataAAC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataBaseTime.html">– DataBaseTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataBytes.html">– DataBytes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataCAN.html">– DataCAN</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataControlPad.html">– DataControlPad</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataFloat.html">– DataFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataGeneralSensor.html">– DataGeneralSensor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataGeneric.html">– DataGeneric</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataH264.html">– DataH264</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataH265.html">– DataH265</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataInt.html">– DataInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataJPEG.html">– DataJPEG</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataMavlinkPacket.html">– DataMavlinkPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataNMEA.html">– DataNMEA</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataPCM.html">– DataPCM</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashData/DataString.html">– DataString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashDataFileManager.html">IntdashDataFileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashLog.html">IntdashLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntdashPacketHelper.html">IntdashPacketHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NMEAUtils.html">NMEAUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTPManager.html">NTPManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:7Intdash01kA16FrameworkVersionSSvp">kIntdashFrameworkVersion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Endian.html">Endian</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FactorType.html">FactorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/IntdashDataType.html">IntdashDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/IntdashLogLevel.html">IntdashLogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NMEADataType.html">NMEADataType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/GeneralSensorConvertible.html">GeneralSensorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IntdashClientDelegate.html">IntdashClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IntdashClientDownstreamManagerDelegate.html">IntdashClientDownstreamManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IntdashClientUpstreamManagerDelegate.html">IntdashClientUpstreamManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NMEA.html">NMEA</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CaptureItem.html">CaptureItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapturesListResponse.html">CapturesListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapturesPage.html">CapturesPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DataPoint.html">DataPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DataPointsGetDataPointsResponse.html">DataPointsGetDataPointsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EdgeItem.html">EdgeItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EdgesListResponse.html">EdgesListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EdgesMePasswordResponse.html">EdgesMePasswordResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EdgesPage.html">EdgesPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorAcceleration.html">GeneralSensorAcceleration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorAccelerationIncludingGravity.html">GeneralSensorAccelerationIncludingGravity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGeoLocationAccuracy.html">GeneralSensorGeoLocationAccuracy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGeoLocationAltitude.html">GeneralSensorGeoLocationAltitude</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGeoLocationCoordinate.html">GeneralSensorGeoLocationCoordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGeoLocationHeading.html">GeneralSensorGeoLocationHeading</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGeoLocationSpeed.html">GeneralSensorGeoLocationSpeed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorGravity.html">GeneralSensorGravity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorOrientationAngle.html">GeneralSensorOrientationAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GeneralSensorRotationRate.html">GeneralSensorRotationRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntdashClientDownstreamManagerError.html">IntdashClientDownstreamManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntdashClientDownstreamManagerError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntdashClientUpstreamManagerError.html">IntdashClientUpstreamManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntdashClientUpstreamManagerError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntdashVersion.html">IntdashVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MeasurementItem.html">MeasurementItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MeasurementsListResponse.html">MeasurementsListResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MeasurementsPage.html">MeasurementsPage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NMEARMC.html">NMEARMC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OAuth2AuthenticateResponse.html">OAuth2AuthenticateResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RESTError.html">RESTError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RESTError/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RealtimeDataPoint.html">RealtimeDataPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VersionsGetVersionInfoResponse.html">VersionsGetVersionInfoResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Intdash15EdgesMeResponsea">EdgesMeResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Intdash21OAuth2RefreshResponsea">OAuth2RefreshResponse</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>IntdashDataType</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">IntdashDataType</span> <span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                </div>
+              </div>
+            <p>iSCPのデータタイプを表す列挙型。
+iSCPのデータタイプに関する詳細は <a href="https://docs.intdash.jp/manual/iscp1-essentials/latest/ja/iscp1-essentials-ja.pdf">詳説 iSCP 1.0</a> を参照してください。</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO8baseTimeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/baseTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO8baseTimeyA2CmF">baseTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>基準時刻。 <code><a href="../Classes/IntdashData/DataBaseTime.html">IntdashData.DataBaseTime</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">baseTime</span> <span class="o">=</span> <span class="mh">0x87</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO3canyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/can" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO3canyA2CmF">can</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CAN（Controller Area Network用の通信プロトコル）データ。 <code><a href="../Classes/IntdashData/DataCAN.html">IntdashData.DataCAN</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">can</span> <span class="o">=</span> <span class="mh">0x01</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO4nmeayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/nmea" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO4nmeayA2CmF">nmea</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>NMEA（GPSの通信用プロトコル）データ。 <code><a href="../Classes/IntdashData/DataNMEA.html">IntdashData.DataNMEA</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">nmea</span> <span class="o">=</span> <span class="mh">0x02</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO13generalSensoryA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/generalSensor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO13generalSensoryA2CmF">generalSensor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>aptpod独自フォーマットにより定義された、各種センサー値。 <code><a href="../Classes/IntdashData/DataGeneralSensor.html">IntdashData.DataGeneralSensor</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">generalSensor</span> <span class="o">=</span> <span class="mh">0x03</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO10controlPadyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/controlPad" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO10controlPadyA2CmF">controlPad</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>aptpod独自フォーマットにより定義された、汎用的なゲームパッド/コントロールパッドの操作データ。 <code><a href="../Classes/IntdashData/DataControlPad.html">IntdashData.DataControlPad</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">controlPad</span> <span class="o">=</span> <span class="mh">0x04</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO13mavlinkPacketyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/mavlinkPacket" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO13mavlinkPacketyA2CmF">mavlinkPacket</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mavlink 2 Packet（Micro Air Vehicle/ドローン用の通信プロトコル）のデータ。 <code><a href="../Classes/IntdashData/DataMavlinkPacket.html">IntdashData.DataMavlinkPacket</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">mavlinkPacket</span> <span class="o">=</span> <span class="mh">0x05</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO4jpegyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/jpeg" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO4jpegyA2CmF">jpeg</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>JPEG画像データ。 <code><a href="../Classes/IntdashData/DataJPEG.html">IntdashData.DataJPEG</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">jpeg</span> <span class="o">=</span> <span class="mh">0x09</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO4h264yA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/h264" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO4h264yA2CmF">h264</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>H.264/AVCデータ。 <code><a href="../Classes/IntdashData/DataH264.html">IntdashData.DataH264</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">h264</span> <span class="o">=</span> <span class="mh">0x0d</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO3pcmyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/pcm" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO3pcmyA2CmF">pcm</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>WAVE形式の音声波形情報。 <code><a href="../Classes/IntdashData/DataPCM.html">IntdashData.DataPCM</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pcm</span> <span class="o">=</span> <span class="mh">0x0f</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO3aacyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/aac" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO3aacyA2CmF">aac</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>AACデータ（ADTS形式のAAC音声）。 <code><a href="../Classes/IntdashData/DataAAC.html">IntdashData.DataAAC</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">aac</span> <span class="o">=</span> <span class="mh">0x10</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO4h265yA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/h265" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO4h265yA2CmF">h265</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>H.265/HEVCデータ。 <code><a href="../Classes/IntdashData/DataH265.html">IntdashData.DataH265</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">h265</span> <span class="o">=</span> <span class="mh">0x11</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO6stringyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/string" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO6stringyA2CmF">string</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>文字列IDを持った文字列。 <code><a href="../Classes/IntdashData/DataString.html">IntdashData.DataString</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">string</span> <span class="o">=</span> <span class="mh">0x0a</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO5floatyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/float" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO5floatyA2CmF">float</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>文字列IDを持った倍精度浮動小数点数。 <code><a href="../Classes/IntdashData/DataFloat.html">IntdashData.DataFloat</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">float</span> <span class="o">=</span> <span class="mh">0x0b</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO3intyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO3intyA2CmF">int</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>文字列IDを持った64bit符号付き整数。 <code><a href="../Classes/IntdashData/DataInt.html">IntdashData.DataInt</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">int</span> <span class="o">=</span> <span class="mh">0x0c</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO5bytesyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/bytes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO5bytesyA2CmF">bytes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>文字列IDを持った任意のバイト配列。 <code><a href="../Classes/IntdashData/DataBytes.html">IntdashData.DataBytes</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">bytes</span> <span class="o">=</span> <span class="mh">0x0e</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A8DataTypeO7genericyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/generic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A8DataTypeO7genericyA2CmF">generic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>aptpod独自フォーマットにより定義された、任意のバイト配列。 <code><a href="../Classes/IntdashData/DataGeneric.html">IntdashData.DataGeneric</a></code> に対応します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">generic</span> <span class="o">=</span> <span class="mh">0x7f</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://www.aptpod.co.jp" target="_blank" rel="external">aptpod Inc</a>. All rights reserved. (Last updated: 2021-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

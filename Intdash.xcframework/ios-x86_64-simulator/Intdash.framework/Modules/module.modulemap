@@ -1,0 +1,11 @@
+framework module Intdash {
+  umbrella header "Intdash.h"
+
+  export *
+  module * { export * }
+}
+
+module Intdash.Swift {
+    header "Intdash-Swift.h"
+    requires objc
+}

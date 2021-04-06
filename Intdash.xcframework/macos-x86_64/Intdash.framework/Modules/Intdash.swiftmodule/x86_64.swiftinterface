@@ -1,0 +1,1076 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 effective-4.1.50 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target x86_64-apple-macos10.12 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name Intdash
+import CommonCrypto
+import Foundation
+@_exported import Intdash
+import Swift
+import zlib
+public struct GeneralSensorGeoLocationSpeed : Intdash.GeneralSensorConvertible {
+  public var speed: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(speed: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationSpeed
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationSpeed
+}
+extension GeneralSensorGeoLocationSpeed : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGeoLocationSpeed, rhs: Intdash.GeneralSensorGeoLocationSpeed) -> Swift.Bool
+}
+public struct GeneralSensorAccelerationIncludingGravity : Intdash.GeneralSensorConvertible {
+  public var agx: Swift.Float
+  public var agy: Swift.Float
+  public var agz: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(agx: Swift.Float, agy: Swift.Float, agz: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorAccelerationIncludingGravity
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorAccelerationIncludingGravity
+}
+extension GeneralSensorAccelerationIncludingGravity : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorAccelerationIncludingGravity, rhs: Intdash.GeneralSensorAccelerationIncludingGravity) -> Swift.Bool
+}
+public struct GeneralSensorGravity : Intdash.GeneralSensorConvertible {
+  public var gx: Swift.Float
+  public var gy: Swift.Float
+  public var gz: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(gx: Swift.Float, gy: Swift.Float, gz: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGravity
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGravity
+}
+extension GeneralSensorGravity : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGravity, rhs: Intdash.GeneralSensorGravity) -> Swift.Bool
+}
+extension IntdashData {
+  open class DataGeneric : Intdash.IntdashData {
+    public var id: Swift.UInt32
+    public var data: [Swift.UInt8]
+    public init(id: Swift.UInt32, data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+@objc public protocol IntdashClientUpstreamManagerDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func upstreamManager(_ manager: Intdash.IntdashClient.UpstreamManager, didReceiveEndOfSection sectionId: Swift.Int, streamId: Swift.Int, success: Swift.Bool, final: Swift.Bool, sentCount: Swift.Int)
+  @objc optional func upstreamManager(_ manager: Intdash.IntdashClient.UpstreamManager, didGeneratedSesion sectionId: Swift.Int, sectionIndex: Swift.Int, streamId: Swift.Int, final: Swift.Bool, sentCount: Swift.Int, startOfElapsedTime: Foundation.TimeInterval, endOfElapsedTime: Foundation.TimeInterval)
+  @objc optional func upstreamManager(_ manager: Intdash.IntdashClient.UpstreamManager, didReceiveMeasurementId measurementId: Swift.String)
+  @objc optional func upstreamManager(_ manager: Intdash.IntdashClient.UpstreamManager, didFailToReceiveMeasurementIdWith error: Swift.Error)
+  @objc optional func upstreamManager(_ manager: Intdash.IntdashClient.UpstreamManager, didSendElem dataSize: Swift.Int)
+}
+public struct IntdashClientUpstreamManagerError : Swift.Error {
+  public enum Kind {
+    case invalidArguments
+    case upstreamSpecIsNotFound
+    case upstreamSpecResponseFailure
+    case streamIdIsAlreadyUsed
+    case needToSendFirstData
+    case failedToCreateUnit
+    public static func == (a: Intdash.IntdashClientUpstreamManagerError.Kind, b: Intdash.IntdashClientUpstreamManagerError.Kind) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var kind: Intdash.IntdashClientUpstreamManagerError.Kind
+}
+extension IntdashClient {
+  @objc public class UpstreamManager : ObjectiveC.NSObject {
+    public static let defaultRetryCount: Swift.Int
+    public static let defaultRetryCountOfRequestingSpecs: Swift.Int
+    public var tag: Swift.Int
+    public var upstreamIds: [Swift.Int] {
+      get
+    }
+    public func open(measurementId: Swift.String, srcEdgeId: Swift.String, dstEdgeIds: [Swift.String]? = nil, store: Swift.Bool = true, retryCount: Swift.Int = IntdashClient.UpstreamManager.defaultRetryCount, sectionUpdateInterval: Foundation.TimeInterval? = nil) throws -> Swift.Int
+    public func openForResend(measurementId: Swift.String, srcEdgeId: Swift.String, dstEdgeIds: [Swift.String]? = nil, sectionUpdateInterval: Foundation.TimeInterval? = nil, resendSections: [Swift.Int : Swift.Int] = [Int: Int](), lastSectionId: Swift.Int?) throws -> Swift.Int
+    public func close(completion: @escaping (Swift.Error?) -> ())
+    public func close(streamIds: [Swift.Int], completion: @escaping (Swift.Error?) -> ())
+    public func reconnect(completion: ((Swift.Bool) -> ())? = nil)
+    public func clearResendData(streamIds: [Swift.Int])
+    public func requestMeasurementId(edgeUuid: Swift.String, completion: @escaping (Swift.String?, Swift.Error?) -> ())
+    public func sync(removeClosedStream: Swift.Bool = true, retryCount: Swift.Int = IntdashClient.UpstreamManager.defaultRetryCountOfRequestingSpecs, completion: @escaping (Swift.Error?) -> ())
+    public func removeClosedUpstream()
+    public func sendFirstData(_ baseTime: Foundation.TimeInterval, streamId: Swift.Int, channelNum: Swift.Int, baseTimeType: Intdash.IntdashData.DataBaseTime.TimeType = .edge) throws
+    public func sendLastData(streamId: Swift.Int) throws
+    public func sendUnit(_ data: Intdash.IntdashData, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
+    public func sendUnit(_ data: Intdash.IntdashData, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int, channelNum: Swift.Int) throws
+    public func sendBaseTime(_ baseTime: Foundation.TimeInterval, baseTimeType: Intdash.IntdashData.DataBaseTime.TimeType, streamId: Swift.Int) throws
+    public func sendSensor(_ sensor: Intdash.GeneralSensorConvertible, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
+    public func addDelegate(delegate: Intdash.IntdashClientUpstreamManagerDelegate)
+    public func removeDelegate(delegate: Intdash.IntdashClientUpstreamManagerDelegate)
+    public func dispose()
+    @objc deinit
+    @objc override dynamic public init()
+  }
+}
+extension IntdashData {
+  open class DataInt : Intdash.IntdashData {
+    public var idLength: Swift.UInt8
+    public var id: [Swift.UInt8]
+    public var data: Swift.Int64
+    public init(id: Swift.String, data: Swift.Int64) throws
+    public init(id: [Swift.UInt8], data: Swift.Int64) throws
+    public init(id: Swift.String, data: [Swift.UInt8]) throws
+    public init(id: [Swift.UInt8], data: [Swift.UInt8]) throws
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public struct RealtimeDataPoint {
+  public var time: Foundation.Date
+  public var srcEdgeId: Swift.String
+  public var dataType: Swift.UInt8
+  public var dataId: Swift.String
+  public var data: Any?
+  public var dataModel: Intdash.IntdashData
+}
+extension RealtimeDataPoint : Swift.Equatable {
+  public static func == (lhs: Intdash.RealtimeDataPoint, rhs: Intdash.RealtimeDataPoint) -> Swift.Bool
+}
+extension IntdashData {
+  open class DataPCM : Intdash.IntdashData {
+    public var formatId: Swift.UInt16
+    public var channels: Swift.UInt16
+    public var sampleRate: Swift.UInt32
+    public var bitsPerSample: Swift.UInt16
+    public var data: [Swift.UInt8]
+    public init(formatId: Swift.UInt16, channels: Swift.UInt16, sampleRate: Swift.UInt32, bitsPerSample: Swift.UInt16, data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+@objc public class NTPManager : ObjectiveC.NSObject {
+  public static let EXAMPLE_HOST_APPLE: Swift.String
+  public static let DEFAULT_HOST: Swift.String
+  public static let DEFAULT_TIMEOUT: Foundation.TimeInterval
+  public static let DEFAULT_RETRY: Swift.Int
+  public static let DEFAULT_FASTEST_RETRY: Swift.Int
+  public var offset: Foundation.TimeInterval {
+    get
+    }
+  @objc override dynamic public init()
+  public init(hostName: Swift.String)
+  public func sync(retry: Swift.Int = DEFAULT_RETRY, fastestRetry: Swift.Int = DEFAULT_FASTEST_RETRY, timeout: Foundation.TimeInterval = DEFAULT_TIMEOUT, completion: @escaping (Foundation.TimeInterval, Swift.Error?) -> ())
+  @objc deinit
+}
+extension IntdashData {
+  open class DataFloat : Intdash.IntdashData {
+    public var idLength: Swift.UInt8
+    public var id: [Swift.UInt8]
+    public var data: Swift.Float64
+    public init(id: Swift.String, data: Swift.Float64) throws
+    public init(id: [Swift.UInt8], data: Swift.Float64) throws
+    public init(id: Swift.String, data: [Swift.UInt8]) throws
+    public init(id: [Swift.UInt8], data: [Swift.UInt8]) throws
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public protocol IntdashClientDownstreamManagerDelegate : ObjectiveC.NSObjectProtocol {
+  func downstreamManagerDidParseDataPoints(_ manager: Intdash.IntdashClient.DownstreamManager, streamId: Swift.Int, dataPoints: [Intdash.RealtimeDataPoint])
+  func downstreamManagerDidFailToParseDataPoints(_ manager: Intdash.IntdashClient.DownstreamManager, streamId: Swift.Int, with error: Intdash.IntdashClientDownstreamManagerError)
+}
+extension IntdashClientDownstreamManagerDelegate {
+  public func downstreamManagerDidFailToParseDataPoints(_ manager: Intdash.IntdashClient.DownstreamManager, streamId: Swift.Int, with error: Intdash.IntdashClientDownstreamManagerError)
+}
+public struct IntdashClientDownstreamManagerError : Swift.Error {
+  public enum Kind {
+    case downstreamSpecIsNotFound
+    case elemUnitParserIsNotFound
+    public static func == (a: Intdash.IntdashClientDownstreamManagerError.Kind, b: Intdash.IntdashClientDownstreamManagerError.Kind) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var kind: Intdash.IntdashClientDownstreamManagerError.Kind
+}
+extension IntdashClient {
+  @objc open class DownstreamManager : ObjectiveC.NSObject {
+    public var downstreamIds: [Swift.Int] {
+      get
+    }
+    public var tag: Swift.Int
+    public class RequestFilters {
+      public init()
+      public func append(streamId: Swift.Int, channelNum: Swift.Int, dataType: Intdash.IntdashDataType, id: Any?)
+      public func append(streamId: Swift.Int, channelNum: Swift.Int, dataType: Intdash.IntdashDataType, ids: [Any])
+      @objc deinit
+    }
+    public func open(srcEdgeId: Swift.String, dstEdgeId: Swift.String? = nil) throws -> Swift.Int
+    public func close(completion: @escaping (Swift.Error?) -> ())
+    public func close(streamIds: [Swift.Int], completion: @escaping (Swift.Error?) -> ())
+    public func sync(removeClosedStream: Swift.Bool = true, completion: @escaping ([Swift.Error]?) -> (), filters: Intdash.IntdashClient.DownstreamManager.RequestFilters? = nil)
+    public func removeClosedDownstream()
+    public func addDelegate(delegate: Intdash.IntdashClientDownstreamManagerDelegate)
+    public func removeDelegate(delegate: Intdash.IntdashClientDownstreamManagerDelegate)
+    public func dispose()
+    @objc deinit
+    @objc override dynamic public init()
+  }
+}
+extension IntdashData {
+  open class DataNMEA : Intdash.IntdashData {
+    public var nmeaString: Swift.String
+    public init(nmeaString: Swift.String)
+    public init(data: [Swift.UInt8]) throws
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+extension Date {
+  public init?(fromISO8601 string: Swift.String)
+  public init?(fromRFC3339 string: Swift.String)
+  public var rfc3339String: Swift.String {
+    get
+  }
+}
+public class IntdashDataFileManager : Swift.Codable {
+  public var parentPath: Swift.String {
+    get
+    }
+  public var dataSize: Swift.UInt64 {
+    get
+  }
+  public var baseTime: Foundation.TimeInterval?
+  public func setBaseTime(time: Foundation.TimeInterval?) throws
+  public var baseTime2: Foundation.TimeInterval?
+  public func setBaseTime2(time: Foundation.TimeInterval?) throws
+  public var measurementId: Swift.String?
+  public func setMeasurementId(id: Swift.String) throws
+  public var streamChannels: Swift.Int?
+  public func setStreamChannels(channels: Swift.Int?) throws
+  public var duration: Foundation.TimeInterval?
+  public func setDuration(duration: Foundation.TimeInterval?) throws
+  public var isUploaded: Swift.Bool
+  public func setUploadFlag(flag: Swift.Bool) throws
+  public var string: Swift.String?
+  public func setString(str: Swift.String?) throws
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(parentPath: Swift.String, isOverwrite: Swift.Bool = false) throws
+  public static func load(parentPath: Swift.String) throws -> Intdash.IntdashDataFileManager
+  public func write() throws
+  public func remove() throws
+  public static func remove(parentPath: Swift.String) throws
+  public func clear() throws
+  @discardableResult
+  public func write(units: [Intdash.IntdashData], timestamp: Foundation.TimeInterval, withUpdateDataSize: Swift.Bool = true) throws -> Swift.Int
+  @discardableResult
+  public func write(units: [Intdash.IntdashData], elapsedTime: Foundation.TimeInterval, withUpdateDataSize: Swift.Bool = true) throws -> Swift.Int
+  public func read(elapsedTime: Swift.Int, index: Swift.Int, completion: @escaping (Swift.Error?, [Intdash.IntdashData]?, Foundation.TimeInterval?) -> ())
+  public func getDataDuration() -> Swift.Int
+  public static func getDataDuration(parentPath: Swift.String) -> Swift.Int
+  public func getUnitSizePerSecond(elapsedTime: Swift.Int) -> Swift.Int
+  public static func getUnitSizePerSecond(parentPath: Swift.String, elapsedTime: Swift.Int) -> Swift.Int
+  public func move(toParentPath: Swift.String) throws
+  public static func move(fromParentPath: Swift.String, toParentPath: Swift.String) throws
+  public func move(toParentPath: Swift.String, isOverwrite: Swift.Bool) throws
+  public static func move(fromParentPath: Swift.String, toParentPath: Swift.String, isOverwrite: Swift.Bool) throws
+  public func copy(toParentPath: Swift.String) throws
+  public static func copy(fromParentPath: Swift.String, toParentPath: Swift.String) throws
+  public func copy(toParentPath: Swift.String, isOverwrite: Swift.Bool) throws
+  public static func copy(fromParentPath: Swift.String, toParentPath: Swift.String, isOverwrite: Swift.Bool) throws
+  @objc deinit
+}
+extension IntdashClient.DataPointsAPI {
+  public enum OrderType : Swift.String {
+    case asc
+    case desc
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public class RequestFilters {
+    public init()
+    public func append(dataType: Intdash.IntdashDataType, channelNum: Swift.Int?, id: Any?)
+    public func append(dataType: Intdash.IntdashDataType, channelNum: Swift.Int?, ids: [Any]?)
+    @objc deinit
+  }
+}
+public struct DataPoint {
+  public var time: Foundation.Date?
+  public var measurementUuid: Swift.String
+  public var dataType: Swift.UInt8
+  public var dataId: Swift.String
+  public var data: [Swift.String : Any]
+  public var dataModel: Intdash.IntdashData?
+  public var createAt: Foundation.Date?
+}
+public struct DataPointsGetDataPointsResponse {
+  public var dataPoints: [Intdash.DataPoint]
+}
+public enum IntdashDataType : Swift.UInt8, Swift.CaseIterable {
+  case baseTime
+  case can
+  case nmea
+  case generalSensor
+  case controlPad
+  case mavlinkPacket
+  case jpeg
+  case h264
+  case pcm
+  case aac
+  case h265
+  case string
+  case float
+  case int
+  case bytes
+  case generic
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+  public typealias AllCases = [Intdash.IntdashDataType]
+  public static var allCases: [Intdash.IntdashDataType] {
+    get
+  }
+}
+public class IntdashPacketHelper {
+  public static func generatePackets(units: [Intdash.IntdashData]) throws -> Foundation.Data
+  public static func parsePackets(data: Foundation.Data) throws -> [Intdash.IntdashData]
+  @objc deinit
+}
+open class IntdashData : Swift.Equatable {
+  final public let dataType: Intdash.IntdashDataType
+  public func dataLength() throws -> Swift.Int
+  public static func == (lhs: Intdash.IntdashData, rhs: Intdash.IntdashData) -> Swift.Bool
+  @objc deinit
+}
+public class GeneralSensorUtils {
+  public static func sensorFromDataGeneralSensor(_ data: Intdash.IntdashData.DataGeneralSensor, byteOrder: Intdash.Endian) throws -> Intdash.GeneralSensorConvertible
+  public static func sensorFromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian) throws -> Intdash.GeneralSensorConvertible
+  @objc deinit
+}
+public enum Endian : Swift.Int {
+  case littleEndian
+  case bigEndian
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum FactorType : Swift.Float {
+  case eMinus1
+  case eMinus2
+  case eMinus3
+  case eMinus4
+  case eMinus5
+  case eMinus6
+  case eMinus7
+  public typealias RawValue = Swift.Float
+  public var rawValue: Swift.Float {
+    get
+  }
+  public init?(rawValue: Swift.Float)
+}
+public let kIntdashFrameworkVersion: Swift.String
+extension IntdashClient {
+  open class Session {
+    public static let didRefreshToken: Foundation.NSNotification.Name
+    public var serverURL: Swift.String {
+      get
+      set
+    }
+    public var webSocketURL: Swift.String {
+      get
+    }
+    public var baseEndpoint: Swift.String {
+      get
+    }
+    public var webSocketEndpoint: Swift.String {
+      get
+    }
+    public var clientId: Swift.String {
+      get
+      set
+    }
+    public var timeoutInterval: Foundation.TimeInterval? {
+      get
+      set
+    }
+    public var accessToken: Swift.String?
+    public var refreshToken: Swift.String?
+    public var expiresIn: Foundation.TimeInterval?
+    public var refreshTokenExpiresIn: Foundation.TimeInterval?
+    public var acquiredTime: Foundation.Date?
+    public var isOAuth2: Swift.Bool
+    public var isRefreshable: Swift.Bool {
+      get
+    }
+    convenience public init()
+    public init(serverURL: Swift.String, clientId: Swift.String, timeoutInterval: Foundation.TimeInterval? = nil)
+    public func clearSession()
+    public func update(withResponse response: Intdash.OAuth2AuthenticateResponse)
+    @objc deinit
+  }
+}
+extension IntdashData {
+  open class DataH264 : Intdash.IntdashData {
+    public enum H264Type : Swift.UInt8 {
+      case idrFrame
+      case nonIdrFrame
+      case exUnit
+      public typealias RawValue = Swift.UInt8
+      public init?(rawValue: Swift.UInt8)
+      public var rawValue: Swift.UInt8 {
+        get
+      }
+    }
+    public var type: Intdash.IntdashData.DataH264.H264Type
+    public var data: [Swift.UInt8]
+    public init(data: [Swift.UInt8], type: Intdash.IntdashData.DataH264.H264Type)
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public enum NMEADataType : Swift.String {
+  case rmc
+  case gga
+  case gsa
+  case gsv
+  case vtg
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol NMEA {
+  static var dataType: Intdash.NMEADataType { get }
+  func equalTo(_ nmea: Intdash.NMEA) -> Swift.Bool
+}
+extension IntdashClient {
+  open class OAuth2API {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func refresh(completion: @escaping (Intdash.OAuth2RefreshResponse?, Intdash.RESTError?) -> ())
+    public func generateAuthorizationURL(callbackURLScheme: Swift.String, completion: @escaping (Swift.String?, Swift.String?, Swift.String?, Intdash.RESTError?) -> ())
+    public func authenticate(code: Swift.String, codeVerifier: Swift.String, callbackURLScheme: Swift.String, completion: @escaping (Intdash.OAuth2AuthenticateResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var oauth2: Intdash.IntdashClient.OAuth2API {
+    get
+  }
+  open class EdgesAPI {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func list(uuid: Swift.String? = nil, order: Intdash.IntdashClient.EdgesAPI.OrderType = .asc, limit: Swift.Int? = nil, page: Swift.Int? = nil, name: Swift.String? = nil, nickname: Swift.String? = nil, type: Intdash.IntdashClient.EdgesAPI.EdgeType? = nil, completion: @escaping (Intdash.EdgesListResponse?, Intdash.RESTError?) -> ())
+    public func me(completion: @escaping (Intdash.EdgesMeResponse?, Intdash.RESTError?) -> ())
+    public func mePassword(completion: @escaping (Intdash.EdgesMePasswordResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var edges: Intdash.IntdashClient.EdgesAPI {
+    get
+  }
+  open class CapturesAPI {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func list(start: Foundation.TimeInterval, end: Foundation.TimeInterval, limit: Swift.Int = 0, page: Swift.Int? = nil, completion: @escaping (Intdash.CapturesListResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var captures: Intdash.IntdashClient.CapturesAPI {
+    get
+  }
+  open class MeasurementsAPI {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func list(uuid: Swift.String? = nil, name: Swift.String? = nil, edgeUuid: Swift.String? = nil, start: Foundation.TimeInterval? = nil, end: Foundation.TimeInterval? = nil, limit: Swift.Int = 0, page: Swift.Int? = nil, completion: @escaping (Intdash.MeasurementsListResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var measurements: Intdash.IntdashClient.MeasurementsAPI {
+    get
+  }
+  open class DataPointsAPI {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func getDataPoints(name: Swift.String, filters: Intdash.IntdashClient.DataPointsAPI.RequestFilters?, start: Foundation.TimeInterval, end: Foundation.TimeInterval, limit: Swift.Int = -1, order: Intdash.IntdashClient.DataPointsAPI.OrderType = .asc, completion: @escaping (Intdash.DataPointsGetDataPointsResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var dataPoints: Intdash.IntdashClient.DataPointsAPI {
+    get
+  }
+  open class VersionsAPI {
+    public var session: Intdash.IntdashClient.Session?
+    public init(session: Intdash.IntdashClient.Session?)
+    public func getVersionInfo(completion: @escaping (Intdash.VersionsGetVersionInfoResponse?, Intdash.RESTError?) -> ())
+    @objc deinit
+  }
+  public var version: Intdash.IntdashClient.VersionsAPI {
+    get
+  }
+}
+extension IntdashData {
+  open class DataGeneralSensor : Intdash.IntdashData {
+    public enum SensorId : Swift.UInt16 {
+      case acceleration
+      case accelerationIncludingGravity
+      case gravity
+      case rotationRate
+      case orientationAngle
+      case geoLocationCoordinate
+      case geoLocationAltitude
+      case geoLocationAccuracy
+      case geoLocationHeading
+      case geoLocationSpeed
+      public typealias RawValue = Swift.UInt16
+      public init?(rawValue: Swift.UInt16)
+      public var rawValue: Swift.UInt16 {
+        get
+      }
+    }
+    public var id: Intdash.IntdashData.DataGeneralSensor.SensorId
+    public var data: [Swift.UInt8]
+    public var dataLength: Swift.Int {
+      get
+    }
+    public init(sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId, data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+extension IntdashData {
+  open class DataString : Intdash.IntdashData {
+    public var idLength: Swift.UInt8
+    public var id: [Swift.UInt8]
+    public var data: Swift.String
+    public init(id: Swift.String, data: Swift.String) throws
+    public init(id: [Swift.UInt8], data: Swift.String) throws
+    public init(id: Swift.String, data: [Swift.UInt8]) throws
+    public init(id: [Swift.UInt8], data: [Swift.UInt8]) throws
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+extension IntdashClient.EdgesAPI {
+  public enum OrderType : Swift.String {
+    case asc
+    case desc
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+  }
+  public enum EdgeType : Swift.String {
+    case user
+    case device
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+  }
+}
+public struct EdgeItem {
+  public var uuid: Swift.String
+  public var name: Swift.String
+  public var nickname: Swift.String
+  public var description: Swift.String
+  public var disabled: Swift.Bool
+  public var type: Intdash.IntdashClient.EdgesAPI.EdgeType?
+  public var createdAt: Foundation.Date?
+  public var updatedAt: Foundation.Date?
+  public var lastLoginAt: Foundation.Date?
+  public var lastLivedAt: Foundation.Date?
+}
+public struct EdgesPage {
+  public var totalCount: Swift.Int
+  public var first: Swift.Bool
+  public var last: Swift.Bool
+  public var next: Swift.String
+  public var previous: Swift.String
+}
+public typealias EdgesMeResponse = Intdash.EdgeItem
+public struct EdgesMePasswordResponse {
+  public var disabled: Swift.Bool
+  public var isTemporary: Swift.Bool
+  public var protected: Swift.Bool
+  public var loginFailCount: Swift.Int
+  public var createdAt: Foundation.Date?
+  public var expiredAt: Foundation.Date?
+  public var lastModifiedAt: Foundation.Date?
+  public var lastUsedAt: Foundation.Date?
+  public var updatedAt: Foundation.Date?
+}
+public struct EdgesListResponse {
+  public var items: [Intdash.EdgeItem]
+  public var page: Intdash.EdgesPage
+}
+public struct NMEARMC : Intdash.NMEA {
+  public var nmeaTypeFull: Swift.String
+  public var utcTime: Swift.String
+  public var status: Swift.String
+  public var latDmm: Swift.String
+  public var ns: Swift.String
+  public var lngDmm: Swift.String
+  public var ew: Swift.String
+  public var SpeedNot: Swift.String
+  public var direction: Swift.String
+  public var utcDate: Swift.String
+  public var diffDeg: Swift.String
+  public var diffDirection: Swift.String
+  public var mode: Swift.String
+  public var checksum: Swift.String
+  public var latDeg: Swift.String
+  public var lngDeg: Swift.String
+  public static var dataType: Intdash.NMEADataType {
+    get
+  }
+  public init(nmeaString: Swift.String) throws
+  public init(nmeaTypeFull: Swift.String, utcTime: Swift.String, status: Swift.String, latDmm: Swift.String, ns: Swift.String, lngDmm: Swift.String, ew: Swift.String, speedNot: Swift.String, direction: Swift.String, utcDate: Swift.String, diffDeg: Swift.String, diffDirection: Swift.String, mode: Swift.String, checksum: Swift.String, latDeg: Swift.String, lngDeg: Swift.String)
+  public func equalTo(_ rhs: Intdash.NMEA) -> Swift.Bool
+}
+public class NMEAUtils {
+  public static func nmeaFromDataNMEA(_ data: Intdash.IntdashData.DataNMEA) throws -> Intdash.NMEA
+  public static func nmeaFromNMEAString(_ nmeaString: Swift.String) throws -> Intdash.NMEA
+  @objc deinit
+}
+extension IntdashData {
+  open class DataCAN : Intdash.IntdashData {
+    public var id: Swift.UInt32
+    public var dlc: Swift.UInt8
+    public var data: [Swift.UInt8]
+    public init(id: Swift.UInt32, dlc: Swift.UInt8, data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+extension IntdashData {
+  open class DataAAC : Intdash.IntdashData {
+    public var data: [Swift.UInt8]
+    public init(data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+extension IntdashData {
+  open class DataControlPad : Intdash.IntdashData {
+    public var id: Swift.UInt8
+    public var data: [Swift.UInt8]
+    public init(data: [Swift.UInt8], id: Swift.UInt8)
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public class CANUtils {
+  public static func bitfieldToUnsignedNumber(bytes: [Swift.UInt8], startBit: Swift.Int, byteOrder: Intdash.Endian, bitLength: Swift.Int) throws -> Swift.UInt
+  public static func signedNumber(unsignedNumber: Swift.UInt, bitLength: Swift.Int) -> Swift.Int
+  public static func applyFactorNumber(number: Any, scale: Swift.Double, offset: Swift.Double) -> Any
+  @objc deinit
+}
+public struct GeneralSensorGeoLocationHeading : Intdash.GeneralSensorConvertible {
+  public var head: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(head: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationHeading
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationHeading
+}
+extension GeneralSensorGeoLocationHeading : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGeoLocationHeading, rhs: Intdash.GeneralSensorGeoLocationHeading) -> Swift.Bool
+}
+extension IntdashData {
+  open class DataH265 : Intdash.IntdashData {
+    public enum H265Type : Swift.UInt8 {
+      case idrFrame
+      case nonIdrFrame
+      case exUnit
+      public typealias RawValue = Swift.UInt8
+      public var rawValue: Swift.UInt8 {
+        get
+      }
+      public init?(rawValue: Swift.UInt8)
+    }
+    public var type: Intdash.IntdashData.DataH265.H265Type
+    public var data: [Swift.UInt8]
+    public init(data: [Swift.UInt8], type: Intdash.IntdashData.DataH265.H265Type)
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public struct IntdashVersion : Swift.Equatable {
+  public var value: Swift.String
+  public var major: Swift.Int?
+  public var minor: Swift.Int?
+  public var patch: Swift.Int?
+  public var preRelease: Swift.String?
+  public var build: Swift.String?
+  public init(string: Swift.String)
+  public static func == (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+  public static func != (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+  public static func < (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+  public static func > (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+  public static func <= (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+  public static func >= (lhs: Intdash.IntdashVersion, rhs: Intdash.IntdashVersion) -> Swift.Bool
+}
+public struct VersionsGetVersionInfoResponse {
+  public var version: Intdash.IntdashVersion
+}
+public struct GeneralSensorAcceleration : Intdash.GeneralSensorConvertible {
+  public var ax: Swift.Float
+  public var ay: Swift.Float
+  public var az: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(ax: Swift.Float, ay: Swift.Float, az: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorAcceleration
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorAcceleration
+}
+extension GeneralSensorAcceleration : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorAcceleration, rhs: Intdash.GeneralSensorAcceleration) -> Swift.Bool
+}
+public struct GeneralSensorGeoLocationAccuracy : Intdash.GeneralSensorConvertible {
+  public var aoc: Swift.Float
+  public var aoa: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(aoc: Swift.Float, aoa: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationAccuracy
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationAccuracy
+}
+extension GeneralSensorGeoLocationAccuracy : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGeoLocationAccuracy, rhs: Intdash.GeneralSensorGeoLocationAccuracy) -> Swift.Bool
+}
+public struct MeasurementItem {
+  public var edgeUuid: Swift.String
+  public var name: Swift.String
+  public var description: Swift.String
+  public var uuid: Swift.String
+  public var createdAt: Foundation.Date?
+  public var updatedAt: Foundation.Date?
+  public var duration: Foundation.TimeInterval
+  public var processedRatio: Foundation.TimeInterval
+  public var baseTime: Foundation.Date?
+  public var baseTimeType: Swift.String
+  public var ended: Swift.Bool
+  public var protected: Swift.Bool
+}
+public struct MeasurementsPage {
+  public var next: Swift.String
+  public var previous: Swift.String
+}
+public struct MeasurementsListResponse {
+  public var items: [Intdash.MeasurementItem]
+  public var page: Intdash.MeasurementsPage?
+}
+extension IntdashData {
+  open class DataBytes : Intdash.IntdashData {
+    public var idLength: Swift.UInt8
+    public var id: [Swift.UInt8]
+    public var data: [Swift.UInt8]
+    public init(id: Swift.String, data: [Swift.UInt8]) throws
+    public init(id: [Swift.UInt8], data: [Swift.UInt8]) throws
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public struct GeneralSensorRotationRate : Intdash.GeneralSensorConvertible {
+  public var rra: Swift.Float
+  public var rrb: Swift.Float
+  public var rrg: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(rra: Swift.Float, rrb: Swift.Float, rrg: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorRotationRate
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorRotationRate
+}
+extension GeneralSensorRotationRate : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorRotationRate, rhs: Intdash.GeneralSensorRotationRate) -> Swift.Bool
+}
+extension IntdashData {
+  open class DataBaseTime : Intdash.IntdashData {
+    public static let secToNsec: Swift.Double
+    public enum TimeType : Swift.UInt8 {
+      case edge
+      case ntp
+      case gps
+      case volatile
+      case api
+      case manual
+      public typealias RawValue = Swift.UInt8
+      public var rawValue: Swift.UInt8 {
+        get
+      }
+      public init?(rawValue: Swift.UInt8)
+    }
+    public var type: Intdash.IntdashData.DataBaseTime.TimeType {
+      get
+      }
+    public var baseTimeSec: Swift.UInt32 {
+      get
+      }
+    public var baseTimeNsec: Swift.UInt32 {
+      get
+      }
+    public var value: Foundation.TimeInterval {
+      get
+    }
+    public init(type: Intdash.IntdashData.DataBaseTime.TimeType, baseTimeSec: Swift.UInt32, baseTimeNSec: Swift.UInt32)
+    public init(type: Intdash.IntdashData.DataBaseTime.TimeType, baseTime: Foundation.TimeInterval)
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public protocol IntdashClientDelegate : ObjectiveC.NSObjectProtocol {
+  func intdashClientDidConnect(_ client: Intdash.IntdashClient)
+  func intdashClientDidDisconnect(_ client: Intdash.IntdashClient)
+  func intdashClient(_ client: Intdash.IntdashClient, didFailWithError error: Swift.Error?)
+  func intdashClient(_ client: Intdash.IntdashClient, didRetryToRequestSpecs success: Swift.Bool)
+}
+@objc open class IntdashClient : ObjectiveC.NSObject {
+  public var session: Intdash.IntdashClient.Session?
+  public var logLevel: Intdash.IntdashLogLevel {
+    get
+    set
+  }
+  public var tag: Swift.Int
+  @objc override dynamic public init()
+  public static let reconnectTimeInterval: Foundation.TimeInterval
+  final public let downstreamManager: Intdash.IntdashClient.DownstreamManager
+  final public let upstreamManager: Intdash.IntdashClient.UpstreamManager
+  public func connect(reconnectTimeInterval: Foundation.TimeInterval = reconnectTimeInterval, completion: @escaping (Swift.Error?) -> ())
+  public func connect(url: Foundation.URL, reconnectTimeInterval: Foundation.TimeInterval = reconnectTimeInterval, completion: @escaping (Swift.Error?) -> ())
+  public func connect(string: Swift.String, reconnectTimeInterval: Foundation.TimeInterval = reconnectTimeInterval, completion: @escaping (Swift.Error?) -> ())
+  public func disconnect(completion: @escaping (Swift.Error?) -> ())
+  @available(*, unavailable, message: "Set a property named 'session' instead")
+  public func setToken(_ token: Swift.String)
+  public func addDelegate(_ delegate: Intdash.IntdashClientDelegate)
+  public func removeDelegate(_ delegate: Intdash.IntdashClientDelegate)
+  public func dispose()
+  @objc deinit
+}
+public struct GeneralSensorGeoLocationCoordinate : Intdash.GeneralSensorConvertible {
+  public var lat: Swift.Float
+  public var lng: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(lat: Swift.Float, lng: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationCoordinate
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationCoordinate
+}
+extension GeneralSensorGeoLocationCoordinate : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGeoLocationCoordinate, rhs: Intdash.GeneralSensorGeoLocationCoordinate) -> Swift.Bool
+}
+public struct GeneralSensorGeoLocationAltitude : Intdash.GeneralSensorConvertible {
+  public var alt: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(alt: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationAltitude
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorGeoLocationAltitude
+}
+extension GeneralSensorGeoLocationAltitude : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorGeoLocationAltitude, rhs: Intdash.GeneralSensorGeoLocationAltitude) -> Swift.Bool
+}
+public struct RESTError : Swift.Error {
+  public enum Kind {
+    case offline
+    case timeout
+    case httpStatus
+    case unauthorized
+    case forbidden
+    case notFound
+    case tooManyRequests
+    case invalidRequest
+    case nodata
+    case failedToParseJSON
+    case failedToParseJWT
+    case sessionNotSet
+    case dataConversionFailed
+    public static func == (a: Intdash.RESTError.Kind, b: Intdash.RESTError.Kind) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public let kind: Intdash.RESTError.Kind
+  public var originError: Swift.Error?
+  public init(kind: Intdash.RESTError.Kind)
+}
+public struct GeneralSensorOrientationAngle : Intdash.GeneralSensorConvertible {
+  public var oaa: Swift.Float
+  public var oab: Swift.Float
+  public var oag: Swift.Float
+  public static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId {
+    get
+  }
+  public static var factor: Intdash.FactorType {
+    get
+  }
+  public init(oaa: Swift.Float, oab: Swift.Float, oag: Swift.Float)
+  public func toData() -> Intdash.IntdashData.DataGeneralSensor
+  public static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorOrientationAngle
+  public static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian = .littleEndian) throws -> Intdash.GeneralSensorOrientationAngle
+}
+extension GeneralSensorOrientationAngle : Swift.Equatable {
+  public static func == (lhs: Intdash.GeneralSensorOrientationAngle, rhs: Intdash.GeneralSensorOrientationAngle) -> Swift.Bool
+}
+extension IntdashData {
+  open class DataMavlinkPacket : Intdash.IntdashData {
+    public var packetStartSign: Swift.UInt8
+    public var payloadLength: Swift.UInt8
+    public var packetSequence: Swift.UInt8
+    public var systemId: Swift.UInt8
+    public var componentId: Swift.UInt8
+    public var messageId: Swift.UInt8
+    public var data: [Swift.UInt8]
+    public var checkSum: Swift.UInt16
+    public init(packetStartSign: Swift.UInt8, payloadLength: Swift.UInt8, packetSequence: Swift.UInt8, systemId: Swift.UInt8, componentId: Swift.UInt8, messageId: Swift.UInt8, data: [Swift.UInt8], checkSum: Swift.UInt16)
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public struct CaptureItem {
+  public var name: Swift.String
+  public var description: Swift.String
+  public var start: Foundation.Date?
+  public var duration: Foundation.TimeInterval
+  public var shared: Swift.Bool
+  public var uuid: Swift.String
+  public var edgeUuid: Swift.String
+  public var createdAt: Foundation.Date?
+  public var updatedAt: Foundation.Date?
+}
+public struct CapturesPage {
+  public var totalCount: Swift.Int
+  public var first: Swift.Bool
+  public var last: Swift.Bool
+  public var next: Swift.String?
+  public var previous: Swift.String?
+}
+public struct CapturesListResponse {
+  public var items: [Intdash.CaptureItem]
+  public var page: Intdash.CapturesPage?
+}
+public struct OAuth2AuthenticateResponse {
+  public var accessToken: Swift.String
+  public var expiresIn: Foundation.TimeInterval
+  public var refreshToken: Swift.String
+  public var refreshTokenExpiresIn: Foundation.TimeInterval
+  public var acquiredTime: Foundation.Date
+}
+public typealias OAuth2RefreshResponse = Intdash.OAuth2AuthenticateResponse
+public enum IntdashLogLevel : Swift.Int {
+  case verbose
+  case debug
+  case info
+  case warning
+  case error
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class IntdashLog {
+  public var level: Intdash.IntdashLogLevel
+  public static let shared: Intdash.IntdashLog
+  @objc deinit
+}
+extension IntdashData {
+  open class DataJPEG : Intdash.IntdashData {
+    public var data: [Swift.UInt8]
+    public init(data: [Swift.UInt8])
+    public init?(json: [Swift.String : Any])
+    @objc deinit
+  }
+}
+public protocol GeneralSensorConvertible {
+  static var sensorId: Intdash.IntdashData.DataGeneralSensor.SensorId { get }
+  static var factor: Intdash.FactorType { get }
+  func toData() -> Intdash.IntdashData.DataGeneralSensor
+  static func fromHexString(_ hexstring: Swift.String, byteOrder: Intdash.Endian) throws -> Self
+  static func fromData(_ data: [Swift.UInt8], byteOrder: Intdash.Endian) throws -> Self
+}
+extension Intdash.IntdashClientUpstreamManagerError.Kind : Swift.Equatable {}
+extension Intdash.IntdashClientUpstreamManagerError.Kind : Swift.Hashable {}
+extension Intdash.IntdashClientDownstreamManagerError.Kind : Swift.Equatable {}
+extension Intdash.IntdashClientDownstreamManagerError.Kind : Swift.Hashable {}
+extension Intdash.IntdashClient.DataPointsAPI.OrderType : Swift.Equatable {}
+extension Intdash.IntdashClient.DataPointsAPI.OrderType : Swift.Hashable {}
+extension Intdash.IntdashClient.DataPointsAPI.OrderType : Swift.RawRepresentable {}
+extension Intdash.IntdashDataType : Swift.Hashable {}
+extension Intdash.IntdashDataType : Swift.RawRepresentable {}
+extension Intdash.Endian : Swift.Hashable {}
+extension Intdash.Endian : Swift.RawRepresentable {}
+extension Intdash.FactorType : Swift.Equatable {}
+extension Intdash.FactorType : Swift.Hashable {}
+extension Intdash.FactorType : Swift.RawRepresentable {}
+extension Intdash.IntdashData.DataH264.H264Type : Swift.Equatable {}
+extension Intdash.IntdashData.DataH264.H264Type : Swift.Hashable {}
+extension Intdash.IntdashData.DataH264.H264Type : Swift.RawRepresentable {}
+extension Intdash.NMEADataType : Swift.Equatable {}
+extension Intdash.NMEADataType : Swift.Hashable {}
+extension Intdash.NMEADataType : Swift.RawRepresentable {}
+extension Intdash.IntdashData.DataGeneralSensor.SensorId : Swift.Equatable {}
+extension Intdash.IntdashData.DataGeneralSensor.SensorId : Swift.Hashable {}
+extension Intdash.IntdashData.DataGeneralSensor.SensorId : Swift.RawRepresentable {}
+extension Intdash.IntdashClient.EdgesAPI.OrderType : Swift.Equatable {}
+extension Intdash.IntdashClient.EdgesAPI.OrderType : Swift.Hashable {}
+extension Intdash.IntdashClient.EdgesAPI.OrderType : Swift.RawRepresentable {}
+extension Intdash.IntdashClient.EdgesAPI.EdgeType : Swift.Equatable {}
+extension Intdash.IntdashClient.EdgesAPI.EdgeType : Swift.Hashable {}
+extension Intdash.IntdashClient.EdgesAPI.EdgeType : Swift.RawRepresentable {}
+extension Intdash.IntdashData.DataH265.H265Type : Swift.Equatable {}
+extension Intdash.IntdashData.DataH265.H265Type : Swift.Hashable {}
+extension Intdash.IntdashData.DataH265.H265Type : Swift.RawRepresentable {}
+extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.Equatable {}
+extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.Hashable {}
+extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.RawRepresentable {}
+extension Intdash.RESTError.Kind : Swift.Equatable {}
+extension Intdash.RESTError.Kind : Swift.Hashable {}
+extension Intdash.IntdashLogLevel : Swift.Equatable {}
+extension Intdash.IntdashLogLevel : Swift.Hashable {}
+extension Intdash.IntdashLogLevel : Swift.RawRepresentable {}

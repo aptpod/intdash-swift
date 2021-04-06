@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAAC650725CA4D570065A360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC650625CA4D570065A360 /* AppDelegate.swift */; };
+		EAAC650E25CA4D570065A360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAC650C25CA4D570065A360 /* Main.storyboard */; };
+		EAAC651025CA4D580065A360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC650F25CA4D580065A360 /* Assets.xcassets */; };
+		EAAC651325CA4D580065A360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAC651125CA4D580065A360 /* LaunchScreen.storyboard */; };
+		EAAC65E925CA833E0065A360 /* Intdash.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC65E725CA833A0065A360 /* Intdash.xcframework */; };
+		EAAC65EA25CA833E0065A360 /* Intdash.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC65E725CA833A0065A360 /* Intdash.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EAAC660025CA83650065A360 /* MySystemClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65EF25CA83650065A360 /* MySystemClock.swift */; };
+		EAAC660125CA83650065A360 /* IntdashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F025CA83650065A360 /* IntdashAPIManager.swift */; };
+		EAAC660225CA83650065A360 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F125CA83650065A360 /* Common.swift */; };
+		EAAC660325CA83650065A360 /* UIInterfaceOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F325CA83650065A360 /* UIInterfaceOrientationExtension.swift */; };
+		EAAC660425CA83650065A360 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F425CA83650065A360 /* UIViewExtension.swift */; };
+		EAAC660525CA83650065A360 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F525CA83650065A360 /* TimeIntervalExtension.swift */; };
+		EAAC660625CA83650065A360 /* UInt64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F625CA83650065A360 /* UInt64Extension.swift */; };
+		EAAC660725CA83650065A360 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F725CA83650065A360 /* StringExtension.swift */; };
+		EAAC660825CA83650065A360 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65F825CA83650065A360 /* UIImageExtension.swift */; };
+		EAAC660925CA83650065A360 /* LoadingAlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65FB25CA83650065A360 /* LoadingAlertDialogView.swift */; };
+		EAAC660A25CA83650065A360 /* AlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65FC25CA83650065A360 /* AlertDialogView.swift */; };
+		EAAC660B25CA83650065A360 /* IntdashSignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAC65FE25CA83650065A360 /* IntdashSignInView.xib */; };
+		EAAC660C25CA83650065A360 /* IntdashSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC65FF25CA83650065A360 /* IntdashSignInView.swift */; };
+		EAAC661E25CA83D70065A360 /* CMSampleBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC660E25CA83D70065A360 /* CMSampleBufferExtension.swift */; };
+		EAAC661F25CA83D70065A360 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC660F25CA83D70065A360 /* Config.swift */; };
+		EAAC662025CA83D70065A360 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661225CA83D70065A360 /* SignInViewController.swift */; };
+		EAAC662125CA83D70065A360 /* FileListViewController+ViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661425CA83D70065A360 /* FileListViewController+ViewEvents.swift */; };
+		EAAC662225CA83D70065A360 /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661525CA83D70065A360 /* FileListViewController.swift */; };
+		EAAC662325CA83D70065A360 /* FileListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661625CA83D70065A360 /* FileListViewController+TableView.swift */; };
+		EAAC662425CA83D70065A360 /* FileListViewController+IntdashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661725CA83D70065A360 /* FileListViewController+IntdashManager.swift */; };
+		EAAC662525CA83D70065A360 /* MainViewController+IntdashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661925CA83D70065A360 /* MainViewController+IntdashManager.swift */; };
+		EAAC662625CA83D70065A360 /* MainViewController+ViewEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661A25CA83D70065A360 /* MainViewController+ViewEvents.swift */; };
+		EAAC662725CA83D70065A360 /* MainViewController+EncodeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661B25CA83D70065A360 /* MainViewController+EncodeFunc.swift */; };
+		EAAC662825CA83D70065A360 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661C25CA83D70065A360 /* MainViewController.swift */; };
+		EAAC662925CA83D70065A360 /* MainViewController+CaptureDeviceFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC661D25CA83D70065A360 /* MainViewController+CaptureDeviceFunc.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAAC65EB25CA833E0065A360 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAAC65EA25CA833E0065A360 /* Intdash.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA6B24E925CD100A0060D57A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EAAC650325CA4D570065A360 /* VideoUpstreamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoUpstreamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC650625CA4D570065A360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAAC650D25CA4D570065A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAAC650F25CA4D580065A360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAAC651225CA4D580065A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAAC651425CA4D580065A360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAC65E725CA833A0065A360 /* Intdash.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Intdash.xcframework; path = "../../../../../Intdash.xcframework"; sourceTree = "<group>"; };
+		EAAC65EF25CA83650065A360 /* MySystemClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySystemClock.swift; sourceTree = "<group>"; };
+		EAAC65F025CA83650065A360 /* IntdashAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashAPIManager.swift; sourceTree = "<group>"; };
+		EAAC65F125CA83650065A360 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		EAAC65F325CA83650065A360 /* UIInterfaceOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientationExtension.swift; sourceTree = "<group>"; };
+		EAAC65F425CA83650065A360 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		EAAC65F525CA83650065A360 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		EAAC65F625CA83650065A360 /* UInt64Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt64Extension.swift; sourceTree = "<group>"; };
+		EAAC65F725CA83650065A360 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		EAAC65F825CA83650065A360 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		EAAC65FB25CA83650065A360 /* LoadingAlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAlertDialogView.swift; sourceTree = "<group>"; };
+		EAAC65FC25CA83650065A360 /* AlertDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialogView.swift; sourceTree = "<group>"; };
+		EAAC65FE25CA83650065A360 /* IntdashSignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntdashSignInView.xib; sourceTree = "<group>"; };
+		EAAC65FF25CA83650065A360 /* IntdashSignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntdashSignInView.swift; sourceTree = "<group>"; };
+		EAAC660E25CA83D70065A360 /* CMSampleBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSampleBufferExtension.swift; sourceTree = "<group>"; };
+		EAAC660F25CA83D70065A360 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		EAAC661225CA83D70065A360 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EAAC661425CA83D70065A360 /* FileListViewController+ViewEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+ViewEvents.swift"; sourceTree = "<group>"; };
+		EAAC661525CA83D70065A360 /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
+		EAAC661625CA83D70065A360 /* FileListViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+TableView.swift"; sourceTree = "<group>"; };
+		EAAC661725CA83D70065A360 /* FileListViewController+IntdashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileListViewController+IntdashManager.swift"; sourceTree = "<group>"; };
+		EAAC661925CA83D70065A360 /* MainViewController+IntdashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+IntdashManager.swift"; sourceTree = "<group>"; };
+		EAAC661A25CA83D70065A360 /* MainViewController+ViewEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+ViewEvents.swift"; sourceTree = "<group>"; };
+		EAAC661B25CA83D70065A360 /* MainViewController+EncodeFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+EncodeFunc.swift"; sourceTree = "<group>"; };
+		EAAC661C25CA83D70065A360 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EAAC661D25CA83D70065A360 /* MainViewController+CaptureDeviceFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController+CaptureDeviceFunc.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAAC650025CA4D570065A360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC65E925CA833E0065A360 /* Intdash.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAAC64FA25CA4D570065A360 = {
+			isa = PBXGroup;
+			children = (
+				EA6B24E925CD100A0060D57A /* README.md */,
+				EAAC65EC25CA83650065A360 /* Common */,
+				EAAC650525CA4D570065A360 /* VideoUpstreamApp */,
+				EAAC650425CA4D570065A360 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAAC650425CA4D570065A360 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC650325CA4D570065A360 /* VideoUpstreamApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAAC650525CA4D570065A360 /* VideoUpstreamApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65E625CA83220065A360 /* Frameworks */,
+				EAAC657E25CA4EC70065A360 /* Classes */,
+				EAAC650C25CA4D570065A360 /* Main.storyboard */,
+				EAAC650F25CA4D580065A360 /* Assets.xcassets */,
+				EAAC651125CA4D580065A360 /* LaunchScreen.storyboard */,
+				EAAC651425CA4D580065A360 /* Info.plist */,
+			);
+			path = VideoUpstreamApp;
+			sourceTree = "<group>";
+		};
+		EAAC657E25CA4EC70065A360 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC660F25CA83D70065A360 /* Config.swift */,
+				EAAC650625CA4D570065A360 /* AppDelegate.swift */,
+				EAAC660D25CA83D70065A360 /* Extensions */,
+				EAAC661025CA83D70065A360 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAAC65E625CA83220065A360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65E725CA833A0065A360 /* Intdash.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAAC65EC25CA83650065A360 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65ED25CA83650065A360 /* Classes */,
+			);
+			name = Common;
+			path = ../Common;
+			sourceTree = "<group>";
+		};
+		EAAC65ED25CA83650065A360 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65F125CA83650065A360 /* Common.swift */,
+				EAAC65EE25CA83650065A360 /* Backends */,
+				EAAC65F225CA83650065A360 /* Extensions */,
+				EAAC65F925CA83650065A360 /* ViewControllers */,
+				EAAC65FA25CA83650065A360 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAAC65EE25CA83650065A360 /* Backends */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65EF25CA83650065A360 /* MySystemClock.swift */,
+				EAAC65F025CA83650065A360 /* IntdashAPIManager.swift */,
+			);
+			path = Backends;
+			sourceTree = "<group>";
+		};
+		EAAC65F225CA83650065A360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65F325CA83650065A360 /* UIInterfaceOrientationExtension.swift */,
+				EAAC65F425CA83650065A360 /* UIViewExtension.swift */,
+				EAAC65F525CA83650065A360 /* TimeIntervalExtension.swift */,
+				EAAC65F625CA83650065A360 /* UInt64Extension.swift */,
+				EAAC65F725CA83650065A360 /* StringExtension.swift */,
+				EAAC65F825CA83650065A360 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAAC65F925CA83650065A360 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAAC65FA25CA83650065A360 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65FB25CA83650065A360 /* LoadingAlertDialogView.swift */,
+				EAAC65FC25CA83650065A360 /* AlertDialogView.swift */,
+				EAAC65FD25CA83650065A360 /* IntdashSignInView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EAAC65FD25CA83650065A360 /* IntdashSignInView */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC65FE25CA83650065A360 /* IntdashSignInView.xib */,
+				EAAC65FF25CA83650065A360 /* IntdashSignInView.swift */,
+			);
+			path = IntdashSignInView;
+			sourceTree = "<group>";
+		};
+		EAAC660D25CA83D70065A360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC660E25CA83D70065A360 /* CMSampleBufferExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAAC661025CA83D70065A360 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC661125CA83D70065A360 /* SignIn */,
+				EAAC661325CA83D70065A360 /* FileList */,
+				EAAC661825CA83D70065A360 /* Main */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAAC661125CA83D70065A360 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC661225CA83D70065A360 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		EAAC661325CA83D70065A360 /* FileList */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC661525CA83D70065A360 /* FileListViewController.swift */,
+				EAAC661425CA83D70065A360 /* FileListViewController+ViewEvents.swift */,
+				EAAC661625CA83D70065A360 /* FileListViewController+TableView.swift */,
+				EAAC661725CA83D70065A360 /* FileListViewController+IntdashManager.swift */,
+			);
+			path = FileList;
+			sourceTree = "<group>";
+		};
+		EAAC661825CA83D70065A360 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC661C25CA83D70065A360 /* MainViewController.swift */,
+				EAAC661925CA83D70065A360 /* MainViewController+IntdashManager.swift */,
+				EAAC661A25CA83D70065A360 /* MainViewController+ViewEvents.swift */,
+				EAAC661B25CA83D70065A360 /* MainViewController+EncodeFunc.swift */,
+				EAAC661D25CA83D70065A360 /* MainViewController+CaptureDeviceFunc.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAAC650225CA4D570065A360 /* VideoUpstreamApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAC651725CA4D580065A360 /* Build configuration list for PBXNativeTarget "VideoUpstreamApp" */;
+			buildPhases = (
+				EAAC64FF25CA4D570065A360 /* Sources */,
+				EAAC650025CA4D570065A360 /* Frameworks */,
+				EAAC650125CA4D570065A360 /* Resources */,
+				EAAC65EB25CA833E0065A360 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoUpstreamApp;
+			productName = VideoUpstreamApp;
+			productReference = EAAC650325CA4D570065A360 /* VideoUpstreamApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAAC64FB25CA4D570065A360 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "aptpod, Inc.";
+				TargetAttributes = {
+					EAAC650225CA4D570065A360 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = EAAC64FE25CA4D570065A360 /* Build configuration list for PBXProject "VideoUpstreamApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAAC64FA25CA4D570065A360;
+			productRefGroup = EAAC650425CA4D570065A360 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAC650225CA4D570065A360 /* VideoUpstreamApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAAC650125CA4D570065A360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC660B25CA83650065A360 /* IntdashSignInView.xib in Resources */,
+				EAAC651325CA4D580065A360 /* LaunchScreen.storyboard in Resources */,
+				EAAC651025CA4D580065A360 /* Assets.xcassets in Resources */,
+				EAAC650E25CA4D570065A360 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAAC64FF25CA4D570065A360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC660A25CA83650065A360 /* AlertDialogView.swift in Sources */,
+				EAAC660025CA83650065A360 /* MySystemClock.swift in Sources */,
+				EAAC662425CA83D70065A360 /* FileListViewController+IntdashManager.swift in Sources */,
+				EAAC662725CA83D70065A360 /* MainViewController+EncodeFunc.swift in Sources */,
+				EAAC661F25CA83D70065A360 /* Config.swift in Sources */,
+				EAAC660725CA83650065A360 /* StringExtension.swift in Sources */,
+				EAAC660125CA83650065A360 /* IntdashAPIManager.swift in Sources */,
+				EAAC660825CA83650065A360 /* UIImageExtension.swift in Sources */,
+				EAAC660625CA83650065A360 /* UInt64Extension.swift in Sources */,
+				EAAC662525CA83D70065A360 /* MainViewController+IntdashManager.swift in Sources */,
+				EAAC660225CA83650065A360 /* Common.swift in Sources */,
+				EAAC660C25CA83650065A360 /* IntdashSignInView.swift in Sources */,
+				EAAC660425CA83650065A360 /* UIViewExtension.swift in Sources */,
+				EAAC660925CA83650065A360 /* LoadingAlertDialogView.swift in Sources */,
+				EAAC662625CA83D70065A360 /* MainViewController+ViewEvents.swift in Sources */,
+				EAAC662825CA83D70065A360 /* MainViewController.swift in Sources */,
+				EAAC660325CA83650065A360 /* UIInterfaceOrientationExtension.swift in Sources */,
+				EAAC662025CA83D70065A360 /* SignInViewController.swift in Sources */,
+				EAAC662325CA83D70065A360 /* FileListViewController+TableView.swift in Sources */,
+				EAAC661E25CA83D70065A360 /* CMSampleBufferExtension.swift in Sources */,
+				EAAC662225CA83D70065A360 /* FileListViewController.swift in Sources */,
+				EAAC650725CA4D570065A360 /* AppDelegate.swift in Sources */,
+				EAAC662125CA83D70065A360 /* FileListViewController+ViewEvents.swift in Sources */,
+				EAAC660525CA83650065A360 /* TimeIntervalExtension.swift in Sources */,
+				EAAC662925CA83D70065A360 /* MainViewController+CaptureDeviceFunc.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EAAC650C25CA4D570065A360 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAC650D25CA4D570065A360 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAAC651125CA4D580065A360 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAC651225CA4D580065A360 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAAC651525CA4D580065A360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAAC651625CA4D580065A360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAAC651825CA4D580065A360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VideoUpstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.VideoUpstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAAC651925CA4D580065A360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VideoUpstreamApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.VideoUpstreamApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAAC64FE25CA4D570065A360 /* Build configuration list for PBXProject "VideoUpstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC651525CA4D580065A360 /* Debug */,
+				EAAC651625CA4D580065A360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAC651725CA4D580065A360 /* Build configuration list for PBXNativeTarget "VideoUpstreamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAC651825CA4D580065A360 /* Debug */,
+				EAAC651925CA4D580065A360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAAC64FB25CA4D570065A360 /* Project object */;
+}
