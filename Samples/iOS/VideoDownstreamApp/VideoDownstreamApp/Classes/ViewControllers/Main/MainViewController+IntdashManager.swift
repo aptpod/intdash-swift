@@ -42,8 +42,10 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
         self.intdashClient = client
         client.session = session
         client.addDelegate(self)
+        // データのダウンストリームに利用します。
         client.downstreamManager.addDelegate(delegate: self)
-        client.connect{ [weak self] (error) in
+        // intdashサーバーとの接続を開始する。
+        client.connect { [weak self] (error) in
             guard error == nil else {
                 print("Failed to connect intdash server. \(error!.localizedDescription)")
                 completion(false)
@@ -53,6 +55,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
             
             var streamId = 0
             do {
+                // ダウンストリームを開く。
                 streamId = try client.downstreamManager.open(srcEdgeId: edgeUUID)
             } catch {
                 print("Failed to open stream. \(error.localizedDescription)")
@@ -64,9 +67,10 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
             self?.downstreamId = streamId
             self?.downstreamIds.append(streamId)
             
-            // Make Downstream Filters
+            // ダウンストリームするデータを定義したフィルターを生成します。
             let filters = self?.makeDownstreamFilters(streamId: streamId, channel: channel)
 
+            // ダウンストリーム情報をintdashサーバーと同期する。
             client.downstreamManager.sync(completion: { [weak self] (error) in
                 guard error == nil else {
                     print("Failed to request stream.")
@@ -128,6 +132,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
             self.downstreamIds.removeAll()
             if streamIds.count > 0 {
                 group.enter()
+                // 開いているストリームIDを閉じる。
                 client.downstreamManager.close(streamIds: streamIds) { (error) in
                     if error != nil {
                         print("Failed to close intdash downstream. \(error!)")
@@ -138,6 +143,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
             }
             
             group.notify(queue: .global()) {
+                // intdashサーバーとの接続を解除します。
                 client.disconnect(completion: { (error) in
                     if error != nil {
                         print("Failed to disconnect intdash server. \(error!)")
@@ -151,10 +157,12 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
         }
     }
     
+    //MARK:- IntdashClientDownstreamManagerDelegate
     func downstreamManagerDidParseDataPoints(_ manager: IntdashClient.DownstreamManager, streamId: Int, dataPoints: [RealtimeDataPoint]) {
         dataPoints.forEach { (dataPoint) in
             guard dataPoint.dataModel.dataType != .baseTime else {
                 print("BaseTime recieved. streamId:\(streamId), id:\(dataPoint.dataId), time:\(dataPoint.time.rfc3339String)")
+                // APIは対象のエッジが計測開始時に`IntdashData.DataBaseTime.TimeType.api`を返却します。
                 if (dataPoint.dataModel as? IntdashData.DataBaseTime)?.type == .api {
                     NSLog("Measurement started BaseTime recieved.")
                 }
@@ -162,10 +170,11 @@ extension MainViewController: IntdashClientDelegate, IntdashClientDownstreamMana
             }
             guard let data = dataPoint.data as? Data else { return }
             print("Binary data received. streamId:\(streamId), dataType:\(dataPoint.dataType), dataId:\(dataPoint.dataId), time:\(dataPoint.time.rfc3339String), size:\(data.count)")
+            // 取得したデータポイントに含まれるデータ種別応じて処理を行います。
             switch dataPoint.dataModel.dataType {
             case .jpeg:
                 DispatchQueue.global().async {
-                    self.decodeJpeg(jpeg: data, timestamp: dataPoint.time.timeIntervalSince1970)
+                    self.decodeJPEG(jpeg: data, timestamp: dataPoint.time.timeIntervalSince1970)
                 }
             case .h264:
                 /// ToDo

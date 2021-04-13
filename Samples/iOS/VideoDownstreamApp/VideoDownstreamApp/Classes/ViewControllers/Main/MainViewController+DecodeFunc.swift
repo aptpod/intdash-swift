@@ -10,7 +10,7 @@ import UIKit
 
 extension MainViewController {
     
-    func decodeJpeg(jpeg: Data, timestamp: TimeInterval) {
+    func decodeJPEG(jpeg: Data, timestamp: TimeInterval) {
         guard let image = UIImage.init(data: jpeg) else {
             print("Failed to decode image.")
             return

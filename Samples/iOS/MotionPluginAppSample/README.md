@@ -1,7 +1,9 @@
 # Motion Plugin App Sample
 このサンプルアプリは、 `intdash Motion(※以下、Motion)` と連携してintdashサーバーへデータを送信するプラグインアプリのサンプルです。
 
-Motionとの通信にはUDPを利用します。そのため、送信できる最大のパケットサイズは65535byteです。
+Motionとの通信にはUDP(User Datagram Protocol)を利用します。
+
+※iOS、macOS標準で送受信可能なUDPの最大パケットサイズは `9216byte` です。
 
 Motionがフォアグラウンドで動作するため、プラグインアプリはバックグラウンドで動作することを前提としています。
 そのため、プラグインアプリでは、BluetoothやGPS関連のバックグランドでの動作が許された処理しか実行できません。また、カメラは利用できません。

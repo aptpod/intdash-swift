@@ -1,5 +1,7 @@
 # intdash SDK for Swift Sample Apps
 
+※サンプルアプリはご利用の前に `Common/Classes/Common.swift` と `各プロジェクト/Classes/Config.swift` を確認し、修正の必要がある場合があります。
+
 ### 1. SensorGPSUpstreamApp
 
 iOSデバイスのセンサーデータとGPSデータを、intdashサーバーに送信するサンプルです。

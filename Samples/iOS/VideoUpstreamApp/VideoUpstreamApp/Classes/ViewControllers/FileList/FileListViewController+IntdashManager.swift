@@ -72,7 +72,9 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                     self?.sectionSize = 0
                     DispatchQueue.global().async {
                         do {
+                            // `IntdashDataFileManager`を利用して保存されたデータを読み出します。
                             let fileManager = try IntdashDataFileManager.load(parentPath: measData.measPath)
+                            // 保存されているデータを参照する為に実際に保存されているデータの期間を取得します。
                             let dataDuration = fileManager.getDataDuration()
                             DispatchQueue.main.async {
                                 self?.loadingDialog?.setMessage(message: "0% Uploading...")
@@ -82,20 +84,23 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                                 completion(true)
                                 return
                             }
+                            // 計測開始時間を送信します。
                             try client.upstreamManager.sendFirstData(baseTime, streamId: streamId, channelNum: Config.INTDASH_TARGET_CHANNEL)
                             print("============> Sent to FirstData: \(baseTime)")
                             if let ntpTime = measData.ntpTime {
+                                // NTPと同期した計測開始時間が存在すれば存在すれば送信します。
                                 try client.upstreamManager.sendUnit(IntdashData.DataBaseTime.init(type: .ntp, baseTime: ntpTime), elapsedTime: 0, streamId: streamId)
                                 print("Send to ntpTime: \(ntpTime)")
                             }
                             for i in 0..<dataDuration {
                                 if i % Config.INTDASH_UNITS_RESEND_TIME_INTERVAL == 0 {
-                                    // Wait thread loop
+                                    // 送信中のセクションと反映済みセクションが同じタイミングのみ再送を有効とします。
                                     while(!(self!.isReadySendUnitReceivedAck || !self!.isRunning)) {
                                         Thread.sleep(forTimeInterval: Config.INTDASH_WAIT_FOR_SEND_UNITS_INTERVAL)
                                     }
                                 }
                                 print("Sending...[\(i)/\(dataDuration)]")
+                                // 経過時間(秒)毎のデータ数を取得します。
                                 let size = fileManager.getUnitSizePerSecond(elapsedTime: i)
                                 for j in 0..<size {
                                     guard self!.isRunning else {
@@ -103,6 +108,7 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                                         return
                                     }
                                     autoreleasepool {
+                                        // 指定した経過時間、indexの`IntdashData`を読み込みます。
                                         fileManager.read(elapsedTime: i, index: j, completion: { (error, units, elapsedTime) in
                                             guard let units = units, let elapsedTime = elapsedTime else {
                                                 print("Failed to read frame. \(error?.localizedDescription ?? "") [\(i)/\(dataDuration)][\(j)/\(size)]")
@@ -111,6 +117,7 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                                             print("Read[\(i)/\(dataDuration)][\(j)/\(size)] \(units.count) units, elapsed: \(elapsedTime)")
                                             for unit in units {
                                                 do {
+                                                    // 読み込んだ`IntdashData`を再送信します。
                                                     try client.upstreamManager.sendUnit(unit, elapsedTime: elapsedTime, streamId: streamId)
                                                 } catch {
                                                     print("Failed to send unit. \(error)")
@@ -124,7 +131,7 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                                     self?.loadingDialog?.setMessage(message: "\(progress)% Uploading...")
                                 }
                             }
-                            // Send to LastData
+                            // 計測終了データを送信します。
                             try client.upstreamManager.sendLastData(streamId: streamId)
                             print("Send to LastData <==================")
                         } catch {
@@ -193,6 +200,7 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
         guard success else { return }
         self.sectionCnt += 1
         
+        // 最終データが正しく反映された場合はストリームを閉じアップロード処理を終了します。
         if final {
             DispatchQueue.global().async {
                 if let client = self.intdashClient {

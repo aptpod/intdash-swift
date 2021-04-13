@@ -40,7 +40,9 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         self.intdashClient = client
         client.session = session
         client.addDelegate(self)
+        // セクション情報の管理を行います。
         client.upstreamManager.addDelegate(delegate: self)
+        // intdashサーバーとの接続を開始する。
         client.connect { [weak self] (error) in
             guard error == nil else {
                 print("Failed to connect intdash server. \(error!.localizedDescription)")
@@ -48,6 +50,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 self?.connectionError()
                 return
             }
+            // 計測IDを取得する。
             client.upstreamManager.requestMeasurementId(edgeUuid: edgeUUID, completion: { (measId, error) in
                 guard error == nil, let upstreamMeasId = measId else {
                     print("Failed to get measurement ID.")
@@ -60,6 +63,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 
                 var streamId = 0
                 do {
+                    // アップストリームを開く。
                     streamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, dstEdgeIds: nil, store: Config.INTDASH_IS_SAVE_TO_SERVER, retryCount: 0, sectionUpdateInterval: nil)
                 } catch {
                     print("Failed to open stream. \(error.localizedDescription)")
@@ -71,6 +75,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 self?.upstreamId = streamId
                 self?.upstreamIds.append(streamId)
                 
+                // アップストリーム情報をintdashサーバーと同期する。
                 client.upstreamManager.sync(completion: { (error) in
                     guard error == nil else {
                         print("Failed to request stream. \(error!.localizedDescription)")
@@ -79,7 +84,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                         return
                     }
                     print("Success to open stream.")
-                    // Intdash Data File Manager
+                    // サーバーへデータを保存する場合は`IntdashDataFileManager`を利用してローカルストレージへデータの保存も行い再送アップロードを行える状態にします。
                     if Config.INTDASH_IS_SAVE_TO_SERVER {
                         do {
                             let fileManager = try IntdashDataFileManager(parentPath: "\(Config.INTDASH_DATA_FILE_PARENT_PATH)/\(edgeUUID)/\(upstreamMeasId)")
@@ -121,13 +126,15 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         self.baseTime = timestamp
         if let streamId = self.upstreamId {
             do {
+                // データ送信前の保存処理。
+                try self.intdashDataFileManager?.setBaseTime(time: timestamp)
                 /// ToDo
                 /// チャンネルはストリームID毎に変更する事ができます。
-                try self.intdashClient?.upstreamManager.sendFirstData(timestamp, streamId: streamId, channelNum: Config.INTDASH_TARGET_CHANNEL)
-                try self.intdashDataFileManager?.setBaseTime(time: timestamp)
                 try self.intdashDataFileManager?.setStreamChannels(channels: Config.INTDASH_TARGET_CHANNEL)
+                // 計測開始時間を送信します。
+                try self.intdashClient?.upstreamManager.sendFirstData(timestamp, streamId: streamId, channelNum: Config.INTDASH_TARGET_CHANNEL)
                 print("Success to send first data. \(timestamp)")
-                // Sync NTP.
+                // NTPと同期し正しい計測開始時間を再送信します。
                 self.syncNTP(baseTime: timestamp, upstreamId: streamId)
             } catch {
                 print("Failed to send first data.\(error)")
@@ -149,9 +156,12 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 do {
                     let elapsedRtc = MySystemClock.shared.rtcDate.timeIntervalSince1970 - baseTime
                     let ntpTime = MySystemClock.shared.ntpDate.timeIntervalSince1970 - elapsedRtc
-                    let baseTime = IntdashData.DataBaseTime.init(type: .ntp, baseTime: ntpTime)
-                    try self.intdashClient?.upstreamManager.sendUnit(baseTime, elapsedTime: 0, streamId: upstreamId)
+                    // 送信する`IntdashData`を生成します。`IntdashData.DataBaseTime`は基本的には後続のものが優先的に計測開始時間として取り扱われます。
+                    let data = IntdashData.DataBaseTime.init(type: .ntp, baseTime: ntpTime)
+                    // データ送信前の保存処理。
                     try self.intdashDataFileManager?.setBaseTime2(time: ntpTime)
+                    // 生成した`IntdashData`を送信します。
+                    try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: 0, streamId: upstreamId)
                 } catch {
                     print("Failed To Send NTP.\(error)")
                     // Close Intdash Client
@@ -169,14 +179,15 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         guard let client = self.intdashClient else { return }
         print("closeIntdashClient() >>>")
         self.intdashClient = nil
+        // `IntdashDataFileManager`に計測した期間を保存する事ができます。
         try? self.intdashDataFileManager?.setDuration(duration: MySystemClock.shared.rtcDate.timeIntervalSince1970-self.baseTime)
         self.intdashDataFileManager = nil
         
         DispatchQueue.global().async {
             if let streamId = self.upstreamId {
                 self.upstreamId = nil
-                // Send Last Data
                 do {
+                    // 計測終了データを送信します。
                     try client.upstreamManager.sendLastData(streamId: streamId)
                 } catch {
                     print("Failed to send last data. \(error)")
@@ -188,6 +199,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
             self.upstreamIds.removeAll()
             if streamIds.count > 0 {
                 group.enter()
+                // 開いているストリームIDを閉じる。
                 client.upstreamManager.close(streamIds: streamIds) { (error) in
                     if error != nil {
                         print("Failed to close intdash upstream. \(error!)")
@@ -198,6 +210,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
             }
             
             group.notify(queue: .global()) {
+                // intdashサーバーとの接続を解除します。
                 client.disconnect(completion: { (error) in
                     if error != nil {
                         print("Failed to disconnect intdash server. \(error!)")
@@ -211,6 +224,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         }
     }
     
+    //MARK:- IntdashClientUpstreamManagerDelegate
     func upstreamManager(_ manager: IntdashClient.UpstreamManager, didGeneratedSesion sectionId: Int, sectionIndex: Int, streamId: Int, final: Bool, sentCount: Int, startOfElapsedTime: TimeInterval, endOfElapsedTime: TimeInterval) {
         print("didGeneratedSesion sectionId:\(sectionId), sectionIndex: \(sectionIndex), streamId:\(streamId), final:\(final), sentCount:\(sentCount), startOfElapsedTime:\(startOfElapsedTime), endOfElapsedTime:\(endOfElapsedTime) - IntdashClient.UpstreamManager")
     }
@@ -218,7 +232,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
     func upstreamManager(_ manager: IntdashClient.UpstreamManager, didReceiveEndOfSection sectionId: Int, streamId: Int, success: Bool, final: Bool, sentCount: Int) {
         print("didReceiveEndOfSection sectionId:\(sectionId), streamId:\(streamId), success:\(success), final:\(final), sentCount:\(sentCount) - IntdashClient.UpstreamManager")
         
-        // Badnetwork Management
+        // 正しくAckが受信できなければintdashサーバーと再接続を行いキューに溜まるデータをクリアします。
         self.appendNetworkSectionTime(success: success)
     }
     

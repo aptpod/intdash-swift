@@ -68,6 +68,7 @@ extension MainViewController {
         guard let streamId = self.sensorUpstreamId else { return }
         
         self.clockLock.lock()
+        // 計測開始時間が未送信であれば送信します。
         if self.baseTime == -1 {
             self.sendFirstData(timestamp: rtcTime)
         }
@@ -77,6 +78,7 @@ extension MainViewController {
         }
         self.clockLock.unlock()
         
+        // 計測開始時間から経過時間を算出します。
         let elapsedTime = ((motion.timestamp - self.motionSampleBaseTime) + self.motionBaseTime) - self.baseTime
         guard elapsedTime >= 0 else {
             print("Elapsed time error. \(elapsedTime)")
@@ -85,35 +87,51 @@ extension MainViewController {
         DispatchQueue.global().async {
             do {
                 if Config.SENSOR_IS_ENABLED_ACCELERATION {
+                    // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorAcceleration(ax: self.toMs2(motion.userAcceleration.x), ay: self.toMs2(motion.userAcceleration.y), az: self.toMs2(motion.userAcceleration.z))
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.sensorDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 }
                 if Config.SENSOR_IS_ENABLED_GRAVITY_ACCELERATION {
+                    // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorGravity(gx: self.toMs2(motion.gravity.x), gy: self.toMs2(motion.gravity.y), gz: self.toMs2(motion.gravity.z))
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.sensorDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 }
                 if Config.SENSOR_IS_ENABLED_ROTATION_RATE {
+                    // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorRotationRate(rra: self.toDegrees(motion.rotationRate.z), rrb: self.toDegrees(motion.rotationRate.x), rrg: self.toDegrees(motion.rotationRate.y))
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.sensorDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 }
                 if Config.SENSOR_IS_ENABLED_ORIENTATION_ANGLE {
+                    // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorOrientationAngle(oaa: self.toDegrees(motion.attitude.yaw), oab: self.toDegrees(motion.attitude.pitch), oag: self.toDegrees(motion.attitude.roll))
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.sensorDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 }
             } catch {

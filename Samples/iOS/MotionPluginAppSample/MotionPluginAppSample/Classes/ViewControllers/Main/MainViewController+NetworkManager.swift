@@ -47,7 +47,7 @@ extension MainViewController {
     func sendMessage(data: Data) {
         let completion = NWConnection.SendCompletion.contentProcessed { [weak self] (error) in
             if let error = error {
-                print("Send data error. \(error.localizedDescription)")
+                print("Send data error. \(error.localizedDescription), \(data.count) bytes.")
                 guard self?.app.isForeground == false else { return } // Background時のみ処理
                 self?.packetLossUnitsCnt += 1
                 if self!.packetLossUnitsCnt >= Config.PACKET_LOSS_UNTIL_BLUETOOTH_DISCONNECTION {
@@ -57,7 +57,7 @@ extension MainViewController {
                 }                
                 return
             }
-            //NSLog("Successful data transmission. \(data.count) bytes")
+            //NSLog("Successful data transmission. \(data.count) bytes.")
         }
         self.connection?.send(content: data, completion: completion)
     }

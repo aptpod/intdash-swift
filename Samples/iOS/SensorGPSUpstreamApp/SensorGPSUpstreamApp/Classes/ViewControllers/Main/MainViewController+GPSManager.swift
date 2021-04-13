@@ -89,17 +89,25 @@ extension MainViewController: CLLocationManagerDelegate {
         DispatchQueue.global().async {
             do {
                 if !Config.GPS_IS_PRIMITIVE_DATA {
-                    let data = GeneralSensorGeoLocationCoordinate(lat: Float(location.coordinate.latitude), lng: Float(location.coordinate.longitude)).toData()
+                    // 送信する`IntdashData`を生成します。
+                    let sensor = GeneralSensorGeoLocationCoordinate(lat: Float(location.coordinate.latitude), lng: Float(location.coordinate.longitude))
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
+                    let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.gpsDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 } else {
+                    // 送信する`IntdashData`を生成します。
                     let lat = try IntdashData.DataFloat(id: Config.GPS_PRIMITIVE_DATA_LATITUDE_ID, data: location.coordinate.latitude)
                     let lng = try IntdashData.DataFloat(id: Config.GPS_PRIMITIVE_DATA_LONGITUDE_ID, data: location.coordinate.longitude)
+                    // データ送信前の保存処理。
                     if let fileManager = self.gpsDataFileManager {
                         _ = try fileManager.write(units: [lat, lng], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(lat, elapsedTime: elapsedTime, streamId: streamId)
                     try self.intdashClient?.upstreamManager.sendUnit(lng, elapsedTime: elapsedTime, streamId: streamId)
                 }
@@ -121,6 +129,7 @@ extension MainViewController: CLLocationManagerDelegate {
         guard let streamId = self.gpsUpstreamId else { return }
         
         self.clockLock.lock()
+        // 計測開始時間が未送信であれば送信します。
         if self.baseTime == -1 {
             self.sendFirstData(timestamp: rtcTime)
         }
@@ -130,6 +139,7 @@ extension MainViewController: CLLocationManagerDelegate {
         }
         self.clockLock.unlock()
         
+        // 計測開始時間から経過時間を算出します。
         let elapsedTime = ((sampleTime - self.headSampleBaseTime) + self.headBaseTime) - self.baseTime
         guard elapsedTime >= 0 else {
             print("Elapsed time error. \(elapsedTime)")
@@ -138,16 +148,24 @@ extension MainViewController: CLLocationManagerDelegate {
         DispatchQueue.global().async {
             do {
                 if !Config.GPS_IS_PRIMITIVE_DATA {
-                    let data = GeneralSensorGeoLocationHeading(head: heading).toData()
+                    // 送信する`IntdashData`を生成します。
+                    let sensor = GeneralSensorGeoLocationHeading(head: heading)
+                    // `GeneralSensor***`は`IntdashData`に変換が可能。
+                    let data = sensor.toData()
+                    // データ送信前の保存処理。
                     if let fileManager = self.gpsDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 } else {
+                    // 送信する`IntdashData`を生成します。
                     let data = try IntdashData.DataFloat(id: Config.GPS_PRIMITIVE_DATA_HEAD_ID, data: Float64(heading))
+                    // データ送信前の保存処理。
                     if let fileManager = self.gpsDataFileManager {
                         _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                     }
+                    // 生成した`IntdashData`を送信します。
                     try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
                 }
             } catch {

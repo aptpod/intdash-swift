@@ -26,18 +26,20 @@ extension MainViewController {
 //                self.timestampLabel.text = self.timestampFormat.string(from: Date(timeIntervalSince1970: timestamp))
 //            }
 //        }        
-        self.sendJpeg(jpeg: jpeg, timestamp: timestamp)
+        self.sendJPEG(jpeg: jpeg, timestamp: timestamp)
     }
     
-    func sendJpeg(jpeg: Data, timestamp: TimeInterval) {
+    func sendJPEG(jpeg: Data, timestamp: TimeInterval) {
         guard let streamId = self.upstreamId else { return }
         
         self.clockLock.lock()
+        // 計測開始時間が未送信であれば送信します。
         if self.baseTime == -1 {
             self.sendFirstData(timestamp: timestamp)
         }
         self.clockLock.unlock()
         
+        // 計測開始時間から経過時間を算出します。
         let elapsedTime = timestamp - self.baseTime
         guard elapsedTime >= 0 else {
             print("Elapsed time error. \(elapsedTime)")
@@ -45,12 +47,15 @@ extension MainViewController {
         }
         DispatchQueue.global().async {
             do {
-                let data = IntdashData.DataJPEG(data: [UInt8](jpeg))                
+                // 送信する`IntdashData`を生成します。
+                let data = IntdashData.DataJPEG(data: [UInt8](jpeg))
+                // データ送信前の保存処理。
                 if let fileManager = self.intdashDataFileManager {
                     _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
                 }
+                // 生成した`IntdashData`を送信します。
                 try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
-            } catch{
+            } catch {
                 print("Failed to send jpeg. \(error)")
             }
         }

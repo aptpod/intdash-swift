@@ -66,6 +66,8 @@ class SignInViewController: UIViewController, IntdashSignInViewDelegate {
     func didFinishFetchToken(_ view: IntdashSignInView, result: Bool, error: Error?) {
         print("didFinishFetchToken result: \(result), error: \(error?.localizedDescription ?? "nil") - IntdashSignInViewDelegate")
         self.stopLoading()
+        // ToDo: 下部をコメントアウトすることで認証情報を用意していない場合でも次の画面を確認できます
+        //guard result else { return }
         self.goToNextView()
     }
 }
