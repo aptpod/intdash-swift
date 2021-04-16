@@ -62,7 +62,7 @@ extension MainViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let rtcTime = MySystemClock.shared.rtcDate.timeIntervalSince1970
-        if let location = locations.first {
+        if let location = locations.last {
             print("locationManager didUpdateLocations sampleTime: \(location.timestamp.timeIntervalSince1970) latitude: \(location.coordinate.latitude), longitude: \(location.coordinate.longitude) - CLLocationManager")
             self.sendLocation(location: location, rtcTime: rtcTime)
         }
@@ -72,6 +72,7 @@ extension MainViewController: CLLocationManagerDelegate {
         guard let streamId = self.gpsUpstreamId else { return }
         
         self.clockLock.lock()
+        // 計測開始時間が未送信であれば送信します。
         if self.baseTime == -1 {
             self.sendFirstData(timestamp: rtcTime)
         }
@@ -81,6 +82,7 @@ extension MainViewController: CLLocationManagerDelegate {
         }
         self.clockLock.unlock()
         
+        // 計測開始時間から経過時間を算出します。
         let elapsedTime = ((location.timestamp.timeIntervalSince1970 - self.locationSampleBaseTime) + self.locationBaseTime) - self.baseTime
         guard elapsedTime >= 0 else {
             print("Elapsed time error. \(elapsedTime)")
