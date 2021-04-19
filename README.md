@@ -29,7 +29,15 @@
     |   - Item 0        |String     |スキーム名（例：companyname.appname）   |
 
 4\. `Intdash.xcframework` をプロジェクトに追加します。  
-※ `Intdash.xcframework` のエンベッド方法は `Embed & Sign` としてください。
+
+※ 手動で開発するプロジェクトへフレームワークを追加した場合は `Embed & Sign` としてください。
+
+### Cocoapods
+このフレームワークは [CocoaPods](http://cocoapods.org) からも入手可能です、`Podfile` に以下を追加してください。
+
+```ruby
+pod 'Intdash'
+```
 
 ## ■ 実装
 
