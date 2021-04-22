@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 spec.name         = "Intdash"
   spec.version      = "1.0.0"
   spec.summary      = "intdash SDK for Swift"
-  spec.homepage     = "https://www.aptpod.co.jp/"
+  spec.homepage     = "https://github.com/aptpod/intdash-swift"
   spec.documentation_url = "https://docs.intdash.jp/sdk/swift/v#{spec.version}" 
 
   spec.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
