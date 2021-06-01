@@ -90,7 +90,7 @@ class ExampleViewController: UIViewController {
                 return
             }
             // 5. 認証を開始する。
-            let webAuthSession = ASWebAuthenticationSession(url: authURL, callbackURLScheme: kCallbackURLScheme) { (callbackURL, error) in
+            let webAuthSession = ASWebAuthenticationSession(url: authURL, callbackURLScheme: callbackURLScheme) { (callbackURL, error) in
                 guard error == nil, let callbackURL = callbackURL else {
                     print("Web authentication callback error. \(error?.localizedDescription ?? "")")
                     return
