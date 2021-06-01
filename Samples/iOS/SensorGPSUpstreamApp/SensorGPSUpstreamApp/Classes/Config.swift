@@ -15,7 +15,7 @@ class Config {
     
     /// アプリごとのOAuth2.0 Web認証用のコールバックスキーム。intdashサーバー管理者に登録を依頼してください。
     ///
-    /// この値は `Info.plist` でも設定してください。
+    /// この値は `Info.plist` でも設定してください。※ただし`:`以降は不要です。(`example.app`のみ）
     public static let CALLBACK_URL_SCHEME: String = "example.app://oauth2/callback"
     /*
      |Key                  |Type       |Value                       |

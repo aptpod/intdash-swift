@@ -83,7 +83,8 @@ class ExampleViewController: UIViewController {
         // 3. `IntdashClient.OAuth2API` を初期化する。
         let oauth2Api = IntdashClient.OAuth2API(session: session)
         // 4. Web認証用URLを生成する。
-        oauth2Api.generateAuthorizationURL(callbackURLScheme: kCallbackURLScheme) { [weak self] (url, codeVerifier, state, error) in
+        let callbackURLScheme = kCallbackURLScheme.replacingOccurrences(of: ":", with: "%3A").replacingOccurrences(of: "/", with: "%2F") // URLエンコード
+        oauth2Api.generateAuthorizationURL(callbackURLScheme: callbackURLScheme) { [weak self] (url, codeVerifier, state, error) in
             guard error == nil, let url = url, let authURL = URL(string: url), let codeVerifier = codeVerifier else {
                 print("generateAuthorizationURL failed. \(error?.localizedDescription ?? "")")
                 return

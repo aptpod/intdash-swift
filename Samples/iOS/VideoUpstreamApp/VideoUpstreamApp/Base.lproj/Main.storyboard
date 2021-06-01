@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR7-VR-RGv" userLabel="SignInView" customClass="IntdashSignInView" customModule="VideoUpstreamSample" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR7-VR-RGv" userLabel="SignInView" customClass="IntdashSignInView" customModule="VideoUpstreamApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -110,6 +110,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signOutBtnPushed:" destination="yiz-xC-pKZ" eventType="touchUpInside" id="XSN-Oj-rIp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.30329623290000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -16,6 +16,11 @@ extension MainViewController {
         self.timestampFormat.dateFormat = Config.TIMESTAMP_FORMAT_STRING
     }
     
+    @IBAction func signOutBtnPushed(_ sender: Any) {
+        print("signOutBtnPushed")
+        self.app.signOut()
+    }
+    
     @IBAction func moveToFileListViewBtnPushed(_ sender: Any) {
         print("moveToFileListViewBtnPushed")
         self.goToFileListView()

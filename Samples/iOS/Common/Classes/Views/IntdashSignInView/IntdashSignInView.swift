@@ -88,7 +88,7 @@ class IntdashSignInView: UIView {
     @IBAction func signInBtnPushed(_ sender: Any) {
         print("signInBtnPushed")
         self.startFetch()
-        let callbackURLScheme = self.callbackURLScheme
+        let callbackURLScheme = self.callbackURLScheme.replacingOccurrences(of: ":", with: "%3A").replacingOccurrences(of: "/", with: "%2F") // URLエンコード
         let api = IntdashAPIManager.shared
         DispatchQueue.global().async {
             api.generateAuthorizationURL(callbackURLScheme: callbackURLScheme) { [weak self] (url, codeVerifier, state, error) in

@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("viewDidLoad - MainViewController")
+        self.app.activeVC = self
         // View Events
         self.setupViewEvents()
     }
