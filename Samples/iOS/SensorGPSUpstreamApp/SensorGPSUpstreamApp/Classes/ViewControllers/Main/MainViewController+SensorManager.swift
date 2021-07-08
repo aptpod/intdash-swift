@@ -86,53 +86,47 @@ extension MainViewController {
         }
         DispatchQueue.global().async {
             do {
+                var units = [IntdashData]()
+                
                 if Config.SENSOR_IS_ENABLED_ACCELERATION {
                     // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorAcceleration(ax: self.toMs2(motion.userAcceleration.x), ay: self.toMs2(motion.userAcceleration.y), az: self.toMs2(motion.userAcceleration.z))
                     // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
-                    // データ送信前の保存処理。
-                    if let fileManager = self.sensorDataFileManager {
-                        _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
-                    }
-                    // 生成した`IntdashData`を送信します。
-                    try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
+                    // 同時刻のデータはひとまとめにして送信可能です。
+                    units.append(data)
                 }
                 if Config.SENSOR_IS_ENABLED_GRAVITY_ACCELERATION {
                     // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorGravity(gx: self.toMs2(motion.gravity.x), gy: self.toMs2(motion.gravity.y), gz: self.toMs2(motion.gravity.z))
                     // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
-                    // データ送信前の保存処理。
-                    if let fileManager = self.sensorDataFileManager {
-                        _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
-                    }
-                    // 生成した`IntdashData`を送信します。
-                    try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
+                    // 同時刻のデータはひとまとめにして送信可能です。
+                    units.append(data)
                 }
                 if Config.SENSOR_IS_ENABLED_ROTATION_RATE {
                     // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorRotationRate(rra: self.toDegrees(motion.rotationRate.z), rrb: self.toDegrees(motion.rotationRate.x), rrg: self.toDegrees(motion.rotationRate.y))
                     // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
-                    // データ送信前の保存処理。
-                    if let fileManager = self.sensorDataFileManager {
-                        _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
-                    }
-                    // 生成した`IntdashData`を送信します。
-                    try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
+                    // 同時刻のデータはひとまとめにして送信可能です。
+                    units.append(data)
                 }
                 if Config.SENSOR_IS_ENABLED_ORIENTATION_ANGLE {
                     // 送信する`IntdashData`を生成します。
                     let sensor = GeneralSensorOrientationAngle(oaa: self.toDegrees(motion.attitude.yaw), oab: self.toDegrees(motion.attitude.pitch), oag: self.toDegrees(motion.attitude.roll))
                     // `GeneralSensor***`は`IntdashData`に変換が可能。
                     let data = sensor.toData()
+                    // 同時刻のデータはひとまとめにして送信可能です。
+                    units.append(data)
+                }
+                if !units.isEmpty {
                     // データ送信前の保存処理。
                     if let fileManager = self.sensorDataFileManager {
-                        _ = try fileManager.write(units: [data], elapsedTime: elapsedTime)
+                        _ = try fileManager.write(units: units, elapsedTime: elapsedTime)
                     }
                     // 生成した`IntdashData`を送信します。
-                    try self.intdashClient?.upstreamManager.sendUnit(data, elapsedTime: elapsedTime, streamId: streamId)
+                    try self.intdashClient?.upstreamManager.sendUnits(units, elapsedTime: elapsedTime, streamId: streamId)
                 }
             } catch {
                 print("Failed to send location heading. \(error)")

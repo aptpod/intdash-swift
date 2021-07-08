@@ -29,42 +29,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x51r5ReywCns+jhMjtO0YcGx0BLQMW8ReaGdz6FtaeY=
+			DZxVn+YMA1PTfIYJErs3ghAmf1n+UqBtRoop3w0IZjQ=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4Jzwliqo7oH3JpbsXQqmYsC5VMuJeyiMd+mAUXK1n8=
+			0314sSzg2Hya1W7iqsXXj7fXAlcy3jKwJiSnWm77vCU=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KF3fXHeH65h1Tn13nUq8a51rGgsj+brRmmzPMsP/XRg=
+			huKEk0Aepl67kR/0R08UovBfoPutAnZuLT1kClWQ9mc=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x51r5ReywCns+jhMjtO0YcGx0BLQMW8ReaGdz6FtaeY=
+			DZxVn+YMA1PTfIYJErs3ghAmf1n+UqBtRoop3w0IZjQ=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4Jzwliqo7oH3JpbsXQqmYsC5VMuJeyiMd+mAUXK1n8=
+			0314sSzg2Hya1W7iqsXXj7fXAlcy3jKwJiSnWm77vCU=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KF3fXHeH65h1Tn13nUq8a51rGgsj+brRmmzPMsP/XRg=
+			huKEk0Aepl67kR/0R08UovBfoPutAnZuLT1kClWQ9mc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

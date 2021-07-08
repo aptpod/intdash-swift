@@ -112,8 +112,11 @@ extension IntdashClient {
     public func sendLastData(streamId: Swift.Int) throws
     public func sendUnit(_ data: Intdash.IntdashData, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
     public func sendUnit(_ data: Intdash.IntdashData, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int, channelNum: Swift.Int) throws
+    public func sendUnits(_ data: [Intdash.IntdashData], elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
+    public func sendUnits(_ data: [Intdash.IntdashData], elapsedTime: Foundation.TimeInterval, streamId: Swift.Int, channelNum: Swift.Int) throws
     public func sendBaseTime(_ baseTime: Foundation.TimeInterval, baseTimeType: Intdash.IntdashData.DataBaseTime.TimeType, streamId: Swift.Int) throws
     public func sendSensor(_ sensor: Intdash.GeneralSensorConvertible, elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
+    public func sendSensors(_ sensors: [Intdash.GeneralSensorConvertible], elapsedTime: Foundation.TimeInterval, streamId: Swift.Int) throws
     public func addDelegate(delegate: Intdash.IntdashClientUpstreamManagerDelegate)
     public func removeDelegate(delegate: Intdash.IntdashClientUpstreamManagerDelegate)
     public func dispose()
@@ -497,7 +500,7 @@ extension IntdashClient {
   open class MeasurementsAPI {
     public var session: Intdash.IntdashClient.Session?
     public init(session: Intdash.IntdashClient.Session?)
-    public func list(uuid: Swift.String? = nil, name: Swift.String? = nil, edgeUuid: Swift.String? = nil, start: Foundation.TimeInterval? = nil, end: Foundation.TimeInterval? = nil, limit: Swift.Int = 0, page: Swift.Int? = nil, completion: @escaping (Intdash.MeasurementsListResponse?, Intdash.RESTError?) -> ())
+    public func list(uuid: Swift.String? = nil, name: Swift.String? = nil, edgeUuid: Swift.String? = nil, start: Foundation.TimeInterval? = nil, end: Foundation.TimeInterval? = nil, durationStart: Foundation.TimeInterval? = nil, durationEnd: Foundation.TimeInterval? = nil, status: Intdash.IntdashClient.MeasurementsAPI.Status? = nil, limit: Swift.Int? = nil, page: Swift.Int? = nil, order: Intdash.IntdashClient.MeasurementsAPI.OrderType = .asc, completion: @escaping (Intdash.MeasurementsListResponse?, Intdash.RESTError?) -> ())
     @objc deinit
   }
   public var measurements: Intdash.IntdashClient.MeasurementsAPI {
@@ -769,6 +772,27 @@ public struct GeneralSensorGeoLocationAccuracy : Intdash.GeneralSensorConvertibl
 extension GeneralSensorGeoLocationAccuracy : Swift.Equatable {
   public static func == (lhs: Intdash.GeneralSensorGeoLocationAccuracy, rhs: Intdash.GeneralSensorGeoLocationAccuracy) -> Swift.Bool
 }
+extension IntdashClient.MeasurementsAPI {
+  public enum OrderType : Swift.String {
+    case asc
+    case desc
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+  }
+  public enum Status : Swift.String {
+    case measuring
+    case resending
+    case finished
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+  }
+}
 public struct MeasurementItem {
   public var edgeUuid: Swift.String
   public var name: Swift.String
@@ -784,6 +808,9 @@ public struct MeasurementItem {
   public var protected: Swift.Bool
 }
 public struct MeasurementsPage {
+  public var totalCount: Swift.Int
+  public var first: Swift.Bool
+  public var last: Swift.Bool
   public var next: Swift.String
   public var previous: Swift.String
 }
@@ -1067,6 +1094,12 @@ extension Intdash.IntdashClient.EdgesAPI.EdgeType : Swift.RawRepresentable {}
 extension Intdash.IntdashData.DataH265.H265Type : Swift.Equatable {}
 extension Intdash.IntdashData.DataH265.H265Type : Swift.Hashable {}
 extension Intdash.IntdashData.DataH265.H265Type : Swift.RawRepresentable {}
+extension Intdash.IntdashClient.MeasurementsAPI.OrderType : Swift.Equatable {}
+extension Intdash.IntdashClient.MeasurementsAPI.OrderType : Swift.Hashable {}
+extension Intdash.IntdashClient.MeasurementsAPI.OrderType : Swift.RawRepresentable {}
+extension Intdash.IntdashClient.MeasurementsAPI.Status : Swift.Equatable {}
+extension Intdash.IntdashClient.MeasurementsAPI.Status : Swift.Hashable {}
+extension Intdash.IntdashClient.MeasurementsAPI.Status : Swift.RawRepresentable {}
 extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.Equatable {}
 extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.Hashable {}
 extension Intdash.IntdashData.DataBaseTime.TimeType : Swift.RawRepresentable {}

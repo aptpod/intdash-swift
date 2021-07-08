@@ -17,7 +17,7 @@
     <a title="MeasurementsAPI Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html">Intdash v1.0.2 Docs</a></p>
+        <p><a href="../../index.html">Intdash v1.1.2 Docs</a></p>
         <p class="header-right">
           <form role="search" action="../../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -57,6 +57,9 @@
                 <a href="../../Classes/IntdashClient/EdgesAPI.html">– EdgesAPI</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/IntdashClient/MeasurementsAPI.html">– MeasurementsAPI</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/IntdashClient/DownstreamManager.html">– DownstreamManager</a>
               </li>
               <li class="nav-group-task">
@@ -67,9 +70,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/IntdashClient/CapturesAPI.html">– CapturesAPI</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/IntdashClient/MeasurementsAPI.html">– MeasurementsAPI</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/IntdashClient/VersionsAPI.html">– VersionsAPI</a>
@@ -408,9 +408,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Intdash0A6ClientC15MeasurementsAPIC4list4uuid4name8edgeUuid5start3end5limit4page10completionySSSg_A2OSdSgAPS2iSgyAA0C12ListResponseVSg_AA9RESTErrorVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/list(uuid:name:edgeUuid:start:end:limit:page:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Intdash0A6ClientC15MeasurementsAPIC4list4uuid4name8edgeUuid5start3end5limit4page10completionySSSg_A2OSdSgAPS2iSgyAA0C12ListResponseVSg_AA9RESTErrorVSgtctF">list(uuid:<wbr>name:<wbr>edgeUuid:<wbr>start:<wbr>end:<wbr>limit:<wbr>page:<wbr>completion:<wbr>)</a>
+                    <a name="/s:7Intdash0A6ClientC15MeasurementsAPIC4list4uuid4name8edgeUuid5start3end13durationStart0L3End6status5limit4page5order10completionySSSg_A2SSdSgA3tE6StatusOSgSiSgAxE9OrderTypeOyAA0C12ListResponseVSg_AA9RESTErrorVSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/list(uuid:name:edgeUuid:start:end:durationStart:durationEnd:status:limit:page:order:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15MeasurementsAPIC4list4uuid4name8edgeUuid5start3end13durationStart0L3End6status5limit4page5order10completionySSSg_A2SSdSgA3tE6StatusOSgSiSgAxE9OrderTypeOyAA0C12ListResponseVSg_AA9RESTErrorVSgtctF">list(uuid:<wbr>name:<wbr>edgeUuid:<wbr>start:<wbr>end:<wbr>durationStart:<wbr>durationEnd:<wbr>status:<wbr>limit:<wbr>page:<wbr>order:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -425,7 +425,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">list</span><span class="p">(</span><span class="nv">uuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">edgeUuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span> <span class="kt"><a href="../../Structs/MeasurementsListResponse.html">MeasurementsListResponse</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Structs/RESTError.html">RESTError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">list</span><span class="p">(</span><span class="nv">uuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">edgeUuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">durationStart</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">durationEnd</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashClient.html">IntdashClient</a></span><span class="o">.</span><span class="kt">MeasurementsAPI</span><span class="o">.</span><span class="kt"><a href="../../Classes/IntdashClient/MeasurementsAPI/Status.html">Status</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt"><a href="../../Classes/IntdashClient.html">IntdashClient</a></span><span class="o">.</span><span class="kt">MeasurementsAPI</span><span class="o">.</span><span class="kt"><a href="../../Classes/IntdashClient/MeasurementsAPI/OrderType.html">OrderType</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">asc</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span> <span class="kt"><a href="../../Structs/MeasurementsListResponse.html">MeasurementsListResponse</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Structs/RESTError.html">RESTError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
 
                         </div>
                       </div>
@@ -496,12 +496,48 @@
                             <tr>
                               <td>
                                 <code>
+                                <em>durationStart</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>取得対象とする計測の長さの最小値（長さがこの値以上の計測を取得対象とします）</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>durationEnd</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>取得対象とする計測の長さの最大値（長さがこの値未満の計測を取得対象とします）</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>status</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>取得対象とする計測の状態</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
                                 <em>limit</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>取得件数</p>
+                                  <p>取得対象とする最大の計測数</p>
                                 </div>
                               </td>
                             </tr>
@@ -513,7 +549,19 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>取得対象とするページ数</p>
+                                  <p>取得対象とするページ番号</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>order</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>取得結果の順序</p>
                                 </div>
                               </td>
                             </tr>
@@ -559,12 +607,67 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15MeasurementsAPIC9OrderTypeO"></a>
+                    <a name="//apple_ref/swift/Enum/OrderType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15MeasurementsAPIC9OrderTypeO">OrderType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>順序を表す列挙型。</p>
+
+                        <a href="../../Classes/IntdashClient/MeasurementsAPI/OrderType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OrderType</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Intdash0A6ClientC15MeasurementsAPIC6StatusO"></a>
+                    <a name="//apple_ref/swift/Enum/Status" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Intdash0A6ClientC15MeasurementsAPIC6StatusO">Status</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../../Classes/IntdashClient/MeasurementsAPI/Status.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Status</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://www.aptpod.co.jp" target="_blank" rel="external">aptpod Inc</a>. All rights reserved. (Last updated: 2021-06-01)</p>
+          <p>&copy; 2021 <a class="link" href="https://www.aptpod.co.jp" target="_blank" rel="external">aptpod Inc</a>. All rights reserved. (Last updated: 2021-07-08)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

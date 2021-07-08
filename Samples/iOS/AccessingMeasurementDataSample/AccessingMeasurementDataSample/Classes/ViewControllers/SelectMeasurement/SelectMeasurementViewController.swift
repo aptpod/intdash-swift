@@ -44,6 +44,10 @@ class SelectMeasurementViewController: UIViewController {
     }
     
     func updateMeasurementList() {
+        guard let uuid = self.app.targetEdge?.uuid else {
+            print("Failed to get target uuid.")
+            return
+        }
         self.loadingDialog = LoadingAlertDialogView.init(addView: self.app.window!, showMessageLabel: false)
         self.loadingDialog?.startAnimating()
         DispatchQueue.global().async { [weak self] in
@@ -51,18 +55,36 @@ class SelectMeasurementViewController: UIViewController {
             self?.listDataLock.lock()
             let start = Date().timeIntervalSince1970 - Config.INTDASH_REQUEST_MEASUREMENT_LIST_DURATION
             let end = Date().timeIntervalSince1970
-            // エッジ選択画面で選択されたエッジの計測を検索
-            IntdashAPIManager.shared.requestMeasurementList(edgeUuid: self?.app.targetEdge?.uuid, start: start, end: end) { [weak self] (response, error) in
-                if let response = response {
-                    // 計測リストの中から、ベースタイムが取得でき、時間が1秒以上で、終了フラグがtrueのもののみを抽出
-                    self?.measurementList = response.items.filter { $0.baseTime != nil && $0.duration >= 1 && $0.ended == true }
+            self?.requestMeasurementList(edgeUuid: uuid, start: start, end: end)
+        }
+    }
+    
+    func requestMeasurementList(edgeUuid: String, start: TimeInterval, end: TimeInterval, page: Int = 1, items: [String: MeasurementItem] = [String: MeasurementItem]()) {
+        var items = items
+        // エッジ選択画面で選択されたエッジの計測を検索
+        IntdashAPIManager.shared.requestMeasurementList(edgeUuid: edgeUuid, start: start, end: end, durationStart: Config.INTDASH_REQUEST_MEASUREMENT_DURATION_START, limit: Config.INTDASH_REQUEST_MEASUREMENT_LIMIT) { [weak self] (response, error) in
+            if let response = response {
+                for item in response.items {
+                    items[item.uuid] = item
                 }
+            }
+            // 次のページが存在しなければ要求終了
+            guard response?.page?.last == false else {
+                // 取得できた計測リストの中からベースタイムが取得でき、終了フラグがtrueの物のみを抽出
+                self?.measurementList = items.values.filter { $0.baseTime != nil && $0.ended == true }.sorted(by: { (item1, item2) -> Bool in
+                    let date1 = item1.createdAt
+                    let date2 = item2.createdAt
+                    return date1!.compare(date2!) == .orderedDescending
+                })
                 DispatchQueue.main.async {
                     self?.loadingDialog?.stopAnimating()
                     self?.loadingDialog = nil
                     self?.reloadMeasurementList(filterText: self?.searchBar.text)
                 }
+                return
             }
+            // 次のページが存在するので再度要求
+            self?.requestMeasurementList(edgeUuid: edgeUuid, start: start, end: end, page: page+1, items: items)
         }
     }
     

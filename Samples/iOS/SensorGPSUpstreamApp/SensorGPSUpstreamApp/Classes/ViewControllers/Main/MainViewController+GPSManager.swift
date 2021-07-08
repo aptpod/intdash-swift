@@ -110,8 +110,7 @@ extension MainViewController: CLLocationManagerDelegate {
                         _ = try fileManager.write(units: [lat, lng], elapsedTime: elapsedTime)
                     }
                     // 生成した`IntdashData`を送信します。
-                    try self.intdashClient?.upstreamManager.sendUnit(lat, elapsedTime: elapsedTime, streamId: streamId)
-                    try self.intdashClient?.upstreamManager.sendUnit(lng, elapsedTime: elapsedTime, streamId: streamId)
+                    try self.intdashClient?.upstreamManager.sendUnits([lat, lng], elapsedTime: elapsedTime, streamId: streamId)
                 }
             } catch {
                 print("Failed to send location coordinate. \(error)")

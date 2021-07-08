@@ -193,8 +193,8 @@ class IntdashAPIManager {
     /// Edgeのリストを取得します。
     /// - parameter uuid: 取得対象とするエッジのUUID
     /// - parameter order: 取得結果の順序
-    /// - parameter limit: 取得件数
-    /// - parameter page: 取得対象とするページ数
+    /// - parameter limit: 取得対象とする最大のエッジ数
+    /// - parameter page: 取得対象とするページ番号
     /// - parameter name: 取得対象とするエッジの名前
     /// - parameter nickname: 取得対象とするエッジの表示名
     /// - parameter type: 取得対象とするエッジのタイプ
@@ -228,14 +228,18 @@ class IntdashAPIManager {
     /// - parameter edgeUuid: 取得対象とする計測が紐づくエッジのUUID
     /// - parameter start: 取得対象とする範囲の始点（UNIXエポックからの経過時間を使用します）
     /// - parameter end: 取得対象とする範囲の終点（UNIXエポックからの経過時間を使用します）
-    /// - parameter limit: 取得件数
-    /// - parameter page: 取得対象とするページ数
+    /// - parameter durationStart: 取得対象とする計測の記録期間の始点
+    /// - parameter durationEnd: 取得対象とする計測の記録期間の終点
+    /// - parameter status: 取得対象とする計測の状態
+    /// - parameter limit: 取得対象とする最大の計測数
+    /// - parameter page: 取得対象とするページ番号
+    /// - parameter order: 取得結果の順序
     /// - parameter completion: 処理終了時のコールバック
     /// - parameter response: レスポンスデータ
     /// - parameter error: エラー情報
-    func requestMeasurementList(uuid: String? = nil, name: String? = nil, edgeUuid: String? = nil, start: TimeInterval? = nil, end: TimeInterval? = nil, limit: Int = 0, page: Int? = nil, completion: @escaping (_ response: MeasurementsListResponse?, _ error: RESTError?)->()) {
+    func requestMeasurementList(uuid: String? = nil, name: String? = nil, edgeUuid: String? = nil, start: TimeInterval? = nil, end: TimeInterval? = nil, durationStart: TimeInterval? = nil, durationEnd: TimeInterval? = nil, status: IntdashClient.MeasurementsAPI.Status? = nil, limit: Int? = nil, page: Int? = nil, order: IntdashClient.MeasurementsAPI.OrderType = .asc, completion: @escaping (MeasurementsListResponse?, RESTError?)->()) {
         let api = IntdashClient.MeasurementsAPI(session: session)
-        api.list(uuid: uuid, name: name, edgeUuid: edgeUuid, start: start, end: end, limit: limit, page: page, completion: completion)
+        api.list(uuid: uuid, name: name, edgeUuid: edgeUuid, start: start, end: end, durationStart: durationStart, durationEnd: durationEnd, status: status, limit: limit, page: page, order: order, completion: completion)
     }
     
     //MARK:- DataPoints

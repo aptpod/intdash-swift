@@ -168,13 +168,11 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                                 return
                             }
                             //print("[\(dataType)] Read[\(i)/\(dataDuration)][\(j)/\(size)] \(units.count) units, elapsed: \(elapsedTime)")
-                            for unit in units {
-                                do {
-                                    // 読み込んだ`IntdashData`を再送信します。
-                                    try client.upstreamManager.sendUnit(unit, elapsedTime: elapsedTime, streamId: streamId)
-                                } catch {
-                                    print("Failed to send [\(dataType)] unit. \(error)")
-                                }
+                            do {
+                                // 読み込んだ`IntdashData`を再送信します。
+                                try client.upstreamManager.sendUnits(units, elapsedTime: elapsedTime, streamId: streamId)
+                            } catch {
+                                print("Failed to send [\(dataType)] unit. \(error)")
                             }
                         })
                     }

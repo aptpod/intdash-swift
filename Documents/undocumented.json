@@ -57,6 +57,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/uenomasamitsu/WorkSpace/Xcode/iOS/WorkSpace/intdash-swift-private/Common/Classes/REST/Measurements/MeasurementsModels.swift",
+      "line": 21,
+      "symbol": "IntdashClient.MeasurementsAPI.Status",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/uenomasamitsu/WorkSpace/Xcode/iOS/WorkSpace/intdash-swift-private/Common/Classes/REST/Versions/VersionsModels.swift",
       "line": 79,
       "symbol": "IntdashVersion.!=(_:_:)",

@@ -18,27 +18,27 @@
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		yvQ3LLiEUB8d+E8gDcSa3vgekd0=
+		9uLbhT4zG/B69sOKkn+p1Zk9gGs=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		KPb2lDT6Jex4EcJw1TptK2ztL1w=
+		owcg87ryb/Fu9ZXWfpQYHyHw/e8=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DmAS2ZZarhUkxiZxA5NcACDw4GM=
+		AvkE5xQVHFx5MlZ3BFthxiC3lxc=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		yvQ3LLiEUB8d+E8gDcSa3vgekd0=
+		9uLbhT4zG/B69sOKkn+p1Zk9gGs=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		KPb2lDT6Jex4EcJw1TptK2ztL1w=
+		owcg87ryb/Fu9ZXWfpQYHyHw/e8=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		DmAS2ZZarhUkxiZxA5NcACDw4GM=
+		AvkE5xQVHFx5MlZ3BFthxiC3lxc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T2331hVteRK+yugS1z9kZpAlDW1vuB0s3HH+x3AFyJs=
+			0pXrOLTXhI2pnnQo/ftjPnOj/MZTc7NE6QGSlLQ2WgQ=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cv1DYH3WdTNLWZYrjQvB2gSy7Twpn5J/QcwXa5fK6fk=
+			Q8ITwYdnQF6RuArpPUL0JdvQ5BgJQqaB5LMmjGQcH6U=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0oPMnkcwvd+PS4/f17/Yt3yyjhxsZZjjwBbQN5hB+zQ=
+			KImwnDSrnocYiELrPyCY34Mnp6J08BF0Ry892ZcSRWI=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T2331hVteRK+yugS1z9kZpAlDW1vuB0s3HH+x3AFyJs=
+			0pXrOLTXhI2pnnQo/ftjPnOj/MZTc7NE6QGSlLQ2WgQ=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cv1DYH3WdTNLWZYrjQvB2gSy7Twpn5J/QcwXa5fK6fk=
+			Q8ITwYdnQF6RuArpPUL0JdvQ5BgJQqaB5LMmjGQcH6U=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0oPMnkcwvd+PS4/f17/Yt3yyjhxsZZjjwBbQN5hB+zQ=
+			KImwnDSrnocYiELrPyCY34Mnp6J08BF0Ry892ZcSRWI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
