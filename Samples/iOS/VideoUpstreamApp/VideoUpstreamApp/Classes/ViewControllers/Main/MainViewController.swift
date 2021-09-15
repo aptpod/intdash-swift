@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
     var upstreamId: Int?
     var upstreamMeasurementId = ""
     var baseTime: TimeInterval = -1
+    var generateSendLastDataCnt = 0
     
     // BaseTimes for Samples
     func resetBaseTime() {
@@ -93,8 +94,8 @@ class MainViewController: UIViewController {
         super.viewWillDisappear(animated)
         print("viewWillDisappear - MainViewController")
         self.navigationController?.navigationBar.isHidden = false
-        // Stop
-        self.stopStream()
+        // Intdsah Client
+        self.closeIntdashClient()
     }
     
     //MARK:- viewDidAppear
@@ -103,6 +104,10 @@ class MainViewController: UIViewController {
         print("viewDidAppear - MainViewController")
         // Capture
         self.startCapturing()
+        // Intdash Client
+        self.openIntdashClient { [weak self] result in
+            self?.app.signOut()
+        }
     }
     
     //MARK:- viewDidDisappear
@@ -127,13 +132,14 @@ class MainViewController: UIViewController {
     }
     
     //MARK:- Start Stream
-    func startStream() {
-        if self.intdashClient == nil {
+    func startMeasurement() {
+        guard self.intdashClient != nil else { return }
+        if self.upstreamMeasurementId.isEmpty {
             // Reset System Clock.
             MySystemClock.shared.resetRtc()
             self.loadingDialog = LoadingAlertDialogView.init(addView: self.app.window!, showMessageLabel: false)
             self.loadingDialog?.startAnimating()
-            self.openIntdashClient { [weak self] (result) in
+            self.startUpstream { [weak self] result in
                 DispatchQueue.main.async {
                     self?.loadingDialog?.stopAnimating()
                     self?.loadingDialog = nil
@@ -142,12 +148,12 @@ class MainViewController: UIViewController {
                 self?.updateStreamControlBtn()
             }
         } else {
-            self.stopStream()
+            self.stopMeaurement()
         }
     }
     
-    func stopStream() {
-        self.closeIntdashClient()
+    func stopMeaurement() {
+        self.stopUpstream()
         self.updateStreamControlBtn()
     }
 }

@@ -18,13 +18,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
             completion(false)
             return
         }
-               
-        guard let edgeUUID = IntdashAPIManager.shared.singInEdgeUuid else {
-            print("Failed to get edge uuid.")
-            completion(false)
-            return
-        }
-        
+
         // Exclusion Control
         self.webSocketLock.lock()
         defer { self.webSocketLock.unlock() }
@@ -50,89 +44,120 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 self?.connectionError()
                 return
             }
-            // 計測IDを取得する。
-            client.upstreamManager.requestMeasurementId(edgeUuid: edgeUUID, completion: { (measId, error) in
-                guard error == nil, let upstreamMeasId = measId else {
-                    print("Failed to get measurement ID.")
-                    completion(false)
-                    self?.connectionError()
-                    return
+            print("Success to connect intdash server.")
+        }
+    }
+    
+    func startUpstream(completion: @escaping (Bool)->()) {
+        // Exclusion Control
+        self.webSocketLock.lock()
+        defer { self.webSocketLock.unlock() }
+        
+        guard let client = self.intdashClient else { return }
+        
+        guard let edgeUUID = IntdashAPIManager.shared.singInEdgeUuid else {
+            print("Failed to get edge uuid.")
+            return
+        }
+        
+        // 前回使用したアップストリームIDが存在すればストリームを閉じる。
+        let group = DispatchGroup()
+        let streamIds = self.upstreamIds
+        self.upstreamIds.removeAll()
+        self.sensorUpstreamId = nil
+        self.gpsUpstreamId = nil
+        if streamIds.count > 0 {
+            group.enter()
+            // 開いているストリームIDを閉じる。
+            client.upstreamManager.close(streamIds: streamIds) { (error) in
+                if error != nil {
+                    print("Failed to close intdash upstream. \(error!)")
                 }
-                print("MeasurementID: \(upstreamMeasId)")
-                self?.upstreamMeasurementId = upstreamMeasId
-                
-                var sensorStreamId: Int? = nil
-                if Config.SENSOR_IS_UPSTREAM {
-                    do {
-                        // センサー用のアップストリームを開く。
-                        sensorStreamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, store: Config.INTDASH_IS_SAVE_TO_SERVER)
-                    } catch {
-                        print("Failed to open stream. \(error.localizedDescription)")
-                        completion(false)
-                        self?.connectionError()
-                        return
-                    }
-                    print("Sensor UpstreamID: \(sensorStreamId!)")
-                    self?.sensorUpstreamId = sensorStreamId!
-                    self?.upstreamIds.append(sensorStreamId!)
-                }
-                
-                var gpsStreamId = 0
+                client.upstreamManager.removeClosedUpstream()
+            }
+        }
+        
+        // 計測IDを取得する。
+        client.upstreamManager.requestMeasurementId(edgeUuid: edgeUUID, completion: { [weak self] (measId, error) in
+            guard error == nil, let upstreamMeasId = measId else {
+                print("Failed to get measurement ID.")
+                completion(false)
+                self?.connectionError()
+                return
+            }
+            print("MeasurementID: \(upstreamMeasId)")
+            self?.upstreamMeasurementId = upstreamMeasId
+            
+            var sensorStreamId: Int? = nil
+            if Config.SENSOR_IS_UPSTREAM {
                 do {
-                    // GPS用のアップストリームを開く。
-                    gpsStreamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, store: Config.INTDASH_IS_SAVE_TO_SERVER)
+                    // センサー用のアップストリームを開く。
+                    sensorStreamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, store: Config.INTDASH_IS_SAVE_TO_SERVER)
                 } catch {
                     print("Failed to open stream. \(error.localizedDescription)")
                     completion(false)
                     self?.connectionError()
                     return
                 }
-                print("GPS UpstreamID: \(gpsStreamId)")
-                self?.gpsUpstreamId = gpsStreamId
-                self?.upstreamIds.append(gpsStreamId)
-                
-                // アップストリーム情報をintdashサーバーと同期する。
-                client.upstreamManager.sync(completion: { (error) in
-                    guard error == nil else {
-                        print("Failed to request stream. \(error!.localizedDescription)")
-                        completion(false)
-                        self?.connectionError()
-                        return
-                    }
-                    print("Success to open stream.")
-                    // サーバーへデータを保存する場合は`IntdashDataFileManager`を利用してローカルストレージへデータの保存も行い再送アップロードを行える状態にします。
-                    if Config.INTDASH_IS_SAVE_TO_SERVER {
-                        if sensorStreamId != nil {
-                            do {
-                                let fileManager = try IntdashDataFileManager(parentPath: "\(Config.INTDASH_DATA_FILE_PARENT_PATH)/\(edgeUUID)/\(upstreamMeasId)/sensor")
-                                try fileManager.setMeasurementId(id: upstreamMeasId)
-                                self?.sensorDataFileManager = fileManager
-                            } catch {
-                                print("Failed to setup file manager. \(error)")
-                            }
-                        }
+                print("Sensor UpstreamID: \(sensorStreamId!)")
+                self?.upstreamIds.append(sensorStreamId!)
+            }
+            
+            var gpsStreamId = 0
+            do {
+                // GPS用のアップストリームを開く。
+                gpsStreamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, store: Config.INTDASH_IS_SAVE_TO_SERVER)
+            } catch {
+                print("Failed to open stream. \(error.localizedDescription)")
+                completion(false)
+                self?.connectionError()
+                return
+            }
+            print("GPS UpstreamID: \(gpsStreamId)")
+            self?.upstreamIds.append(gpsStreamId)
+            
+            // アップストリーム情報をintdashサーバーと同期する。
+            client.upstreamManager.sync(completion: { (error) in
+                guard error == nil else {
+                    print("Failed to request stream. \(error!.localizedDescription)")
+                    completion(false)
+                    self?.connectionError()
+                    return
+                }
+                print("Success to open stream.")
+                // サーバーへデータを保存する場合は`IntdashDataFileManager`を利用してローカルストレージへデータの保存も行い再送アップロードを行える状態にします。
+                if Config.INTDASH_IS_SAVE_TO_SERVER {
+                    if sensorStreamId != nil {
                         do {
-                            let fileManager = try IntdashDataFileManager(parentPath: "\(Config.INTDASH_DATA_FILE_PARENT_PATH)/\(edgeUUID)/\(upstreamMeasId)/gps")
+                            let fileManager = try IntdashDataFileManager(parentPath: "\(Config.INTDASH_DATA_FILE_PARENT_PATH)/\(edgeUUID)/\(upstreamMeasId)/sensor")
                             try fileManager.setMeasurementId(id: upstreamMeasId)
-                            self?.gpsDataFileManager = fileManager
+                            self?.sensorDataFileManager = fileManager
                         } catch {
                             print("Failed to setup file manager. \(error)")
                         }
                     }
-                    self?.refreshNetworkTimeCnt = 0
-                    self?.resetBaseTime()
-                    completion(true)
-                })
+                    do {
+                        let fileManager = try IntdashDataFileManager(parentPath: "\(Config.INTDASH_DATA_FILE_PARENT_PATH)/\(edgeUUID)/\(upstreamMeasId)/gps")
+                        try fileManager.setMeasurementId(id: upstreamMeasId)
+                        self?.gpsDataFileManager = fileManager
+                    } catch {
+                        print("Failed to setup file manager. \(error)")
+                    }
+                }
+                // ストリーム開始
+                self?.sensorUpstreamId = sensorStreamId
+                self?.gpsUpstreamId = gpsStreamId                
+                self?.refreshNetworkTimeCnt = 0
+                self?.resetBaseTime()
+                completion(true)
             })
-        }
+        })
     }
     
     //MARK:- IntdashClientDelegate
     func intdashClientDidConnect(_ client: IntdashClient) {}
     
-    func intdashClientDidDisconnect(_ client: IntdashClient) {
-        self.stopStream()
-    }
+    func intdashClientDidDisconnect(_ client: IntdashClient) {}
     
     func intdashClient(_ client: IntdashClient, didFailWithError error: Error?) {}
     
@@ -141,10 +166,10 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
     public func connectionError() {
         guard !self.isShowAlertDialog else { return }
         self.isShowAlertDialog = true
-        AlertDialogView.showAlert(viewController: self, title: "Connection Error", message: "Failed to connect to the server.") {
-            self.isShowAlertDialog = false
+        AlertDialogView.showAlert(viewController: self, title: "Connection Error", message: "Failed to connect to the server.") { [weak self] in
+            self?.isShowAlertDialog = false
+            self?.app.signOut()
         }
-        self.stopStream()
     }
     
     func sendFirstData(timestamp: TimeInterval) {
@@ -214,14 +239,14 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         }
     }
     
-    public func closeIntdashClient() {
+    public func stopUpstream() {        
         // Exclusion Control
         self.webSocketLock.lock()
         defer { self.webSocketLock.unlock() }
         
         guard let client = self.intdashClient else { return }
-        print("closeIntdashClient() >>>")
-        self.intdashClient = nil
+        self.upstreamMeasurementId = ""
+        
         // Duration
         let duration = MySystemClock.shared.rtcDate.timeIntervalSince1970-self.baseTime
         
@@ -250,6 +275,16 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 print("Failed to send gps last data. \(error)")
             }
         }
+    }
+    
+    public func closeIntdashClient() {
+        // Exclusion Control
+        self.webSocketLock.lock()
+        defer { self.webSocketLock.unlock() }
+        
+        guard let client = self.intdashClient else { return }
+        print("closeIntdashClient() >>>")
+        self.intdashClient = nil
         
         DispatchQueue.global().async {
             let group = DispatchGroup()
@@ -285,10 +320,22 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
     //MARK:- IntdashClientUpstreamManagerDelegate
     func upstreamManager(_ manager: IntdashClient.UpstreamManager, didGeneratedSesion sectionId: Int, sectionIndex: Int, streamId: Int, final: Bool, sentCount: Int, startOfElapsedTime: TimeInterval, endOfElapsedTime: TimeInterval) {
         print("didGeneratedSesion sectionId:\(sectionId), sectionIndex: \(sectionIndex), streamId:\(streamId), final:\(final), sentCount:\(sentCount), startOfElapsedTime:\(startOfElapsedTime), endOfElapsedTime:\(endOfElapsedTime) - IntdashClient.UpstreamManager")
+        if final {
+            // 最終データを受信(複数のストリームIDを用いている場合はカウンタなどを用いる)
+            generateSendLastDataCnt += 1
+        }
     }
     
     func upstreamManager(_ manager: IntdashClient.UpstreamManager, didReceiveEndOfSection sectionId: Int, streamId: Int, success: Bool, final: Bool, sentCount: Int) {
         print("didReceiveEndOfSection sectionId:\(sectionId), streamId:\(streamId), success:\(success), final:\(final), sentCount:\(sentCount) - IntdashClient.UpstreamManager")
+        
+        if final {
+            generateSendLastDataCnt -= 1
+            if generateSendLastDataCnt == 0 {
+                // TODO: データの送信完了
+                print("Completion of receiving final data. - IntdashClient.UpstreamManager")
+            }
+        }
         
         // 正しくAckが受信できなければintdashサーバーと再接続を行いキューに溜まるデータをクリアします。
         self.appendNetworkSectionTime(success: success)

@@ -26,12 +26,12 @@ extension MainViewController {
     
     @IBAction func streamControlBtnPushed(_ sender: Any) {
         print("streamControlBtnPushed")
-        self.startStream()
+        self.startMeasurement()
     }
     
     func updateStreamControlBtn() {
         DispatchQueue.main.async {
-            if self.intdashClient != nil {
+            if !self.upstreamMeasurementId.isEmpty {
                 self.streamControlBtn.setTitle("STOP UPSTREAM", for: .normal)
                 self.streamControlBtn.setTitleColor(Config.BUTTON_ACTIVE_TEXT_COLOR, for: .normal)
                 self.startCurrentTimeCheckTimer()
