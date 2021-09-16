@@ -126,9 +126,7 @@ class MainViewController: UIViewController {
         // Sensor Manager
         self.setupSensorManager()
         // Intdash Client
-        self.openIntdashClient { [weak self] result in
-            self?.app.signOut()
-        }
+        self.openIntdashClient()
     }
     
     //MARK:- viewDidDisappear

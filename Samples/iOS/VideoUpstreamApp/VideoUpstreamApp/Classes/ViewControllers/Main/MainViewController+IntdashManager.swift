@@ -12,10 +12,9 @@ import Intdash
 extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManagerDelegate {
 
     //MARK:- IntdashClient
-    public func openIntdashClient(completion: @escaping (Bool)->()) {
+    public func openIntdashClient() {
         guard let session = IntdashAPIManager.shared.session else {
-            print("Failed to get session.")
-            completion(false)
+            connectionError("Failed to get session.")
             return
         }
 
@@ -24,8 +23,7 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         defer { self.webSocketLock.unlock() }
         
         guard self.intdashClient == nil else {
-            print("Already used intdash client.")
-            completion(false)
+            connectionError("Already used intdash client.")
             return
         }
         
@@ -39,16 +37,13 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         // intdashサーバーとの接続を開始する。
         client.connect { [weak self] (error) in
             guard error == nil else {
-                print("Failed to connect intdash server. \(error!.localizedDescription)")
-                completion(false)
-                self?.connectionError()
+                self?.connectionError("Failed to connect intdash server. \(error!.localizedDescription)")
                 return
             }
             print("Success to connect intdash server.")
         }
     }
     
-    //MARK:- IntdashClient
     public func startUpstream(completion: @escaping (Bool)->()) {
         // Exclusion Control
         self.webSocketLock.lock()
@@ -80,9 +75,8 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         // 計測IDを取得する。
         client.upstreamManager.requestMeasurementId(edgeUuid: edgeUUID, completion: { [weak self] (measId, error) in
             guard error == nil, let upstreamMeasId = measId else {
-                print("Failed to get measurement ID.")
                 completion(false)
-                self?.connectionError()
+                self?.connectionError("Failed to get measurement ID.")
                 return
             }
             print("MeasurementID: \(upstreamMeasId)")
@@ -93,9 +87,8 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
                 // アップストリームを開く。
                 streamId = try client.upstreamManager.open(measurementId: upstreamMeasId, srcEdgeId: edgeUUID, dstEdgeIds: nil, store: Config.INTDASH_IS_SAVE_TO_SERVER, retryCount: 0, sectionUpdateInterval: nil)
             } catch {
-                print("Failed to open stream. \(error.localizedDescription)")
                 completion(false)
-                self?.connectionError()
+                self?.connectionError("Failed to open stream. \(error.localizedDescription)")
                 return
             }
             print("UpstreamID: \(streamId)")
@@ -104,9 +97,8 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
             // アップストリーム情報をintdashサーバーと同期する。
             client.upstreamManager.sync(completion: { (error) in
                 guard error == nil else {
-                    print("Failed to request stream. \(error!.localizedDescription)")
                     completion(false)
-                    self?.connectionError()
+                    self?.connectionError("Failed to request stream. \(error!.localizedDescription)")
                     return
                 }
                 print("Success to open stream.")
@@ -138,10 +130,11 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
     
     func intdashClient(_ client: IntdashClient, didRetryToRequestSpecs success: Bool) {}
     
-    public func connectionError() {
+    public func connectionError(_ message: String) {
         guard !self.isShowAlertDialog else { return }
         self.isShowAlertDialog = true
-        AlertDialogView.showAlert(viewController: self, title: "Connection Error", message: "Failed to connect to the server.") { [weak self] in
+        print(message)
+        AlertDialogView.showAlert(viewController: self, title: "Connection Error", message: message) { [weak self] in
             self?.isShowAlertDialog = false
             self?.app.signOut()
         }
@@ -267,6 +260,12 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         if final {
             // 最終データを受信(複数のストリームIDを用いている場合はカウンタなどを用いる)
             generateSendLastDataCnt += 1
+            if self.loadingDialog == nil {
+                DispatchQueue.main.async { [weak self] in
+                    self?.loadingDialog = LoadingAlertDialogView.init(addView: self!.app.window!, showMessageLabel: false)
+                    self?.loadingDialog?.startAnimating()
+                }
+            }
         }
     }
     
@@ -278,6 +277,10 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
             if generateSendLastDataCnt == 0 {
                 // TODO: データの送信完了
                 print("Completion of receiving final data. - IntdashClient.UpstreamManager")
+                DispatchQueue.main.async { [weak self] in
+                    self?.loadingDialog?.stopAnimating()
+                    self?.loadingDialog = nil
+                }
             }
         }
         

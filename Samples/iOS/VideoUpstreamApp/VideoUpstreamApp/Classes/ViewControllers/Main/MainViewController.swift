@@ -105,9 +105,7 @@ class MainViewController: UIViewController {
         // Capture
         self.startCapturing()
         // Intdash Client
-        self.openIntdashClient { [weak self] result in
-            self?.app.signOut()
-        }
+        self.openIntdashClient()
     }
     
     //MARK:- viewDidDisappear
