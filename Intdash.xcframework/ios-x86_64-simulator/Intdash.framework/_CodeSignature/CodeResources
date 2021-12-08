@@ -14,31 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MKXiYf4P6MfS6OJ5MzaEo0cqCuw=
+		weR7nLquUsQyOKYEN4Li6nB8MHA=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		9uLbhT4zG/B69sOKkn+p1Zk9gGs=
+		O5FsoWaD6RakJHUkj2yTCZiHKSg=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		owcg87ryb/Fu9ZXWfpQYHyHw/e8=
+		KV5OyyFbjJ9JWSgEe7TuKmWt0CM=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AvkE5xQVHFx5MlZ3BFthxiC3lxc=
+		sEOWW0V3zMYCB8mqkP0G6cq00og=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		9uLbhT4zG/B69sOKkn+p1Zk9gGs=
+		O5FsoWaD6RakJHUkj2yTCZiHKSg=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		owcg87ryb/Fu9ZXWfpQYHyHw/e8=
+		KV5OyyFbjJ9JWSgEe7TuKmWt0CM=
 		</data>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		AvkE5xQVHFx5MlZ3BFthxiC3lxc=
+		sEOWW0V3zMYCB8mqkP0G6cq00og=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0pXrOLTXhI2pnnQo/ftjPnOj/MZTc7NE6QGSlLQ2WgQ=
+			0ABniY3nurGK1sRDrQqKb63T15mNAIzxstJd4U4SNeA=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q8ITwYdnQF6RuArpPUL0JdvQ5BgJQqaB5LMmjGQcH6U=
+			g3grVrl0hFWu2tdoLGQomaA/5Bj0DH4NLEf3+frP2o8=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KImwnDSrnocYiELrPyCY34Mnp6J08BF0Ry892ZcSRWI=
+			lZOuZSwWiWEhkJZEcnegxeoayGijPLu9m9xQqC1cy5M=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0pXrOLTXhI2pnnQo/ftjPnOj/MZTc7NE6QGSlLQ2WgQ=
+			0ABniY3nurGK1sRDrQqKb63T15mNAIzxstJd4U4SNeA=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q8ITwYdnQF6RuArpPUL0JdvQ5BgJQqaB5LMmjGQcH6U=
+			g3grVrl0hFWu2tdoLGQomaA/5Bj0DH4NLEf3+frP2o8=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KImwnDSrnocYiELrPyCY34Mnp6J08BF0Ry892ZcSRWI=
+			lZOuZSwWiWEhkJZEcnegxeoayGijPLu9m9xQqC1cy5M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

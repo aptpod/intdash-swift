@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 spec.name         = "Intdash"
-  spec.version      = "1.1.2"
+  spec.version      = "1.1.3"
   spec.summary      = "intdash SDK for Swift"
   spec.homepage     = "https://github.com/aptpod/intdash-swift"
 

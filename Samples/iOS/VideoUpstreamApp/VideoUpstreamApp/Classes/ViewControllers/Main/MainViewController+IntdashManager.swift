@@ -57,12 +57,10 @@ extension MainViewController: IntdashClientDelegate, IntdashClientUpstreamManage
         }
         
         // 前回使用したアップストリームIDが存在すればストリームを閉じる。
-        let group = DispatchGroup()
         let streamIds = self.upstreamIds
         self.upstreamIds.removeAll()
         self.upstreamId = nil
         if streamIds.count > 0 {
-            group.enter()
             // 開いているストリームIDを閉じる。
             client.upstreamManager.close(streamIds: streamIds) { (error) in
                 if error != nil {

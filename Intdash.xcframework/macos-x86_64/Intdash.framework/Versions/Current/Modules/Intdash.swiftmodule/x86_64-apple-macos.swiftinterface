@@ -435,6 +435,7 @@ extension IntdashData {
       case idrFrame
       case nonIdrFrame
       case exUnit
+      case seiUnit
       public typealias RawValue = Swift.UInt8
       public init?(rawValue: Swift.UInt8)
       public var rawValue: Swift.UInt8 {

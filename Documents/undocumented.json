@@ -44,7 +44,7 @@
     },
     {
       "file": "/Users/uenomasamitsu/WorkSpace/Xcode/iOS/WorkSpace/intdash-swift-private/Common/Classes/Measdata/Models/IntdashData/DataH264.swift",
-      "line": 28,
+      "line": 30,
       "symbol": "IntdashData.DataH264.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"

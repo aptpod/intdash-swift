@@ -14,31 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TqRnJx/SL4UYgVYZhNkU5aZZ/K0=
+		cZvkhjYoTDtkthfg62tpxWRChSk=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		fN06Eadhz8zucMQKXM5su2nl12c=
+		KMQ3yiZSG3blpEgMYa7cdsVbdNg=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		O7w2s5+swkZYQNsAf3hnQKgclBI=
+		rygpNk9p/wZxN5K3VQDwn2Na2vc=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		nqCGeif1tpcsZ7dBHkoyz3D0q0k=
+		KjD3HPnlCwxA0rYF+g2cPZ2E3g0=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		fN06Eadhz8zucMQKXM5su2nl12c=
+		KMQ3yiZSG3blpEgMYa7cdsVbdNg=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		O7w2s5+swkZYQNsAf3hnQKgclBI=
+		rygpNk9p/wZxN5K3VQDwn2Na2vc=
 		</data>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		nqCGeif1tpcsZ7dBHkoyz3D0q0k=
+		KjD3HPnlCwxA0rYF+g2cPZ2E3g0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QIJRncxf3nS7Ohs6hfX9Trcr5XDi07Kk+wUjYWUzQEY=
+			vBDnFxdxcCiiBUn0LednGQenbQ2vE52inRHEkurh1UI=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U653e57Cw6Dpbs7vKlVfMGKSiN6vgOtfDGG0A/b0CrA=
+			IfCY3YOeph1JvmCoOeLUfYPPEVSqyX/WpaSDdcVOic0=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jOybSWZOYCACcF8f5oJ+ZxsQgsHkPC6v7BTrnLVn6/8=
+			4RnN+WRgeTg9g7UYRIPuLZot3LqFyEuvKhL8JjeU44c=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QIJRncxf3nS7Ohs6hfX9Trcr5XDi07Kk+wUjYWUzQEY=
+			vBDnFxdxcCiiBUn0LednGQenbQ2vE52inRHEkurh1UI=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U653e57Cw6Dpbs7vKlVfMGKSiN6vgOtfDGG0A/b0CrA=
+			IfCY3YOeph1JvmCoOeLUfYPPEVSqyX/WpaSDdcVOic0=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jOybSWZOYCACcF8f5oJ+ZxsQgsHkPC6v7BTrnLVn6/8=
+			4RnN+WRgeTg9g7UYRIPuLZot3LqFyEuvKhL8JjeU44c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

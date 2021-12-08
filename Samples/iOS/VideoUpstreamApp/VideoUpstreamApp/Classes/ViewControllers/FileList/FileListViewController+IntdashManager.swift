@@ -18,12 +18,6 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
             return
         }
         
-        guard let edgeUUID = IntdashAPIManager.shared.singInEdgeUuid else {
-            print("Failed to get edge uuid.")
-            completion(false)
-            return
-        }
-        
         // IntdashClient
         let client = IntdashClient()
         client.session = session
@@ -48,7 +42,7 @@ extension FileListViewController: IntdashClientDelegate, IntdashClientUpstreamMa
                 var streamId = 0
                 do {
                     print("Open for resend measurementID: \(measData.measId)")
-                    streamId = try client.upstreamManager.openForResend(measurementId: measData.measId, srcEdgeId: edgeUUID, lastSectionId: nil)
+                    streamId = try client.upstreamManager.openForResend(measurementId: measData.measId, srcEdgeId: measData.edgeUUID, lastSectionId: nil)
                 } catch {
                     print("Failed to open stream. \(error.localizedDescription)")
                     self?.closeIntdashClient(client: client, streamId: nil)

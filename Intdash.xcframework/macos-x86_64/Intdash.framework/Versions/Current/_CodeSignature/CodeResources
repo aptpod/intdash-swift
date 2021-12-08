@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		6im08SWfp9UjXPiHEAQFITVmJdQ=
+		8mBm72QL9l07Jja5Jmfl+xYUW44=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -29,42 +29,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZxVn+YMA1PTfIYJErs3ghAmf1n+UqBtRoop3w0IZjQ=
+			u8UNIcViQm2gsiq5GlEO6C2YbgbV23Ltr0jgb1A2T/Q=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0314sSzg2Hya1W7iqsXXj7fXAlcy3jKwJiSnWm77vCU=
+			BUhDZo1qZDsw/yicCUDcHcFFrfmnvkVHjG7/BHDUcZw=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			huKEk0Aepl67kR/0R08UovBfoPutAnZuLT1kClWQ9mc=
+			o7d3LP2OLkF6ntlb9/LEp8va4TDBoPh0FBF8MB/C9VA=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZxVn+YMA1PTfIYJErs3ghAmf1n+UqBtRoop3w0IZjQ=
+			u8UNIcViQm2gsiq5GlEO6C2YbgbV23Ltr0jgb1A2T/Q=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0314sSzg2Hya1W7iqsXXj7fXAlcy3jKwJiSnWm77vCU=
+			BUhDZo1qZDsw/yicCUDcHcFFrfmnvkVHjG7/BHDUcZw=
 			</data>
 		</dict>
 		<key>Modules/Intdash.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			huKEk0Aepl67kR/0R08UovBfoPutAnZuLT1kClWQ9mc=
+			o7d3LP2OLkF6ntlb9/LEp8va4TDBoPh0FBF8MB/C9VA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -78,7 +78,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Ggsu0c5592xfc5jVXshaQooLDfE5ryvscWorSC7Gmo=
+			NXJv7eOAWQBE6f9hMWsPtR1AnTzROS9m76eMrhhIW7Y=
 			</data>
 		</dict>
 	</dict>
